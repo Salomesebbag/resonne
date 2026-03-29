@@ -36,7 +36,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all .4s;}
 nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.06);padding:12px 60px;}
-.nav-logo{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--coral);text-decoration:none;}
+.nav-logo{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--coral);text-decoration:none;letter-spacing:-0.5px;}
 .nav-logo span{color:var(--sun);}
 .nav-links{display:flex;gap:32px;align-items:center;}
 .nav-links a{color:var(--text);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
@@ -913,6 +913,7 @@ nav.scrolled + .fin-ticker { top: 56px; }
   perspective: 1000px;
 }
 
+
 </style>
 </head>
 <body>
@@ -929,7 +930,7 @@ nav.scrolled + .fin-ticker { top: 56px; }
   </button>
 </div>
 <nav id="navbar">
-  <a href="#" class="nav-logo">Résonne<span>.</span></a>
+  <a href="#" class="nav-logo">Salomé Sebbag<span>.</span></a>
   <div class="nav-links">
     <a href="#story">Salomé</a>
     <a href="#method">Méthode</a>
@@ -1613,7 +1614,7 @@ nav.scrolled + .fin-ticker { top: 56px; }
   <div class="ft-inner">
     <div class="ft-top">
       <div>
-        <div class="ft-logo">Résonne<span>.</span></div>
+        <div class="ft-logo">Salomé Sebbag<span>.</span></div>
         <div class="ft-tag">La formation vocale qui libère ta voix de l'intérieur — par Salomé Sebbag, ostéopathe de la voix.</div>
         <div class="ft-socials">
           <a href="https://www.instagram.com/salomesebbag/" target="_blank" rel="noopener" class="ft-social" title="Instagram">📸</a>
@@ -1699,12 +1700,17 @@ function vidGo(i) {
   vidIdx = i;
   var track = document.getElementById('vidTrack');
   if(!track) return;
-  var card = track.querySelector('.vid-card');
-  if(!card) return;
-  var cardW = card.offsetWidth + 16;
-  track.style.transform = 'translateX(' + (-vidIdx * cardW) + 'px)';
+  var cards = track.querySelectorAll('.vid-card');
+  if(!cards.length) return;
+  // getBoundingClientRect = vraie largeur même si offsetWidth = 0
+  var rect = cards[0].getBoundingClientRect();
+  var cardW = (rect.width > 0 ? rect.width : cards[0].offsetWidth) + 16;
+  if(cardW <= 16) cardW = 200; // fallback
+  track.style.transform = 'translate3d(' + (-vidIdx * cardW) + 'px, 0, 0)';
   document.querySelectorAll('.vid-dot').forEach(function(d, j) { d.classList.toggle('on', j === vidIdx); });
   track.querySelectorAll('video').forEach(function(v) { v.pause(); });
+  // Recalculer au resize
+  window._lastCardW = cardW;
 }
 function startVidAuto() { vidAuto = setInterval(function() { vidMove(1); }, 4500); }
 function stopVidAuto() { clearInterval(vidAuto); }
@@ -1712,7 +1718,7 @@ document.addEventListener('DOMContentLoaded', function() {
   startVidAuto();
   var wrap = document.querySelector('.vid-scroll-wrap');
   if(wrap) { wrap.addEventListener('mouseenter', stopVidAuto); wrap.addEventListener('mouseleave', startVidAuto); }
-  window.addEventListener('resize', function() { vidGo(vidIdx); });
+  window.addEventListener('resize', function() { window._lastCardW = 0; vidGo(vidIdx); });
 });
 
 // ── TABS ──
@@ -1869,21 +1875,39 @@ function submitPay(e) {
 }
 
 // ── LOGOS CAROUSEL ──
-var logosOffset = 0;
+var logosManualX = 0;
+var logosAnimRunning = true;
+
 function logoMove(dir) {
   var track = document.getElementById('logosTrack');
   if (!track) return;
-  logosOffset += dir * 180;
-  track.style.animationPlayState = 'paused';
-  track.style.transition = 'transform .45s cubic-bezier(.25,.46,.45,.94)';
-  track.style.transform = 'translate3d(' + logosOffset + 'px, 0, 0)';
+
+  // Si animation encore active, lire la position courante via matrix
+  if (logosAnimRunning) {
+    var matrix = window.getComputedStyle(track).transform;
+    if (matrix && matrix !== 'none') {
+      var match = matrix.match(/matrix\(.*,\s*([-\d.]+),\s*([-\d.]+)\)/);
+      logosManualX = match ? parseFloat(match[1]) : 0;
+    }
+    // Stopper l'animation
+    track.style.animation = 'none';
+    track.style.transform = 'translate3d(' + logosManualX + 'px, 0, 0)';
+    logosAnimRunning = false;
+  }
+
+  logosManualX += dir * 200;
+
+  track.style.transition = 'transform .5s cubic-bezier(.25,.46,.45,.94)';
+  track.style.transform = 'translate3d(' + logosManualX + 'px, 0, 0)';
+
   clearTimeout(window._logosTimeout);
   window._logosTimeout = setTimeout(function() {
-    track.style.transition = '';
-    track.style.transform = '';
-    logosOffset = 0;
-    track.style.animationPlayState = 'running';
-  }, 2500);
+    // Reprendre l'animation
+    track.style.transition = 'none';
+    track.style.animation = 'logoScroll 15s linear infinite';
+    logosManualX = 0;
+    logosAnimRunning = true;
+  }, 3000);
 }
 </script>
 
