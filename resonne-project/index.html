@@ -3,15 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Résonne — La formation vocale de Salomé Sebbag, ostéopathe de la voix. Libère ta voix sans forcer. Certifiée Qualiopi, remboursable AFDAS.">
+<meta name="description" content="Résonne — La formation vocale de Salomé Sebbag, ostéopathe de la voix.">
 <meta property="og:title" content="Résonne — Ostéopathe de la Voix · Salomé Sebbag">
-<meta property="og:description" content="La formation qui combine ostéopathie, rééducation et technique vocale pour libérer ta voix définitivement.">
 <meta property="og:image" content="assets/images/salome.jpg">
 <title>Résonne — Salomé Sebbag · Ostéopathe de la Voix</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,500;1,9..144,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS ── */
 :root {
   --coral: #9B6EA8;
   --coral2: #B88AC4;
@@ -30,10 +28,8 @@
   --tr: cubic-bezier(.25,.46,.45,.94);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
-
-/* ── NAV ── */
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;max-width:100vw;position:relative;}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all .4s;}
 nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.06);padding:12px 60px;}
 .nav-logo{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--coral);text-decoration:none;}
@@ -48,15 +44,13 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:999;padding:100px 40px 40px;flex-direction:column;gap:28px;}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--text);text-decoration:none;border-bottom:1px solid rgba(0,0,0,.08);padding-bottom:20px;}
-
-/* ── HERO ── */
 #hero{min-height:100vh;background:linear-gradient(160deg,#FDF8F2 0%,#F8EFF8 35%,#F2F4FF 60%,#EDF7F4 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding-top:80px;}
-.blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:bfloat 8s ease-in-out infinite;}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:bfloat 8s ease-in-out infinite;max-width:100%;}
 .b1{width:700px;height:700px;background:radial-gradient(circle,rgba(155,110,168,.18),transparent 70%);top:-200px;right:-150px;}
 .b2{width:500px;height:500px;background:radial-gradient(circle,rgba(196,94,138,.15),transparent 70%);bottom:-150px;left:-100px;animation-delay:3s;animation-direction:reverse;}
 .b3{width:400px;height:400px;background:radial-gradient(circle,rgba(107,191,168,.12),transparent 70%);top:30%;right:30%;animation-delay:5s;}
 @keyframes bfloat{0%,100%{transform:scale(1) translate(0,0);}50%{transform:scale(1.08) translate(20px,-20px);}}
-.hero-inner{max-width:1400px;margin:0 auto;padding:80px;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;position:relative;z-index:2;width:100%;}
+.hero-inner{max-width:1400px;margin:0 auto;padding:80px;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;position:relative;z-index:2;width:100%;overflow:hidden;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(155,110,168,.12);border:1.5px solid rgba(155,110,168,.4);color:var(--coral);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 18px;border-radius:50px;margin-bottom:28px;}
 .dot-pulse{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.5);opacity:.5;}}
@@ -80,19 +74,20 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .float-card{position:absolute;background:white;border-radius:16px;padding:14px 20px;box-shadow:0 8px 30px rgba(0,0,0,.1);display:flex;gap:12px;align-items:center;}
 .fc-bot{bottom:-16px;left:-24px;z-index:10;}
 .fc-top{top:24px;right:-24px;z-index:10;}
+@media(max-width:768px){
+  .fc-bot{bottom:10px;left:10px;}
+  .fc-top{top:10px;right:10px;}
+  .hero-tag-bubble{left:10px;top:-10px;font-size:11px;padding:6px 14px;}
+}
 .fc-ico{font-size:28px;}
 .fc-t strong{display:block;font-size:14px;font-weight:700;color:var(--ink);}
 .fc-t span{font-size:12px;color:var(--textm);}
 .hero-tag-bubble{position:absolute;top:-16px;left:30px;background:linear-gradient(135deg,var(--sun),var(--coral));color:white;font-size:13px;font-weight:700;padding:8px 20px;border-radius:50px;box-shadow:0 4px 16px rgba(155,110,168,.4);transform:rotate(-2deg);white-space:nowrap;z-index:10;}
-
-/* ── MARQUEE ── */
-.marquee-wrap{background:linear-gradient(135deg,var(--coral),var(--rose));padding:14px 0;overflow:hidden;}
+.marquee-wrap{background:linear-gradient(135deg,var(--coral),var(--rose));padding:14px 0;overflow:hidden;max-width:100vw;}
 .marquee-track{display:flex;animation:mscroll 22s linear infinite;white-space:nowrap;}
 .mitem{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.9);padding:0 36px;display:flex;align-items:center;gap:12px;}
-.mitem::after{content:'✶';font-size:10px;color:rgba(255,255,255,.4);}
+.mitem::after{content:'\2736';font-size:10px;color:rgba(255,255,255,.4);}
 @keyframes mscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ── LEAD MAGNET ── */
 #leadmagnet{background:white;border-bottom:1px solid rgba(0,0,0,.06);}
 .lm-inner{max-width:1100px;margin:0 auto;padding:80px 60px;display:grid;grid-template-columns:1fr 460px;gap:70px;align-items:center;}
 .lm-input-row{display:flex;gap:12px;flex-wrap:wrap;}
@@ -106,8 +101,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .lm-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(155,110,168,.4);}
 .lm-gratuit{margin-left:auto;background:rgba(155,110,168,.12);border:1px solid rgba(155,110,168,.3);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;color:var(--coral);}
 #lm-merci{display:none;background:linear-gradient(135deg,rgba(155,110,168,.1),rgba(74,158,137,.08));border:1px solid rgba(155,110,168,.3);border-radius:16px;padding:20px 24px;margin-top:12px;}
-
-/* ── SECTIONS ── */
 .sh2{font-family:'Fraunces',serif;font-size:clamp(34px,4vw,56px);font-weight:700;line-height:1.1;color:var(--ink);letter-spacing:-1px;margin-bottom:20px;}
 .sh2 em{font-style:italic;font-weight:500;background:linear-gradient(135deg,var(--coral),var(--sun));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .sh2-light{color:white;}
@@ -119,8 +112,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .tag-mint{background:rgba(78,205,196,.12);color:var(--mint2);}
 .tag-gold{background:rgba(228,164,60,.12);color:#B07820;}
 .tag-rose{background:rgba(196,94,138,.1);color:var(--rose);}
-
-/* ── SYMPTOMS ── */
 #symptoms{background:white;}
 .sympt-wrap{max-width:1400px;margin:0 auto;padding:110px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
 .sy-card{display:flex;gap:16px;align-items:flex-start;padding:22px 24px;border-radius:18px;background:var(--cream2);border:2px solid transparent;transition:all .3s;cursor:default;margin-bottom:14px;}
@@ -129,7 +120,7 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .sy-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;}
 .sy-desc{font-size:13px;color:var(--textm);line-height:1.5;}
 .quote-box{background:linear-gradient(160deg,#1E1228,#2A1A38);border-radius:28px;padding:44px;position:relative;overflow:hidden;}
-.quote-box::before{content:'"';position:absolute;top:-30px;left:16px;font-family:'Fraunces',serif;font-size:180px;color:rgba(255,255,255,.04);line-height:1;}
+.quote-box::before{content:'\201C';position:absolute;top:-30px;left:16px;font-family:'Fraunces',serif;font-size:180px;color:rgba(255,255,255,.04);line-height:1;}
 .quote-text{font-family:'Fraunces',serif;font-size:clamp(18px,2vw,26px);font-style:italic;font-weight:300;line-height:1.55;color:white;position:relative;z-index:1;}
 .quote-text strong{color:var(--sun);font-style:normal;font-weight:600;}
 .quote-author{display:flex;align-items:center;gap:14px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);}
@@ -137,8 +128,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .qa-av img{width:100%;height:100%;object-fit:cover;object-position:top;}
 .qa-name{font-size:14px;font-weight:700;color:white;}
 .qa-role{font-size:12px;color:rgba(255,255,255,.4);margin-top:2px;}
-
-/* ── STORY ── */
 #story{background:var(--cream2);}
 .story-wrap{max-width:1400px;margin:0 auto;padding:110px 80px;display:grid;grid-template-columns:360px 1fr;gap:80px;align-items:start;}
 .story-photo{border-radius:24px 24px 70px 24px;overflow:hidden;aspect-ratio:3/4;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.12);}
@@ -158,15 +147,11 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .cred-ico{font-size:26px;margin-bottom:10px;}
 .cred-t{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;}
 .cred-d{font-size:12px;color:var(--textm);line-height:1.5;}
-
-/* ── PULL QUOTE ── */
-.pullquote{background:linear-gradient(135deg,var(--lavender) 0%,var(--rose) 55%,var(--coral) 100%);padding:90px 80px;text-align:center;position:relative;overflow:hidden;}
+.pullquote{background:linear-gradient(135deg,var(--lavender) 0%,var(--rose) 55%,var(--coral) 100%);padding:90px 80px;text-align:center;position:relative;overflow:hidden;max-width:100vw;}
 .pullquote::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");}
 .pullquote-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;}
 .pullquote-text{font-family:'Fraunces',serif;font-size:clamp(26px,4vw,54px);color:white;font-weight:300;line-height:1.25;font-style:italic;}
 .pullquote-by{margin-top:24px;font-size:14px;color:rgba(255,255,255,.7);letter-spacing:2px;text-transform:uppercase;font-weight:600;}
-
-/* ── METHOD ── */
 #method{background:white;}
 .method-wrap{padding:110px 80px;max-width:1400px;margin:0 auto;}
 .method-header{text-align:center;margin-bottom:70px;}
@@ -183,12 +168,10 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .dim-title{font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:10px;}
 .dim.d1 .dim-title{color:var(--coral);}.dim.d2 .dim-title{color:#C07A00;}.dim.d3 .dim-title{color:var(--mint2);}.dim.d4 .dim-title{color:var(--lavender);}
 .dim-desc{font-size:14px;line-height:1.7;color:var(--textm);}
-
-/* ── VIDEOS ── */
 #videos{background:linear-gradient(160deg,#FDF8F2 0%,#F4EEFF 100%);}
 .videos-wrap{padding:90px 80px;max-width:1400px;margin:0 auto;}
 .videos-header{text-align:center;margin-bottom:44px;}
-.vid-scroll-wrap{position:relative;overflow:hidden;}
+.vid-scroll-wrap{position:relative;overflow:hidden;max-width:100%;}
 .vid-scroll-track{display:flex;gap:16px;transition:transform .6s var(--tr);will-change:transform;}
 .vid-card{flex:0 0 calc(25% - 12px);border-radius:20px;overflow:hidden;background:var(--ink);position:relative;aspect-ratio:9/16;box-shadow:0 12px 40px rgba(0,0,0,.12);border:2px solid rgba(255,255,255,.06);transition:transform .3s,box-shadow .3s;}
 .vid-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 50px rgba(0,0,0,.2);}
@@ -202,8 +185,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .vid-arr:hover{background:var(--coral);color:white;border-color:var(--coral);}
 @media(max-width:900px){.vid-card{flex:0 0 calc(50% - 8px);}}
 @media(max-width:540px){.vid-card{flex:0 0 calc(80% - 6px);}}
-
-/* ── PROGRAMME 3 TABS ── */
 #programme{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 100%);}
 .prog-wrap{padding:110px 80px;max-width:1400px;margin:0 auto;}
 .tab-nav{display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;}
@@ -262,8 +243,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .rf-d{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;}
 .rayonne-cta-box{background:linear-gradient(135deg,rgba(122,98,200,.15),rgba(196,94,138,.12));border:1px solid rgba(122,98,200,.25);border-radius:20px;padding:36px;text-align:center;margin-top:24px;}
 @media(max-width:768px){.performe-grid,.rayonne-features,.tab-infos{grid-template-columns:1fr;}.tab-header{grid-template-columns:1fr;}.tab-price-block{text-align:left;}}
-
-/* ── TESTIMONIALS ── */
 #temoignages{background:white;}
 .testi-wrap{padding:110px 80px;max-width:1400px;margin:0 auto;}
 .testi-header{text-align:center;margin-bottom:60px;}
@@ -286,8 +265,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .tc-big .tc-name{color:white;}
 .tc-role{font-size:12px;color:var(--textm);}
 .tc-big .tc-role{color:rgba(255,255,255,.4);}
-
-/* ── FINANCEMENT ── */
 #financement{background:linear-gradient(160deg,#FDF8F2 0%,#F4EEFF 100%);}
 .fin-wrap{padding:90px 80px;max-width:1400px;margin:0 auto;}
 .fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
@@ -309,8 +286,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .fin-card-ico{font-size:34px;flex-shrink:0;}
 .fin-card-t{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;}
 .fin-card-d{font-size:13px;color:var(--textm);line-height:1.6;}
-
-/* ── QUIZ ── */
 #quiz{background:linear-gradient(160deg,var(--ink) 0%,#1A0A20 100%);}
 .quiz-wrap{padding:90px 80px;max-width:900px;margin:0 auto;text-align:center;}
 .quiz-card{background:linear-gradient(160deg,#24142E 0%,#1A1028 100%);border-radius:32px;padding:60px;border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden;}
@@ -340,8 +315,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .qz-input{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;font-family:'DM Sans',sans-serif;font-size:15px;color:white;width:100%;outline:none;transition:border-color .2s;margin-bottom:12px;display:block;}
 .qz-input::placeholder{color:rgba(255,255,255,.25);}
 .qz-input:focus{border-color:rgba(155,110,168,.5);}
-
-/* ── PRICING ── */
 #pricing{background:white;}
 .price-wrap{padding:110px 80px;max-width:1400px;margin:0 auto;}
 .price-header{text-align:center;margin-bottom:65px;}
@@ -380,8 +353,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .btn-pc-outm:hover{border-color:var(--mint2);color:var(--mint2);}
 .guarantee{text-align:center;margin-top:32px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;color:var(--textm);}
 .guarantee strong{color:var(--ink);}
-
-/* ── PRO ── */
 #pro{background:var(--cream2);}
 .pro-inner{max-width:1400px;margin:0 auto;padding:110px 60px;}
 .pro-header{text-align:center;margin-bottom:70px;}
@@ -396,9 +367,7 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .soin-card{background:var(--cream2);border-radius:16px;padding:22px;border:2px solid transparent;transition:all .3s;cursor:default;margin-bottom:16px;}
 .soin-card:hover{border-color:var(--coral);}
 .soin-card.featured{background:linear-gradient(135deg,rgba(155,110,168,.08),rgba(74,158,137,.06));border:2px solid rgba(155,110,168,.2);}
-
-/* ── PAYMENT ── */
-#paiement{background:var(--cream2);}
+#paiement{background:var(--cream2);border-top:1px solid rgba(0,0,0,.06);}
 .pay-inner{max-width:1000px;margin:0 auto;padding:80px 60px;}
 .pay-header{text-align:center;margin-bottom:60px;}
 .pay-grid{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start;}
@@ -429,8 +398,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .pay-guarantees{background:white;border-radius:16px;padding:20px;border:1px solid rgba(0,0,0,.06);}
 .pay-guarantee-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--textm);margin-bottom:12px;}
 .pay-guarantee-item:last-child{margin-bottom:0;}
-
-/* ── FAQ ── */
 #faq{background:white;}
 .faq-wrap{padding:90px 80px;max-width:860px;margin:0 auto;}
 .faq-header{text-align:center;margin-bottom:56px;}
@@ -442,8 +409,6 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .fq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--tr);}
 .fq.open .fq-a{max-height:200px;}
 .fq-a-in{padding:0 0 20px;font-size:15px;color:var(--textm);line-height:1.75;}
-
-/* ── CTA ── */
 #cta{background:linear-gradient(135deg,var(--coral) 0%,var(--rose) 55%,var(--lavender) 100%);position:relative;overflow:hidden;}
 #cta::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");}
 .cta-inner{position:relative;z-index:1;padding:110px 80px;text-align:center;max-width:1400px;margin:0 auto;}
@@ -454,9 +419,7 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .cta-btn:hover{transform:translateY(-4px);box-shadow:0 24px 56px rgba(0,0,0,.3);}
 .cta-chips{display:flex;gap:20px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
 .cta-chip{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.85);font-size:14px;font-weight:500;}
-.cta-chip::before{content:'✓';font-weight:800;color:white;}
-
-/* ── FOOTER ── */
+.cta-chip::before{content:'\2713';font-weight:800;color:white;}
 footer{background:var(--ink);padding:60px 80px 40px;}
 .ft-inner{max-width:1400px;margin:0 auto;}
 .ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:50px;}
@@ -472,13 +435,9 @@ footer{background:var(--ink);padding:60px 80px 40px;}
 .ft-lks a:hover{color:white;}
 .ft-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .ft-copy{font-size:13px;color:rgba(255,255,255,.2);}
-
-/* ── REVEAL ── */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .65s var(--tr),transform .65s var(--tr);}
 .rv.in{opacity:1;transform:translateY(0);}
 .rv1{transition-delay:.1s;}.rv2{transition-delay:.2s;}.rv3{transition-delay:.3s;}.rv4{transition-delay:.4s;}
-
-/* ── RESPONSIVE ── */
 @media(max-width:1100px){
   .hero-inner,.sympt-wrap,.story-wrap,.fin-grid,.ft-top{grid-template-columns:1fr;gap:40px;}
   .hero-img-area{display:none;}
@@ -505,7 +464,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">Résonne<span>.</span></a>
@@ -527,11 +485,10 @@ footer{background:var(--ink);padding:60px 80px 40px;}
   <a href="#method" onclick="toggleMenu()">Méthode</a>
   <a href="#programme" onclick="toggleMenu()">Formations</a>
   <a href="#temoignages" onclick="toggleMenu()">Avis</a>
-  <a href="#pro" onclick="toggleMenu()">Pro & Cabinet</a>
+  <a href="#pro" onclick="toggleMenu()">Pro &amp; Cabinet</a>
   <a href="#pricing" onclick="toggleMenu()">Tarifs</a>
   <a href="#paiement" onclick="toggleMenu()" style="color:var(--coral);">→ Rejoindre Résonne</a>
 </div>
-
 <!-- HERO -->
 <section id="hero">
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
@@ -564,7 +521,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
@@ -572,7 +528,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     <span class="mitem">Certifiée Qualiopi</span><span class="mitem">Remboursable AFDAS</span><span class="mitem">+1000 voix libérées</span><span class="mitem">Le Roi Lion · Mogador</span><span class="mitem">Ostéopathe de la Voix</span><span class="mitem">Méthode 4 dimensions</span><span class="mitem">Garantie 14 jours</span>
   </div>
 </div>
-
 <!-- LEAD MAGNET -->
 <section id="leadmagnet">
   <div class="lm-inner rv">
@@ -609,7 +564,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- SYMPTOMS -->
 <section id="symptoms">
   <div class="sympt-wrap">
@@ -617,7 +571,7 @@ footer{background:var(--ink);padding:60px 80px 40px;}
       <div class="tag tag-coral rv">Tu te reconnais ?</div>
       <h2 class="sh2 rv rv1">Ces blocages qui<br><em>étouffent ta voix.</em></h2>
       <div class="rv rv2">
-        <div class="sy-card"><span class="sy-ico">😤</span><div><div class="sy-title">Gorge serrée, tensions, forçage</div><div class="sy-desc">Tu pousses, tu serres — et la voix reste bloquée là-dedans.</div></div></div>
+        <div class="sy-card"><span class="sy-ico">😐</span><div><div class="sy-title">Gorge serrée, tensions, forçage</div><div class="sy-desc">Tu pousses, tu serres — et la voix reste bloquée là-dedans.</div></div></div>
         <div class="sy-card"><span class="sy-ico">📉</span><div><div class="sy-title">Voix qui casse ou fatigue vite</div><div class="sy-desc">Après quelques chansons, tu n'as plus rien.</div></div></div>
         <div class="sy-card"><span class="sy-ico">🎵</span><div><div class="sy-title">Les aigus disparaissent</div><div class="sy-desc">Tu appréhendes certaines notes avant même de les chanter.</div></div></div>
         <div class="sy-card"><span class="sy-ico">🧠</span><div><div class="sy-title">Blocage mental avant la scène</div><div class="sy-desc">Le stress envahit tout — le corps se verrouille.</div></div></div>
@@ -635,7 +589,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- STORY -->
 <section id="story">
   <div class="story-wrap">
@@ -663,16 +616,14 @@ footer{background:var(--ink);padding:60px 80px 40px;}
       <div class="highlight">"Près de 1 000 voix accompagnées — des troupes du Roi Lion au Théâtre Mogador, des artistes pro, des chanteurs amateurs. Et maintenant cette méthode, accessible à toi."</div>
       <div class="creds">
         <div class="cred"><div class="cred-ico">🩺</div><div class="cred-t">Ostéopathie vocale</div><div class="cred-d">Approche médicale et technique réunies</div></div>
-        <div class="cred"><div class="cred-ico">🎬</div><div class="cred-t">Comédies musicales</div><div class="cred-d">Mogador, Le Roi Lion et bien d'autres</div></div>
+        <div class="cred"><div class="cred-ico">🎤</div><div class="cred-t">Comédies musicales</div><div class="cred-d">Mogador, Le Roi Lion et bien d'autres</div></div>
         <div class="cred"><div class="cred-ico">🌍</div><div class="cred-t">Formation en ligne</div><div class="cred-d">Accès immédiat, depuis partout</div></div>
         <div class="cred"><div class="cred-ico">✅</div><div class="cred-t">Qualiopi certifiée</div><div class="cred-d">AFDAS, OPCO — jusqu'à 100% pris en charge</div></div>
       </div>
     </div>
   </div>
 </section>
-
 <div class="pullquote"><div class="pullquote-inner"><div class="pullquote-text">"Toi seul as la réponse à ton problème. Mon rôle, c'est seulement de te guider pour y arriver."</div><div class="pullquote-by">— Salomé Sebbag, Ostéopathe de la Voix</div></div></div>
-
 <!-- METHOD -->
 <section id="method">
   <div class="method-wrap">
@@ -682,14 +633,13 @@ footer{background:var(--ink);padding:60px 80px 40px;}
       <p class="sp rv rv2" style="text-align:center;margin:0 auto;">Résonne ne traite pas les symptômes. Elle s'attaque aux vraies causes.</p>
     </div>
     <div class="dims">
-      <div class="dim d1 rv rv1"><div class="dim-n">01</div><span class="dim-ico">🫁</span><div class="dim-title">Ostéopathique</div><div class="dim-desc">Détecter les tensions cachées et les libérer concrètement.</div></div>
+      <div class="dim d1 rv rv1"><div class="dim-n">01</div><span class="dim-ico">�af1</span><div class="dim-title">Ostéopathique</div><div class="dim-desc">Détecter les tensions cachées et les libérer concrètement.</div></div>
       <div class="dim d2 rv rv2"><div class="dim-n">02</div><span class="dim-ico">🧬</span><div class="dim-title">Rééducation</div><div class="dim-desc">Reprogrammer les bons automatismes durablement.</div></div>
       <div class="dim d3 rv rv3"><div class="dim-n">03</div><span class="dim-ico">🎶</span><div class="dim-title">Vocale</div><div class="dim-desc">Soutien, respiration, larynx, résonateurs — sensations concrètes.</div></div>
       <div class="dim d4 rv rv4"><div class="dim-n">04</div><span class="dim-ico">💫</span><div class="dim-title">Émotionnelle</div><div class="dim-desc">Ta voix est le reflet de tes émotions. On les libère aussi.</div></div>
     </div>
   </div>
 </section>
-
 <!-- VIDEOS -->
 <section id="videos">
   <div class="videos-wrap">
@@ -719,7 +669,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     <p class="rv rv3" style="text-align:center;margin-top:28px;font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--textm);">"La méthode de Salomé, c'est différent de tout ce que j'ai essayé."</p>
   </div>
 </section>
-
 <!-- PROGRAMME 3 TABS -->
 <section id="programme">
   <div class="prog-wrap">
@@ -735,13 +684,13 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     <div class="tab-content" id="tab-resonne">
       <div class="tab-header"><div><h3 class="tab-h">Résonne — Formation en ligne</h3><p class="tab-desc">7 modules complets pour libérer ta voix de l'intérieur, à ton rythme, depuis chez toi.</p></div><div class="tab-price-block"><div class="tab-price">597<span>€</span></div><div class="tab-price-sub">Paiement direct · Accès immédiat</div><a href="#paiement" class="btn-tab-cta">Rejoindre Résonne →</a></div></div>
       <div>
-        <div class="mod m1" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 01</span><span class="mod-title">Comprendre ta voix autrement</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Fondations</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Vision ostéopathique, bases remises à l'endroit.<div class="mod-pills"><span class="mod-pill">🎬 3 vidéos</span><span class="mod-pill">📄 1 fiche PDF</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
-        <div class="mod m2" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 02</span><span class="mod-title">Pourquoi ton corps bloque ta voix</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Ostéopathie</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Stress, tensions, réponse nerveuse — on comprend le mécanisme complet.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🎧 Audio guidé</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
-        <div class="mod m3" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 03</span><span class="mod-title">La respiration, ton point de départ</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Rééducation</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Exercices qui changent les automatismes en profondeur.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🎧 Audio abdominal</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
-        <div class="mod m4" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 04</span><span class="mod-title">Le soutien — ton point d'appui</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Technique vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Clé voûte du chant sans forçage. Checklist pratique incluse.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">📄 Checklist soutien</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
-        <div class="mod m5" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 05</span><span class="mod-title">Larynx, langue et mâchoire en chant</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Anatomie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Principales sources de tension — on les libère avec des exercices ciblés.<div class="mod-pills"><span class="mod-pill">🎬 5 vidéos</span><span class="mod-pill">🎧 2 audios guidés</span><span class="mod-pill">⏱ ~35 min</span></div></div></div></div>
-        <div class="mod m6" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 06</span><span class="mod-title">Ton cerveau : allié ou ennemi ?</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Neurologie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Peur de la note, cercle vicieux — on comprend neurologiquement et on reprend le contrôle.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🧠 Exercices cognitifs</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
-        <div class="mod m7" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 07</span><span class="mod-title">Chanter avec ses tripes</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Émotionnel</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Corps, technique et émotion réunis. Chante avec toute ta puissance.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">📄 Fiche émotion/chanson</span><span class="mod-pill">🎧 Mini-routine pré-scène</span></div></div></div></div>
+        <div class="mod m1" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 01</span><span class="mod-title">Comprendre ta voix autrement</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Fondations</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Vision ostéopathique, bases remises à l'endroit.<div class="mod-pills"><span class="mod-pill">🎤 3 vidéos</span><span class="mod-pill">📄 1 fiche PDF</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
+        <div class="mod m2" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 02</span><span class="mod-title">Pourquoi ton corps bloque ta voix</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Ostéopathie</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Stress, tensions, réponse nerveuse — on comprend le mécanisme complet.<div class="mod-pills"><span class="mod-pill">🎤 4 vidéos</span><span class="mod-pill">🎧 Audio guidé</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
+        <div class="mod m3" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 03</span><span class="mod-title">La respiration, ton point de départ</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Rééducation</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Exercices qui changent les automatismes en profondeur.<div class="mod-pills"><span class="mod-pill">🎤 4 vidéos</span><span class="mod-pill">🎧 Audio abdominal</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
+        <div class="mod m4" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 04</span><span class="mod-title">Le soutien — ton point d'appui</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Technique vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Clé voûte du chant sans forçage. Checklist pratique incluse.<div class="mod-pills"><span class="mod-pill">🎤 4 vidéos</span><span class="mod-pill">📄 Checklist soutien</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
+        <div class="mod m5" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 05</span><span class="mod-title">Larynx, langue et mâchoire en chant</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Anatomie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Principales sources de tension — on les libère avec des exercices ciblés.<div class="mod-pills"><span class="mod-pill">🎤 5 vidéos</span><span class="mod-pill">🎧 2 audios guidés</span><span class="mod-pill">⏱ ~35 min</span></div></div></div></div>
+        <div class="mod m6" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 06</span><span class="mod-title">Ton cerveau : allié ou ennemi ?</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Neurologie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Peur de la note, cercle vicieux — on comprend neurologiquement et on reprend le contrôle.<div class="mod-pills"><span class="mod-pill">🎤 4 vidéos</span><span class="mod-pill">🧠 Exercices cognitifs</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
+        <div class="mod m7" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 07</span><span class="mod-title">Chanter avec ses tripes</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Émotionnel</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Corps, technique et émotion réunis. Chante avec toute ta puissance.<div class="mod-pills"><span class="mod-pill">🎤 4 vidéos</span><span class="mod-pill">📄 Fiche émotion/chanson</span><span class="mod-pill">🎧 Mini-routine pré-scène</span></div></div></div></div>
       </div>
     </div>
     <div class="tab-content" id="tab-performe" style="display:none;">
@@ -749,7 +698,7 @@ footer{background:var(--ink);padding:60px 80px 40px;}
       <div class="performe-grid">
         <div class="pday"><div class="pday-num">Jour 1</div><div class="pday-title">Libérer le corps</div><div class="pday-desc">Bilan ostéopathique individuel, travail des tensions profondes, séances de relâchement en groupe.</div><div class="mod-pills" style="margin-top:14px;"><span class="mod-pill">🩺 Bilan individuel</span><span class="mod-pill">🧘 Relâchement collectif</span></div></div>
         <div class="pday"><div class="pday-num">Jour 2</div><div class="pday-title">Construire la technique</div><div class="pday-desc">Modules techniques en profondeur : soutien, respiration, larynx, résonateurs. Mise en pratique sur des chansons réelles.</div><div class="mod-pills" style="margin-top:14px;"><span class="mod-pill">🎶 Technique vocale</span><span class="mod-pill">🎵 Mise en pratique</span></div></div>
-        <div class="pday"><div class="pday-num">Jour 3</div><div class="pday-title">Performer sur scène</div><div class="pday-desc">Travail émotionnel, gestion du stress scénique, présence et charisme. Mini-concert de clôture en groupe.</div><div class="mod-pills" style="margin-top:14px;"><span class="mod-pill">🎭 Scène & présence</span><span class="mod-pill">🏆 Mini-concert</span></div></div>
+        <div class="pday"><div class="pday-num">Jour 3</div><div class="pday-title">Performer sur scène</div><div class="pday-desc">Travail émotionnel, gestion du stress scénique, présence et charisme. Mini-concert de clôture en groupe.</div><div class="mod-pills" style="margin-top:14px;"><span class="mod-pill">🎭 Scène &amp; présence</span><span class="mod-pill">🏆 Mini-concert</span></div></div>
       </div>
       <div class="tab-infos">
         <div class="tab-info-item"><span class="tab-info-ico">📍</span><div><strong>Paris</strong><span>Lieu communiqué après inscription</span></div></div>
@@ -772,7 +721,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- TESTIMONIALS -->
 <section id="temoignages">
   <div class="testi-wrap">
@@ -786,7 +734,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- FINANCEMENT -->
 <section id="financement">
   <div class="fin-wrap">
@@ -802,13 +749,12 @@ footer{background:var(--ink);padding:60px 80px 40px;}
       </div>
       <div class="fin-cards rv rv2">
         <div class="fin-card"><span class="fin-card-ico">🎭</span><div><div class="fin-card-t">AFDAS — Intermittents du spectacle</div><div class="fin-card-d">Catégorie "Métiers" (~10h). Prise en charge jusqu'à 600€ — couvre intégralement Résonne.</div></div></div>
-        <div class="fin-card"><span class="fin-card-ico">💼</span><div><div class="fin-card-t">OPCO — Salariés & indépendants</div><div class="fin-card-d">Financement total ou partiel selon ton secteur.</div></div></div>
+        <div class="fin-card"><span class="fin-card-ico">💼</span><div><div class="fin-card-t">OPCO — Salariés &amp; indépendants</div><div class="fin-card-d">Financement total ou partiel selon ton secteur.</div></div></div>
         <div class="fin-card"><span class="fin-card-ico">📋</span><div><div class="fin-card-t">CPF — Compte Personnel de Formation</div><div class="fin-card-d">Certification Qualiopi validée — utilise tes droits CPF.</div></div></div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- QUIZ -->
 <section id="quiz">
   <div class="quiz-wrap">
@@ -817,18 +763,17 @@ footer{background:var(--ink);padding:60px 80px 40px;}
       <div class="qz" id="qz-steps" style="display:none;">
         <div class="qz-progress" id="qzProg"></div>
         <div id="qz-s0"><div class="qz-q">Quel est ton rapport au chant ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎤</span>Chanteur·se amateur</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎭</span>Artiste professionnel·le</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎓</span>Prof de chant / coach</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🌱</span>Débutant·e</div></div></div>
-        <div id="qz-s1" style="display:none;"><div class="qz-q">Ton problème principal ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">😤</span>Tensions, forçage</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">📉</span>Voix qui fatigue vite</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🧠</span>Blocage mental</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎵</span>Difficultés techniques</div></div></div>
+        <div id="qz-s1" style="display:none;"><div class="qz-q">Ton problème principal ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">😐</span>Tensions, forçage</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">📉</span>Voix qui fatigue vite</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🧠</span>Blocage mental</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎵</span>Difficultés techniques</div></div></div>
         <div id="qz-s2" style="display:none;"><div class="qz-q">As-tu déjà suivi des cours ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">❌</span>Non, jamais</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">📚</span>Quelques cours</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🔄</span>Plusieurs années</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎯</span>Oui, sans résultat</div></div></div>
-        <div id="qz-s3" style="display:none;"><div class="qz-q">À quelle fréquence utilises-tu ta voix ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🌙</span>Rarement</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">📅</span>Quelques fois/semaine</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">⚡</span>Tous les jours</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎪</span>En spectacle</div></div></div>
+        <div id="qz-s3" style="display:none;"><div class="qz-q">À quelle fréquence utilises-tu ta voix ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🌙</span>Rarement</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">📅</span>Quelques fois/semaine</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">⚡</span>Tous les jours</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎢</span>En spectacle</div></div></div>
         <div id="qz-s4" style="display:none;"><div class="qz-q">Ton objectif avec Résonne ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🔓</span>Libérer ma voix</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🚀</span>Développer ma puissance</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">😌</span>Retrouver le plaisir</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🏆</span>Professionnaliser</div></div></div>
         <div class="qz-nav"><button class="btn-qz-back" id="qzBack" onclick="qzPrev()" style="display:none;">← Retour</button><button class="btn-qz-next" id="qzNext" onclick="qzNext()" disabled>Continuer →</button></div>
       </div>
-      <div class="qz" id="qz-form" style="display:none;"><div class="qz-label">Presque là ✦</div><h2 class="qz-h" style="font-size:28px;">Où envoyer ton analyse ?</h2><p class="qz-sub" style="margin-bottom:28px;">Profil vocal + exercices — gratuitement.</p><div style="max-width:360px;margin:0 auto;"><input type="text" class="qz-input" placeholder="Ton prénom" id="qzPrenom"><input type="email" class="qz-input" placeholder="Ton adresse email" id="qzEmail"><button class="btn-main" onclick="submitQz()" style="width:100%;justify-content:center;border-radius:12px;">Recevoir mon analyse →</button><p style="font-size:12px;color:rgba(255,255,255,.2);text-align:center;margin-top:12px;">Aucun spam.</p></div></div>
-      <div class="qz" id="qz-result" style="display:none;"><div style="font-size:60px;margin-bottom:20px;">✦</div><h2 class="qz-h" id="qzResTitle"></h2><p class="qz-sub" id="qzResText" style="margin-bottom:32px;"></p><a href="#paiement" class="btn-main" style="margin:0 auto;display:inline-flex;">Rejoindre Résonne →</a></div>
+      <div class="qz" id="qz-form" style="display:none;"><div class="qz-label">Presque là ❆</div><h2 class="qz-h" style="font-size:28px;">Où envoyer ton analyse ?</h2><p class="qz-sub" style="margin-bottom:28px;">Profil vocal + exercices — gratuitement.</p><div style="max-width:360px;margin:0 auto;"><input type="text" class="qz-input" placeholder="Ton prénom" id="qzPrenom"><input type="email" class="qz-input" placeholder="Ton adresse email" id="qzEmail"><button class="btn-main" onclick="submitQz()" style="width:100%;justify-content:center;border-radius:12px;">Recevoir mon analyse →</button><p style="font-size:12px;color:rgba(255,255,255,.2);text-align:center;margin-top:12px;">Aucun spam.</p></div></div>
+      <div class="qz" id="qz-result" style="display:none;"><div style="font-size:60px;margin-bottom:20px;">❆</div><h2 class="qz-h" id="qzResTitle"></h2><p class="qz-sub" id="qzResText" style="margin-bottom:32px;"></p><a href="#paiement" class="btn-main" style="margin:0 auto;display:inline-flex;">Rejoindre Résonne →</a></div>
     </div>
   </div>
 </section>
-
 <!-- PRICING -->
 <section id="pricing">
   <div class="price-wrap">
@@ -841,11 +786,10 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     <div class="guarantee rv"><span style="font-size:22px;">🛡️</span><span>Satisfait ou remboursé <strong>14 jours</strong> — sans justification, sans conditions.</span></div>
   </div>
 </section>
-
-<!-- LISTE D'ATTENTE Performe / Rayonne -->
+<!-- LISTE D'ATTENTE -->
 <section id="waitlist" style="background:white;border-top:1px solid rgba(0,0,0,.06);">
   <div style="max-width:700px;margin:0 auto;padding:80px 60px;text-align:center;" class="rv">
-    <div class="tag tag-coral" style="display:inline-flex;margin-bottom:20px;">🔥 Performe & Rayonne</div>
+    <div class="tag tag-coral" style="display:inline-flex;margin-bottom:20px;">🔥 Performe &amp; Rayonne</div>
     <h2 class="sh2" style="text-align:center;margin-bottom:16px;">Rejoins la liste d'attente.<br><em>Places très limitées.</em></h2>
     <p style="font-size:15px;color:var(--textm);margin-bottom:32px;">Tu recevras un lien de paiement personnalisé après un appel de qualification avec Salomé.</p>
     <form id="waitlistForm" onsubmit="submitWaitlist(event)">
@@ -867,7 +811,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- PRO + CABINET -->
 <section id="pro">
   <div class="pro-inner">
@@ -902,7 +845,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
         </form>
         <div id="b2b-merci" style="display:none;background:rgba(155,110,168,.08);border:1px solid rgba(155,110,168,.3);border-radius:12px;padding:16px;text-align:center;margin-top:12px;"><p style="font-size:15px;font-weight:600;color:var(--ink);">✅ Message reçu !</p><p style="font-size:13px;color:var(--textm);margin-top:4px;">Salomé vous répondra sous 48h.</p></div>
       </div>
-
       <div class="pro-card">
         <div style="font-size:40px;margin-bottom:20px;">📍</div>
         <h3 style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:12px;">Cabinet à Paris</h3>
@@ -919,7 +861,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- PAYMENT PAGE -->
 <section id="paiement" style="background:var(--cream2);border-top:1px solid rgba(0,0,0,.06);">
   <div class="pay-inner">
@@ -948,7 +889,7 @@ footer{background:var(--ink);padding:60px 80px 40px;}
           <p class="pay-section-title">Méthode de paiement</p>
           <div class="pay-method">
             <label class="pay-method-label" id="cardLabel"><input type="radio" name="payMethod" value="card" checked onchange="switchPayMethod('card')"> 💳 Carte bancaire</label>
-            <label class="pay-method-label" id="paypalLabel"><input type="radio" name="payMethod" value="paypal" onchange="switchPayMethod('paypal')"> 🅿️ PayPal</label>
+            <label class="pay-method-label" id="paypalLabel"><input type="radio" name="payMethod" value="paypal" onchange="switchPayMethod('paypal')"> �Ὗ ️ PayPal</label>
           </div>
           <div id="card-fields">
             <div class="pay-field"><label class="pay-label">Numéro de carte</label><div class="card-number-wrap"><input type="text" class="pay-input" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)"><span class="card-brand" id="cardBrand">💳</span></div></div>
@@ -1010,7 +951,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- FAQ -->
 <section id="faq">
   <div class="faq-wrap">
@@ -1025,7 +965,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- FINAL CTA -->
 <section id="cta">
   <div class="cta-inner">
@@ -1040,7 +979,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <div class="ft-inner">
@@ -1078,7 +1016,7 @@ footer{background:var(--ink);padding:60px 80px 40px;}
         <div class="ft-col-t">Contact</div>
         <div class="ft-lks">
           <a href="#quiz">Diagnostic gratuit</a>
-          <a href="#waitlist">Performe & Rayonne</a>
+          <a href="#waitlist">Performe &amp; Rayonne</a>
           <a href="#pro">Interventions B2B</a>
           <a href="mailto:contact@resonne.fr">contact@resonne.fr</a>
           <a href="#">Mentions légales</a>
@@ -1092,7 +1030,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     </div>
   </div>
 </footer>
-
 <script>
 // ── NAV ──
 window.addEventListener('scroll', function() {
@@ -1102,13 +1039,11 @@ function toggleMenu() {
   var m = document.getElementById('mobileMenu');
   m.classList.toggle('open');
 }
-
 // ── REVEAL ──
 var ro = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) { if(e.isIntersecting) e.target.classList.add('in'); });
 }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(function(el) { ro.observe(el); });
-
 // ── VIDEO CAROUSEL AUTO-SCROLL ──
 var vidIdx = 0, vidTotal = 4, vidAuto;
 function vidMove(dir) { vidGo((vidIdx + dir + vidTotal) % vidTotal); }
@@ -1131,7 +1066,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if(wrap) { wrap.addEventListener('mouseenter', stopVidAuto); wrap.addEventListener('mouseleave', startVidAuto); }
   window.addEventListener('resize', function() { vidGo(vidIdx); });
 });
-
 // ── TABS ──
 function switchTab(name, btn) {
   document.querySelectorAll('.tab-content').forEach(function(t) { t.style.display = 'none'; });
@@ -1139,30 +1073,25 @@ function switchTab(name, btn) {
   document.getElementById('tab-' + name).style.display = 'block';
   btn.classList.add('active');
 }
-
 // ── MODULES ──
 function tMod(el) {
   var was = el.classList.contains('open');
   document.querySelectorAll('.mod').forEach(function(m) { m.classList.remove('open'); });
   if(!was) el.classList.add('open');
 }
-
 // ── FAQ ──
 function tFq(el) {
   var was = el.classList.contains('open');
   document.querySelectorAll('.fq').forEach(function(f) { f.classList.remove('open'); });
   if(!was) el.classList.add('open');
 }
-
 // ── LEAD MAGNET ──
 function accessLM() {
   var e = document.getElementById('lmEmail').value;
   if(!e || !e.includes('@')) { alert('Merci de saisir une adresse email valide.'); return; }
-  // TODO: send to Systeme.io / Mailchimp webhook
   document.getElementById('lm-cta').style.display = 'none';
   document.getElementById('lm-merci').style.display = 'block';
 }
-
 // ── QUIZ ──
 var qzStep = 0, qzTotal = 5, qzAnswers = [];
 function startQz() {
@@ -1210,29 +1139,23 @@ function submitQz() {
   var p = document.getElementById('qzPrenom').value;
   var e = document.getElementById('qzEmail').value;
   if(!p || !e) { alert('Merci de remplir tous les champs.'); return; }
-  // TODO: send to Systeme.io / Mailchimp webhook
   document.getElementById('qz-form').style.display = 'none';
   document.getElementById('qz-result').style.display = 'block';
   document.getElementById('qzResTitle').textContent = p + ', ton analyse arrive !';
   document.getElementById('qzResText').textContent = 'Ton profil vocal et tes exercices personnalisés arrivent sur ' + e + '.';
 }
-
 // ── WAITLIST ──
 function submitWaitlist(e) {
   e.preventDefault();
-  // TODO: connect to Systeme.io or Tally.so webhook
   document.getElementById('waitlistForm').style.display = 'none';
   document.getElementById('waitlist-merci').style.display = 'block';
 }
-
 // ── B2B FORM ──
 function submitB2B(e) {
   e.preventDefault();
-  // Form has action="https://formspree.io/f/FORMSPREE_ID" — replace with real ID
   document.getElementById('b2bForm').style.display = 'none';
   document.getElementById('b2b-merci').style.display = 'block';
 }
-
 // ── PAYMENT PAGE ──
 function switchPayMethod(method) {
   document.getElementById('card-fields').style.display = method === 'card' ? 'block' : 'none';
@@ -1246,7 +1169,7 @@ function formatCard(input) {
   var v = input.value.replace(/\D/g,'').substring(0,16);
   input.value = v.match(/.{1,4}/g) ? v.match(/.{1,4}/g).join(' ') : v;
   var brand = document.getElementById('cardBrand');
-  if(brand) brand.textContent = v.startsWith('4') ? '💙' : v.startsWith('5') ? '🔴' : v.startsWith('3') ? '🟡' : '💳';
+  if(brand) brand.textContent = v.startsWith('4') ? '📙' : v.startsWith('5') ? '🔴' : v.startsWith('3') ? '🟡' : '💳';
 }
 function formatExpiry(input) {
   var v = input.value.replace(/\D/g,'');
@@ -1275,8 +1198,6 @@ function submitPay(e) {
   var btn = document.getElementById('payBtn');
   btn.textContent = '⏳ Traitement en cours...';
   btn.disabled = true;
-  // TODO: redirect to Stripe payment link or process via Stripe.js
-  // window.location.href = 'https://buy.stripe.com/VOTRE_LIEN_STRIPE';
   setTimeout(function() {
     document.getElementById('payForm').style.display = 'none';
     document.getElementById('pay-success').style.display = 'block';
