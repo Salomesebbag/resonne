@@ -30,7 +30,7 @@
   --tr: cubic-bezier(.25,.46,.45,.94);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw;}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw;scroll-padding-top:120px;}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;max-width:100vw;position:relative;}
 
 /* ── NAV ── */
@@ -91,11 +91,11 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .hero-tag-bubble{position:absolute;top:-16px;left:30px;background:linear-gradient(135deg,var(--sun),var(--coral));color:white;font-size:13px;font-weight:700;padding:8px 20px;border-radius:50px;box-shadow:0 4px 16px rgba(155,110,168,.4);transform:rotate(-2deg);white-space:nowrap;z-index:10;}
 
 /* ── MARQUEE ── */
-.marquee-wrap{background:linear-gradient(135deg,var(--coral),var(--rose));padding:14px 0;overflow:hidden;max-width:100vw;}
-.marquee-track{display:flex;animation:mscroll 28s linear infinite;white-space:nowrap;}
-.mitem{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.9);padding:0 36px;display:flex;align-items:center;gap:12px;}
-.mitem::after{content:'✶';font-size:10px;color:rgba(255,255,255,.4);}
-@keyframes mscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+
+
+
+to{transform:translate3d(-50%,0,0)}}
 
 /* ── LEAD MAGNET ── */
 #leadmagnet{background:white;border-bottom:1px solid rgba(0,0,0,.06);}
@@ -388,7 +388,7 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 
 /* ── PRO ── */
 #pro{background:var(--cream2);}
-.pro-inner{max-width:1400px;margin:0 auto;padding:110px 60px;}
+.pro-inner{max-width:1400px;margin:0 auto;padding:80px 60px;}
 .pro-header{text-align:center;margin-bottom:70px;}
 .pro-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .pro-card{background:white;border-radius:24px;padding:48px;border:2px solid rgba(0,0,0,.06);box-shadow:0 4px 30px rgba(0,0,0,.05);}
@@ -612,10 +612,13 @@ footer{background:var(--ink);padding:60px 80px 40px;}
 @keyframes tickerGold { 0%{background-position:0% center} 100%{background-position:300% center} }
 .fin-ticker-track {
   display: flex;
-  animation: tickerScroll 16s linear infinite;
+  animation: tickerScroll 10s linear infinite;
   white-space: nowrap;
   height: 100%;
   align-items: center;
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .fin-ticker-item {
   display: inline-flex; align-items: center; gap: 6px;
@@ -628,35 +631,52 @@ footer{background:var(--ink);padding:60px 80px 40px;}
 }
 .fin-ticker-item .tick-sep { color: rgba(255,255,255,.45); margin: 0 4px; font-size: 8px; }
 .fin-ticker-item .tick-hl { color: white; font-weight: 900; }
-@keyframes tickerScroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes tickerScroll { from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)} }
 nav.scrolled + .fin-ticker { top: 56px; }
 
-/* ── LOGOS MARQUEE ── */
-.logos-section { background: white; border-bottom: 1px solid rgba(0,0,0,.06); padding: 32px 0; overflow: hidden; }
-.logos-label { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--textm); margin-bottom: 20px; }
+/* ── LOGOS SECTION ── */
+.logos-section { background: white; border-bottom: 1px solid rgba(0,0,0,.06); padding: 28px 0; overflow: hidden; }
+.logos-label { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--textm); margin-bottom: 18px; }
+.logos-carousel { position: relative; max-width: 1400px; margin: 0 auto; padding: 0 60px; }
+.logos-arr {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: white; border: 1.5px solid rgba(0,0,0,.1);
+  cursor: pointer; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink); transition: all .25s; z-index: 10;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.logos-arr:hover { background: var(--coral); color: white; border-color: var(--coral); }
+.logos-arr-prev { left: 16px; }
+.logos-arr-next { right: 16px; }
 .logos-track-wrap { overflow: hidden; position: relative; }
 .logos-track-wrap::before, .logos-track-wrap::after {
-  content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+  content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none;
 }
 .logos-track-wrap::before { left: 0; background: linear-gradient(to right, white, transparent); }
 .logos-track-wrap::after { right: 0; background: linear-gradient(to left, white, transparent); }
-.logos-track { display: flex; gap: 0; animation: logoScroll 40s linear infinite; white-space: nowrap; }
+.logos-track {
+  display: flex; gap: 0;
+  animation: logoScroll 15s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+  transform: translateZ(0);
+}
+.logos-track:hover { animation-play-state: paused; }
 .logo-item {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 8px 40px;
+  padding: 6px 32px;
   font-family: 'Fraunces', serif;
-  font-size: clamp(16px, 2vw, 22px);
-  font-weight: 700;
-  color: var(--textm);
-  letter-spacing: -0.5px;
-  opacity: 0.55;
-  transition: opacity .3s;
-  white-space: nowrap;
-  flex-shrink: 0;
+  font-size: clamp(15px, 1.8vw, 20px);
+  font-weight: 700; color: var(--textm);
+  opacity: 0.5; transition: opacity .25s, color .25s;
+  white-space: nowrap; flex-shrink: 0; cursor: default;
 }
 .logo-item:hover { opacity: 1; color: var(--coral); }
-.logo-sep { color: var(--coral); opacity: 0.3; font-size: 18px; padding: 0 4px; }
-@keyframes logoScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.logo-sep { color: var(--coral); opacity: 0.25; font-size: 14px; padding: 0 2px; }
+@keyframes logoScroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+@media(max-width:640px) { .logos-carousel { padding: 0 40px; } .logos-arr { width:30px; height:30px; font-size:13px; } }
 
 /* ── STICKY SCROLL CTA ── */
 .sticky-cta {
@@ -884,6 +904,15 @@ nav.scrolled + .fin-ticker { top: 56px; }
   .hero-mobile-photo { display: block; }
 }
 
+
+/* ── SMOOTH SCROLL PERF ── */
+.logos-track-wrap, .fin-ticker {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
 </style>
 </head>
 <body>
@@ -976,18 +1005,14 @@ nav.scrolled + .fin-ticker { top: 56px; }
 </section>
 
 </div>
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span class="mitem">Certifiée Qualiopi</span><span class="mitem">Remboursable AFDAS</span><span class="mitem">+1000 voix libérées</span><span class="mitem">Le Roi Lion · Mogador</span><span class="mitem">Ostéopathe de la Voix</span><span class="mitem">Méthode 4 dimensions</span><span class="mitem">Garantie 14 jours</span>
-    <span class="mitem">Certifiée Qualiopi</span><span class="mitem">Remboursable AFDAS</span><span class="mitem">+1000 voix libérées</span><span class="mitem">Le Roi Lion · Mogador</span><span class="mitem">Ostéopathe de la Voix</span><span class="mitem">Méthode 4 dimensions</span><span class="mitem">Garantie 14 jours</span>
-  </div>
 </div>
 
-<!-- LOGOS MARQUEE -->
+<!-- LOGOS SECTION -->
 <div class="logos-section">
   <div class="logos-label">Ils me font confiance</div>
-  <div class="logos-track-wrap">
+  <div class="logos-carousel">
+    <button class="logos-arr logos-arr-prev" onclick="logoMove(-1)">←</button>
+    <div class="logos-track-wrap">
     <div class="logos-track" id="logosTrack">
       <span class="logo-item">🦁 Le Roi Lion</span><span class="logo-sep">·</span>
       <span class="logo-item">🎭 Théâtre Mogador</span><span class="logo-sep">·</span>
@@ -1007,6 +1032,8 @@ nav.scrolled + .fin-ticker { top: 56px; }
       <span class="logo-item">🩺 Ostéopathes</span><span class="logo-sep">·</span>
       <span class="logo-item">🌟 +1000 Voix</span><span class="logo-sep">·</span>
     </div>
+    </div>
+    <button class="logos-arr logos-arr-next" onclick="logoMove(1)">→</button>
   </div>
 </div>
 <!-- LEAD MAGNET -->
@@ -1032,7 +1059,7 @@ nav.scrolled + .fin-ticker { top: 56px; }
       <div class="lm-video-card">
         <div class="lm-video-inner">
           <video controls playsinline preload="metadata">
-            <source src="assets/videos/temoignage-1.mp4" type="video/mp4">
+            <source src="assets/videos/temoignage-4.mp4" type="video/mp4">
           </video>
           <div class="lm-video-badge">▶ Ma méthode en 3 min</div>
         </div>
@@ -1136,21 +1163,23 @@ nav.scrolled + .fin-ticker { top: 56px; }
     </div>
     <div class="vid-scroll-wrap rv rv2">
       <div class="vid-scroll-track" id="vidTrack">
-        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-1.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Elle ne force plus sur sa voix</div></div>
-        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-2.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Avant / Après — Session Résonne</div></div>
-        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-1.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Sa voix s'est libérée en 1 séance</div></div>
-        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-2.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Témoignage — Session Résonne</div></div>
-      </div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-1.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-2.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-3.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-4.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-5.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div></div>
       <div class="vid-scroll-nav">
         <button class="vid-dot on" onclick="vidGo(0)"></button>
         <button class="vid-dot" onclick="vidGo(1)"></button>
         <button class="vid-dot" onclick="vidGo(2)"></button>
         <button class="vid-dot" onclick="vidGo(3)"></button>
+        <button class="vid-dot" onclick="vidGo(4)"></button>
         <div class="vid-arrows">
           <button class="vid-arr" onclick="vidMove(-1)">←</button>
           <button class="vid-arr" onclick="vidMove(1)">→</button>
         </div>
       </div>
+    </div>
     </div>
     <p class="rv rv3" style="text-align:center;margin-top:28px;font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--textm);">"La méthode de Salomé, c'est différent de tout ce que j'ai essayé."</p>
   </div>
@@ -1302,9 +1331,9 @@ nav.scrolled + .fin-ticker { top: 56px; }
     <h2 class="sh2" style="text-align:center;margin-bottom:16px;">Rejoins la liste d'attente.<br><em>Places très limitées.</em></h2>
     <p style="font-size:15px;color:var(--textm);margin-bottom:32px;">Tu recevras un lien de paiement personnalisé après un appel de qualification avec Salomé.</p>
     <form id="waitlistForm" onsubmit="submitWaitlist(event)">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
-        <input type="text" placeholder="Ton prénom" required style="padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;">
-        <input type="email" placeholder="Ton email" required style="padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;">
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:14px;">
+        <input type="text" placeholder="Ton prénom" required style="width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;box-sizing:border-box;">
+        <input type="email" placeholder="Ton email" required style="width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;box-sizing:border-box;">
       </div>
       <select required style="width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:14px;background:white;color:var(--text);">
         <option value="">Je suis intéressé·e par...</option>
@@ -1340,6 +1369,10 @@ nav.scrolled + .fin-ticker { top: 56px; }
           <div style="display:flex;gap:10px;font-size:14px;color:var(--textm);align-items:flex-start;"><span style="color:var(--coral);font-size:16px;flex-shrink:0;">✓</span>Coaching vocal pour comédiens / acteurs</div>
           <div style="display:flex;gap:10px;font-size:14px;color:var(--textm);align-items:flex-start;"><span style="color:var(--coral);font-size:16px;flex-shrink:0;">✓</span>Programme sur mesure selon les besoins</div>
         </div>
+        <button onclick="toggleB2B()" id="b2bToggleBtn" style="width:100%;padding:14px 20px;background:linear-gradient(135deg,var(--coral),var(--rose));color:white;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:16px;font-family:'DM Sans',sans-serif;text-align:left;display:flex;justify-content:space-between;align-items:center;">
+          <span>📩 Envoyer une demande</span><span id="b2bArrow">▼</span>
+        </button>
+        <div id="b2bFormWrap" style="display:none;">
         <form id="b2bForm" onsubmit="submitB2B(event)" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
           <div class="form-grid-2">
             <div><label class="field-label">Votre nom</label><input type="text" name="nom" class="field-input" placeholder="Marie Dupont" required></div>
@@ -1353,6 +1386,7 @@ nav.scrolled + .fin-ticker { top: 56px; }
           <textarea name="message" class="field-textarea" rows="3" placeholder="Décrivez votre équipe, le contexte, vos besoins..."></textarea>
           <button type="submit" class="btn-main" style="width:100%;justify-content:center;">Envoyer ma demande →</button>
         </form>
+        </div><!-- end b2bFormWrap -->
         <div id="b2b-merci" style="display:none;background:rgba(155,110,168,.08);border:1px solid rgba(155,110,168,.3);border-radius:12px;padding:16px;text-align:center;margin-top:12px;"><p style="font-size:15px;font-weight:600;color:var(--ink);">✅ Message reçu !</p><p style="font-size:13px;color:var(--textm);margin-top:4px;">Salomé vous répondra sous 48h.</p></div>
       </div>
 
@@ -1659,7 +1693,7 @@ var ro = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.rv').forEach(function(el) { ro.observe(el); });
 
 // ── VIDEO CAROUSEL AUTO-SCROLL ──
-var vidIdx = 0, vidTotal = 4, vidAuto;
+var vidIdx = 0, vidTotal = 5, vidAuto;
 function vidMove(dir) { vidGo((vidIdx + dir + vidTotal) % vidTotal); }
 function vidGo(i) {
   vidIdx = i;
@@ -1832,6 +1866,24 @@ function submitPay(e) {
     document.getElementById('paySuccessName').textContent = 'Bienvenue ' + prenom + ' dans Résonne !';
     window.scrollTo({ top: document.getElementById('paiement').offsetTop - 80, behavior:'smooth' });
   }, 1800);
+}
+
+// ── LOGOS CAROUSEL ──
+var logosOffset = 0;
+function logoMove(dir) {
+  var track = document.getElementById('logosTrack');
+  if (!track) return;
+  logosOffset += dir * 180;
+  track.style.animationPlayState = 'paused';
+  track.style.transition = 'transform .45s cubic-bezier(.25,.46,.45,.94)';
+  track.style.transform = 'translate3d(' + logosOffset + 'px, 0, 0)';
+  clearTimeout(window._logosTimeout);
+  window._logosTimeout = setTimeout(function() {
+    track.style.transition = '';
+    track.style.transform = '';
+    logosOffset = 0;
+    track.style.animationPlayState = 'running';
+  }, 2500);
 }
 </script>
 
