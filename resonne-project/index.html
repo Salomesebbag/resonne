@@ -914,6 +914,74 @@ nav.scrolled + .fin-ticker { top: 56px; }
 }
 
 
+
+/* ── ANIMATIONS AVANCÉES ── */
+
+/* Compteurs */
+.stat-n { transition: opacity .3s; }
+
+/* Typewriter */
+.tw-char {
+  opacity: 0;
+  display: inline;
+  transition: opacity .15s;
+}
+.tw-char.in { opacity: 1; }
+
+/* Tilt 3D reset */
+.dim, .cred {
+  transform-style: preserve-3d;
+  transition: transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s;
+}
+
+/* Hero word reveal */
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s var(--tr), transform .5s var(--tr);
+}
+.hero-word.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger symptômes */
+.sy-card {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity .5s var(--tr), transform .5s var(--tr);
+}
+.sy-card.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Particules canvas */
+#heroParticles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-inner { z-index: 2; }
+
+/* Progress bar modules */
+.mod-progress {
+  height: 2px;
+  background: linear-gradient(90deg, var(--coral), var(--sun));
+  width: 0;
+  transition: width .6s var(--tr);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+.mod.open .mod-progress { width: 100%; }
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tw-char, .hero-word, .sy-card, .mod-progress { transition: none !important; animation: none !important; }
+}
+
 </style>
 </head>
 <body>
@@ -966,6 +1034,7 @@ nav.scrolled + .fin-ticker { top: 56px; }
 </div>
 <!-- HERO -->
 <section id="hero">
+  <canvas id="heroParticles"></canvas>
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <div class="hero-inner">
     <div>
@@ -1211,13 +1280,13 @@ nav.scrolled + .fin-ticker { top: 56px; }
     <div class="tab-content" id="tab-resonne">
       <div class="tab-header"><div><h3 class="tab-h">Résonne — Formation en ligne</h3><p class="tab-desc">7 modules complets pour libérer ta voix de l'intérieur, à ton rythme, depuis chez toi.</p></div><div class="tab-price-block"><div class="tab-price">597<span>€</span></div><div class="tab-price-sub">Paiement direct · Accès immédiat</div><a href="https://VOTRE_PAGE_RESONNE.systeme.io" target="_blank" class="btn-tab-cta">Découvrir Résonne →</a></div></div>
       <div>
-        <div class="mod m1" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 01</span><span class="mod-title">Comprendre ta voix autrement</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Fondations</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Vision ostéopathique, bases remises à l'endroit.<div class="mod-pills"><span class="mod-pill">🎬 3 vidéos</span><span class="mod-pill">📄 1 fiche PDF</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
-        <div class="mod m2" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 02</span><span class="mod-title">Pourquoi ton corps bloque ta voix</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Ostéopathie</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Stress, tensions, réponse nerveuse — on comprend le mécanisme complet.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🎧 Audio guidé</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
-        <div class="mod m3" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 03</span><span class="mod-title">La respiration, ton point de départ</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Rééducation</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Exercices qui changent les automatismes en profondeur.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🎧 Audio abdominal</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
-        <div class="mod m4" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 04</span><span class="mod-title">Le soutien — ton point d'appui</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Technique vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Clé voûte du chant sans forçage. Checklist pratique incluse.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">📄 Checklist soutien</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
-        <div class="mod m5" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 05</span><span class="mod-title">Larynx, langue et mâchoire en chant</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Anatomie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Principales sources de tension — on les libère avec des exercices ciblés.<div class="mod-pills"><span class="mod-pill">🎬 5 vidéos</span><span class="mod-pill">🎧 2 audios guidés</span><span class="mod-pill">⏱ ~35 min</span></div></div></div></div>
-        <div class="mod m6" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 06</span><span class="mod-title">Ton cerveau : allié ou ennemi ?</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Neurologie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Peur de la note, cercle vicieux — on comprend neurologiquement et on reprend le contrôle.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🧠 Exercices cognitifs</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
-        <div class="mod m7" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 07</span><span class="mod-title">Chanter avec ses tripes</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Émotionnel</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in">Corps, technique et émotion réunis. Chante avec toute ta puissance.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">📄 Fiche émotion/chanson</span><span class="mod-pill">🎧 Mini-routine pré-scène</span></div></div></div></div>
+        <div class="mod m1" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 01</span><span class="mod-title">Comprendre ta voix autrement</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Fondations</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Vision ostéopathique, bases remises à l'endroit.<div class="mod-pills"><span class="mod-pill">🎬 3 vidéos</span><span class="mod-pill">📄 1 fiche PDF</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
+        <div class="mod m2" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 02</span><span class="mod-title">Pourquoi ton corps bloque ta voix</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Ostéopathie</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Stress, tensions, réponse nerveuse — on comprend le mécanisme complet.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🎧 Audio guidé</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
+        <div class="mod m3" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 03</span><span class="mod-title">La respiration, ton point de départ</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Rééducation</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Exercices qui changent les automatismes en profondeur.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🎧 Audio abdominal</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
+        <div class="mod m4" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 04</span><span class="mod-title">Le soutien — ton point d'appui</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Technique vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Clé voûte du chant sans forçage. Checklist pratique incluse.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">📄 Checklist soutien</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
+        <div class="mod m5" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 05</span><span class="mod-title">Larynx, langue et mâchoire en chant</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Anatomie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Principales sources de tension — on les libère avec des exercices ciblés.<div class="mod-pills"><span class="mod-pill">🎬 5 vidéos</span><span class="mod-pill">🎧 2 audios guidés</span><span class="mod-pill">⏱ ~35 min</span></div></div></div></div>
+        <div class="mod m6" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 06</span><span class="mod-title">Ton cerveau : allié ou ennemi ?</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Neurologie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Peur de la note, cercle vicieux — on comprend neurologiquement et on reprend le contrôle.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🧠 Exercices cognitifs</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
+        <div class="mod m7" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 07</span><span class="mod-title">Chanter avec ses tripes</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Émotionnel</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Corps, technique et émotion réunis. Chante avec toute ta puissance.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">📄 Fiche émotion/chanson</span><span class="mod-pill">🎧 Mini-routine pré-scène</span></div></div></div></div>
       </div>
     </div>
     <div class="tab-content" id="tab-performe" style="display:none;">
@@ -1909,6 +1978,162 @@ function logoMove(dir) {
     logosAnimRunning = true;
   }, 3000);
 }
+
+// ═══════════════════════════════════════════════
+// ANIMATIONS AVANCÉES — prefers-reduced-motion safe
+// ═══════════════════════════════════════════════
+(function() {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. COMPTEURS animés hero stats
+  function animCounter(el, target, suffix, ms) {
+    var t0 = null;
+    (function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / ms, 1);
+      var v = Math.round((1 - Math.pow(1-p, 3)) * target);
+      el.textContent = v + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  var sObs = new IntersectionObserver(function(es) {
+    es.forEach(function(e) {
+      if (!e.isIntersecting || e.target.dataset.done) return;
+      e.target.dataset.done = 1;
+      var t = e.target.textContent.trim();
+      if (t.includes('1000')) animCounter(e.target, 1000, '+', 1800);
+      else if (t === '7') animCounter(e.target, 7, '', 800);
+      else if (t.includes('0€')) animCounter(e.target, 0, '€', 600);
+      sObs.unobserve(e.target);
+    });
+  }, {threshold: 0.5});
+  if (!reduced) document.querySelectorAll('.stat-n').forEach(function(el) { sObs.observe(el); });
+
+  // 2. HERO H1 mot par mot
+  if (!reduced) {
+    var h1 = document.querySelector('.hero-h1');
+    if (h1) {
+      var first = h1.childNodes[0];
+      if (first && first.nodeType === 3 && first.textContent.trim()) {
+        var words = first.textContent.trim().split(/\s+/);
+        var frag = document.createDocumentFragment();
+        words.forEach(function(w, i) {
+          var s = document.createElement('span');
+          s.className = 'hero-word';
+          s.textContent = w + ' ';
+          s.style.transitionDelay = (i * 0.13) + 's';
+          frag.appendChild(s);
+        });
+        first.replaceWith(frag);
+        setTimeout(function() {
+          h1.querySelectorAll('.hero-word').forEach(function(w) { w.classList.add('in'); });
+        }, 150);
+      }
+    }
+  }
+
+  // 3. STAGGER symptômes
+  var syCards = document.querySelectorAll('.sy-card');
+  if (!reduced && syCards.length) {
+    var syObs = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var i = Array.from(syCards).indexOf(e.target);
+        e.target.style.transitionDelay = (i * 0.1) + 's';
+        e.target.classList.add('in');
+        syObs.unobserve(e.target);
+      });
+    }, {threshold: 0.1});
+    syCards.forEach(function(c) { syObs.observe(c); });
+  } else {
+    syCards.forEach(function(c) { c.style.opacity = '1'; c.style.transform = 'none'; });
+  }
+
+  // 4. PARALLAX blobs
+  if (!reduced) {
+    var blobs = document.querySelectorAll('.blob');
+    window.addEventListener('scroll', function() {
+      var sy = window.scrollY;
+      blobs.forEach(function(b, i) {
+        var sp = [0.07, -0.04, 0.03][i] || 0.05;
+        b.style.transform = 'translateY(' + (sy * sp) + 'px)';
+      });
+    }, {passive: true});
+  }
+
+  // 5. TILT 3D
+  if (!reduced) {
+    ['dim','cred'].forEach(function(cls) {
+      document.querySelectorAll('.' + cls).forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+          var r = card.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transition = 'none';
+          card.style.transform = 'perspective(700px) rotateY(' + (x*8) + 'deg) rotateX(' + (-y*8) + 'deg) translateY(-8px)';
+        });
+        card.addEventListener('mouseleave', function() {
+          card.style.transition = 'transform .4s var(--tr)';
+          card.style.transform = '';
+          setTimeout(function() { card.style.transition = ''; }, 400);
+        });
+      });
+    });
+  }
+
+  // 6. TYPEWRITER pullquote
+  if (!reduced) {
+    var pObs = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var el = e.target.querySelector('.pullquote-text');
+        if (!el || el.dataset.t) return;
+        el.dataset.t = 1;
+        var orig = el.textContent;
+        el.innerHTML = '';
+        orig.split('').forEach(function(c) {
+          var s = document.createElement('span');
+          s.className = 'tw-char';
+          s.textContent = c === ' ' ? ' ' : c;
+          el.appendChild(s);
+        });
+        el.querySelectorAll('.tw-char').forEach(function(ch, i) {
+          setTimeout(function() { ch.classList.add('in'); }, i * 22);
+        });
+        pObs.unobserve(e.target);
+      });
+    }, {threshold: 0.4});
+    var pq = document.querySelector('.pullquote');
+    if (pq) pObs.observe(pq);
+  }
+
+  // 8. PARTICULES canvas hero
+  var canvas = document.getElementById('heroParticles');
+  if (canvas && !reduced) {
+    var ctx = canvas.getContext('2d');
+    var hero = document.getElementById('hero');
+    function rsz() { canvas.width = hero.offsetWidth; canvas.height = hero.offsetHeight; }
+    rsz();
+    window.addEventListener('resize', rsz, {passive: true});
+    var pts = Array.from({length: 18}, function() {
+      return { x: Math.random(), y: Math.random(), r: Math.random()*1.5+0.5, dx: (Math.random()-.5)*.4, dy: (Math.random()-.5)*.3, o: Math.random()*.15+.08 };
+    });
+    (function draw() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      pts.forEach(function(p) {
+        p.x += p.dx/canvas.width; p.y += p.dy/canvas.height;
+        if (p.x<0||p.x>1) p.dx*=-1;
+        if (p.y<0||p.y>1) p.dy*=-1;
+        ctx.beginPath();
+        ctx.arc(p.x*canvas.width, p.y*canvas.height, p.r, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(155,110,168,'+p.o+')';
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    })();
+  }
+})();
+
 </script>
 
 <!-- ═══ BOOKING MODAL (Cabinet) ═══ -->
