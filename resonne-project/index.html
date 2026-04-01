@@ -595,45 +595,40 @@ footer{background:var(--ink);padding:60px 80px 40px;}
   .pay-guarantee-item{flex-wrap:wrap;}
 }
 
-/* ── FINANCEMENT TICKER ── */
+/* ── BANDEAU QUALIOPI ── */
 .fin-ticker {
-  background: linear-gradient(90deg, #B8860A 0%, #D4A020 25%, #F0C030 50%, #D4A020 75%, #B8860A 100%);
-  background-size: 300% auto;
-  animation: tickerGold 5s linear infinite;
-  height: 36px;
+  background: #1E1228;
+  border-bottom: 3px solid #E4A43C;
+  height: 44px;
   overflow: hidden;
   position: fixed;
   top: var(--nav-h, 68px);
   left: 0; right: 0;
   z-index: 997;
-  border-bottom: 1px solid rgba(0,0,0,.15);
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-@keyframes tickerGold { 0%{background-position:0% center} 100%{background-position:300% center} }
+/* pas d'animation tickerGold ni tickerScroll */
 .fin-ticker-track {
   display: flex;
-  animation: tickerScroll 10s linear infinite;
-  white-space: nowrap;
-  height: 100%;
   align-items: center;
-  will-change: transform;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  justify-content: center;
+  gap: 24px;
+  white-space: nowrap;
 }
 .fin-ticker-item {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 0 28px;
-  font-size: 11px; font-weight: 800;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  color: rgba(255,255,255,.95);
-  flex-shrink: 0;
-  text-shadow: 0 1px 2px rgba(0,0,0,.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
 }
-.fin-ticker-item .tick-sep { color: rgba(255,255,255,.45); margin: 0 4px; font-size: 8px; }
-.fin-ticker-item .tick-hl { color: white; font-weight: 900; }
-@keyframes tickerScroll { from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)} }
-nav.scrolled + .fin-ticker { top: 56px; }
-
+.tick-hl { color: #E4A43C; font-weight: 800; }
+.tick-sep { color: rgba(255,255,255,.3); font-size: 10px; }
 /* ── LOGOS SECTION ── */
 .logos-section { background: white; border-bottom: 1px solid rgba(0,0,0,.06); padding: 28px 0; overflow: hidden; }
 .logos-label { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--textm); margin-bottom: 18px; }
@@ -1086,10 +1081,12 @@ nav.scrolled + .fin-ticker { top: 56px; }
 <!-- FINANCEMENT TICKER -->
 <div class="fin-ticker">
   <div class="fin-ticker-track">
-    <span class="fin-ticker-item">🏅 Formation 100% finançable <span class="tick-sep">✦</span> <span class="tick-hl">AFDAS</span> <span class="tick-sep">·</span> <span class="tick-hl">OPCO</span> <span class="tick-sep">·</span> <span class="tick-hl">France Travail</span> <span class="tick-sep">·</span> <span class="tick-hl">FIFPL</span> <span class="tick-sep">·</span> <span class="tick-hl">CPF</span> <span class="tick-sep">✦</span> Certifiée Qualiopi ✓</span>
-    <span class="fin-ticker-item">🎤 Intermittents du spectacle — prise en charge jusqu'à 100% <span class="tick-sep">✦</span> 0€ avancé</span>
-    <span class="fin-ticker-item">🏅 Formation 100% finançable <span class="tick-sep">✦</span> <span class="tick-hl">AFDAS</span> <span class="tick-sep">·</span> <span class="tick-hl">OPCO</span> <span class="tick-sep">·</span> <span class="tick-hl">France Travail</span> <span class="tick-sep">·</span> <span class="tick-hl">FIFPL</span> <span class="tick-sep">·</span> <span class="tick-hl">CPF</span> <span class="tick-sep">✦</span> Certifiée Qualiopi ✓</span>
-    <span class="fin-ticker-item">🎤 Intermittents du spectacle — prise en charge jusqu'à 100% <span class="tick-sep">✦</span> 0€ avancé</span>
+    <span class="fin-ticker-item">
+      <span>🏅</span>
+      <span class="tick-hl">Certifiée Qualiopi</span>
+      <span class="tick-sep"> — </span>
+      <span>Formation 100% Finançable</span>
+    </span>
   </div>
 </div>
 <!-- HERO -->
@@ -1190,7 +1187,7 @@ nav.scrolled + .fin-ticker { top: 56px; }
       <div class="lm-video-card">
         <div class="lm-video-inner">
           <video controls playsinline preload="metadata">
-            <source src="assets/videos/temoignage-4.mp4" type="video/mp4">
+            <source src="assets/videos/temoignage-2.mp4" type="video/mp4">
           </video>
           <div class="lm-video-badge">▶ Ma méthode en 3 min</div>
         </div>
@@ -1305,9 +1302,9 @@ nav.scrolled + .fin-ticker { top: 56px; }
       <div class="vid-scroll-track" id="vidTrack">
         <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-1.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
         <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-2.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
-        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-3.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
-        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-4.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
-        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-5.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-1.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-2.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-1.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div></div>
       <div class="vid-scroll-nav">
         <button class="vid-dot on" onclick="vidGo(0)"></button>
         <button class="vid-dot" onclick="vidGo(1)"></button>
@@ -1788,7 +1785,7 @@ nav.scrolled + .fin-ticker { top: 56px; }
           <a href="#quiz">Diagnostic gratuit</a>
           <a href="#waitlist">Performe & Rayonne</a>
           <a href="#pro">Interventions B2B</a>
-          <a href="mailto:contact@resonne.fr">contact@resonne.fr</a>
+          <a href="/cdn-cgi/l/email-protection#71121e1f05101205310314021e1f1f145f1703"><span class="__cf_email__" data-cfemail="f695999882979582b684938599989893d89084">[email&#160;protected]</span></a>
           <a href="#">Mentions légales</a>
           <a href="#">CGV</a>
         </div>
@@ -1801,7 +1798,7 @@ nav.scrolled + .fin-ticker { top: 56px; }
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── NAV ──
 function updateNavTicker() {
   var nav = document.getElementById('navbar');
@@ -2165,7 +2162,7 @@ function logoMove(dir) {
         orig.split('').forEach(function(c) {
           var s = document.createElement('span');
           s.className = 'tw-char';
-          s.textContent = c === ' ' ? ' ' : c;
+          s.textContent = c === ' ' ? ' ' : c;
           el.appendChild(s);
         });
         el.querySelectorAll('.tw-char').forEach(function(ch, i) {
@@ -2563,10 +2560,3 @@ function logoMove(dir) {
       <div style="font-size:64px;margin-bottom:16px;">📅</div>
       <h3 style="font-family:'Fraunces',serif;font-size:26px;color:var(--ink);margin-bottom:10px;">Appel confirmé !</h3>
       <p style="font-size:15px;color:var(--textm);line-height:1.7;margin-bottom:20px;">Tu recevras le lien Google Meet et un email de rappel 24h avant l'appel. Salomé a hâte de discuter avec toi !</p>
-      <button onclick="closeMeet()" class="btn-main" style="margin:0 auto;display:inline-flex;background:linear-gradient(135deg,var(--lavender),var(--rose));">Super, à très bientôt ! ✨</button>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
