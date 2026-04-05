@@ -1,0 +1,2561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Résonne — La formation vocale de Salomé Sebbag, ostéopathe de la voix. Libère ta voix sans forcer. Certifiée Qualiopi, remboursable AFDAS.">
+<meta property="og:title" content="Résonne — Ostéopathe de la Voix · Salomé Sebbag">
+<meta property="og:description" content="La formation qui combine ostéopathie, rééducation et technique vocale pour libérer ta voix définitivement.">
+<meta property="og:image" content="assets/images/salome.jpg">
+<title>Résonne — Salomé Sebbag · Ostéopathe de la Voix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,500;1,9..144,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --coral: #9B6EA8;
+  --coral2: #B88AC4;
+  --rose: #C45E8A;
+  --sun: #E4A43C;
+  --mint: #6BBFA8;
+  --mint2: #4A9E89;
+  --lavender: #7A62C8;
+  --cream: #FDF8F2;
+  --cream2: #F8F2EC;
+  --ink: #1E1228;
+  --ink2: #2A1A38;
+  --text: #2E1E42;
+  --textm: #7A6890;
+  --white: #FFFFFF;
+  --tr: cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw;scroll-padding-top:120px;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;max-width:100vw;position:relative;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;transition:all .4s;}
+nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.06);padding:12px 60px;}
+.nav-logo{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--coral);text-decoration:none;letter-spacing:-0.5px;}
+.nav-logo span{color:var(--sun);}
+.nav-links{display:flex;gap:32px;align-items:center;}
+.nav-links a{color:var(--text);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--coral);}
+.nav-cta{background:linear-gradient(135deg,var(--lavender),var(--rose)) !important;color:white !important;padding:10px 22px !important;border-radius:50px !important;font-weight:600 !important;box-shadow:0 4px 16px rgba(122,98,200,.3) !important;}
+.nav-cta:hover{transform:translateY(-2px);}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:999;padding:100px 40px 40px;flex-direction:column;gap:28px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--text);text-decoration:none;border-bottom:1px solid rgba(0,0,0,.08);padding-bottom:20px;}
+
+/* ── HERO ── */
+#hero{min-height:100vh;background:linear-gradient(160deg,#FDF8F2 0%,#F8EFF8 35%,#F2F4FF 60%,#EDF7F4 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding-top:calc(var(--nav-h, 68px) + 36px + 16px);}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:bfloat 8s ease-in-out infinite;max-width:100%;}
+.b1{width:700px;height:700px;background:radial-gradient(circle,rgba(155,110,168,.18),transparent 70%);top:-200px;right:-150px;}
+.b2{width:500px;height:500px;background:radial-gradient(circle,rgba(196,94,138,.15),transparent 70%);bottom:-150px;left:-100px;animation-delay:3s;animation-direction:reverse;}
+.b3{width:400px;height:400px;background:radial-gradient(circle,rgba(107,191,168,.12),transparent 70%);top:30%;right:30%;animation-delay:5s;}
+@keyframes bfloat{0%,100%{transform:scale(1) translate(0,0);}50%{transform:scale(1.08) translate(20px,-20px);}}
+.hero-inner{max-width:1400px;margin:0 auto;padding:80px;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;position:relative;z-index:2;width:100%;overflow:hidden;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(155,110,168,.12);border:1.5px solid rgba(155,110,168,.4);color:var(--coral);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 16px;border-radius:50px;margin-bottom:24px;white-space:nowrap;flex-wrap:nowrap;}
+.dot-pulse{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.5);opacity:.5;}}
+.hero-h1{font-family:'Fraunces',serif;font-size:clamp(50px,6vw,84px);font-weight:700;line-height:1.02;letter-spacing:-2px;color:var(--ink);margin-bottom:10px;}
+.hero-h1 .wave{display:block;background:linear-gradient(135deg,var(--coral) 0%,var(--sun) 50%,var(--rose) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic;}
+.hero-h1 .subline{display:block;font-size:clamp(26px,3vw,42px);font-weight:300;color:var(--textm);letter-spacing:-1px;margin-top:4px;-webkit-text-fill-color:var(--textm);background:none;}
+.hero-sub{font-size:17px;line-height:1.75;color:var(--textm);max-width:520px;margin:28px 0 44px;}
+.hero-sub strong{color:var(--text);font-weight:600;}
+.hero-btns{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+.btn-main{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--coral),var(--rose));color:white;padding:18px 38px;border-radius:50px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 12px 32px rgba(155,110,168,.4);transition:all .3s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(155,110,168,.5);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;color:var(--text);font-size:15px;font-weight:500;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:color .2s;text-decoration:none;padding:8px 0;}
+.btn-ghost:hover{color:var(--coral);}
+.hero-stats{display:flex;gap:40px;margin-top:52px;padding-top:36px;border-top:2px dashed rgba(0,0,0,.08);}
+.stat-n{font-family:'Fraunces',serif;font-size:40px;font-weight:700;line-height:1;}
+.c1{color:var(--coral);}.c2{color:var(--sun);}.c3{color:var(--mint2);}
+.stat-l{font-size:12px;color:var(--textm);margin-top:4px;font-weight:500;}
+.hero-img-area{position:relative;}
+.hero-img-frame{border-radius:30px 30px 80px 30px;overflow:hidden;aspect-ratio:3/4;position:relative;box-shadow:0 40px 80px rgba(155,110,168,.2),0 0 0 6px rgba(155,110,168,.15);}
+.hero-img-frame img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.float-card{position:absolute;background:white;border-radius:16px;padding:14px 20px;box-shadow:0 8px 30px rgba(0,0,0,.1);display:flex;gap:12px;align-items:center;}
+.fc-bot{bottom:-16px;left:-24px;z-index:10;}
+.fc-top{top:24px;right:-24px;z-index:10;}
+@media(max-width:768px){
+  .fc-bot{bottom:10px;left:10px;}
+  .fc-top{top:10px;right:10px;}
+  .hero-tag-bubble{left:10px;top:-10px;font-size:11px;padding:6px 14px;}
+}
+.fc-ico{font-size:28px;}
+.fc-t strong{display:block;font-size:14px;font-weight:700;color:var(--ink);}
+.fc-t span{font-size:12px;color:var(--textm);}
+.hero-tag-bubble{position:absolute;top:-16px;left:30px;background:linear-gradient(135deg,var(--sun),var(--coral));color:white;font-size:13px;font-weight:700;padding:8px 20px;border-radius:50px;box-shadow:0 4px 16px rgba(155,110,168,.4);transform:rotate(-2deg);white-space:nowrap;z-index:10;}
+
+/* ── MARQUEE ── */
+
+
+
+
+to{transform:translate3d(-50%,0,0)}}
+
+/* ── LEAD MAGNET ── */
+#leadmagnet{background:white;border-bottom:1px solid rgba(0,0,0,.06);}
+.lm-inner{max-width:1100px;margin:0 auto;padding:80px 60px;display:grid;grid-template-columns:1fr 460px;gap:70px;align-items:center;}
+.lm-input-row{display:flex;gap:12px;flex-wrap:wrap;}
+.lm-input{flex:1;min-width:220px;padding:16px 20px;border-radius:50px;border:2px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color .2s;}
+.lm-input:focus{border-color:var(--coral);}
+.lm-video-card{background:linear-gradient(135deg,#F5EDFF,#EDF7F4);border-radius:28px;padding:8px;box-shadow:0 20px 60px rgba(155,110,168,.18);}
+.lm-video-inner{border-radius:22px;overflow:hidden;position:relative;background:#1A1028;}
+.lm-video-inner video{width:100%;display:block;max-height:360px;object-fit:cover;}
+.lm-video-badge{position:absolute;top:14px;left:14px;background:rgba(155,110,168,.92);backdrop-filter:blur(10px);color:white;font-size:11px;font-weight:700;padding:6px 14px;border-radius:50px;letter-spacing:.5px;text-transform:uppercase;}
+.lm-video-footer{padding:16px 18px 10px;display:flex;align-items:center;gap:12px;}
+.lm-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(155,110,168,.4);}
+.lm-gratuit{margin-left:auto;background:rgba(155,110,168,.12);border:1px solid rgba(155,110,168,.3);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;color:var(--coral);}
+#lm-merci{display:none;background:linear-gradient(135deg,rgba(155,110,168,.1),rgba(74,158,137,.08));border:1px solid rgba(155,110,168,.3);border-radius:16px;padding:20px 24px;margin-top:12px;}
+
+/* ── SECTIONS ── */
+.sh2{font-family:'Fraunces',serif;font-size:clamp(34px,4vw,56px);font-weight:700;line-height:1.1;color:var(--ink);letter-spacing:-1px;margin-bottom:20px;}
+.sh2 em{font-style:italic;font-weight:500;background:linear-gradient(135deg,var(--coral),var(--sun));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sh2-light{color:white;}
+.sh2-light em{background:linear-gradient(135deg,var(--coral),var(--sun));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sh2-mint em{background:linear-gradient(135deg,var(--mint2),#2A9D94);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sp{font-size:17px;line-height:1.8;color:var(--textm);max-width:580px;}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:18px;}
+.tag-coral{background:rgba(155,110,168,.1);color:var(--coral);}
+.tag-mint{background:rgba(78,205,196,.12);color:var(--mint2);}
+.tag-gold{background:rgba(228,164,60,.12);color:#B07820;}
+.tag-rose{background:rgba(196,94,138,.1);color:var(--rose);}
+
+/* ── SYMPTOMS ── */
+#symptoms{background:white;}
+.sympt-wrap{max-width:1400px;margin:0 auto;padding:110px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.sy-card{display:flex;gap:16px;align-items:flex-start;padding:22px 24px;border-radius:18px;background:var(--cream2);border:2px solid transparent;transition:all .3s;cursor:default;margin-bottom:14px;}
+.sy-card:hover{border-color:var(--coral);background:white;box-shadow:0 8px 28px rgba(155,110,168,.1);transform:translateX(6px);}
+.sy-ico{font-size:28px;flex-shrink:0;}
+.sy-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.sy-desc{font-size:13px;color:var(--textm);line-height:1.5;}
+.quote-box{background:linear-gradient(160deg,#1E1228,#2A1A38);border-radius:28px;padding:44px;position:relative;overflow:hidden;}
+.quote-box::before{content:'"';position:absolute;top:-30px;left:16px;font-family:'Fraunces',serif;font-size:180px;color:rgba(255,255,255,.04);line-height:1;}
+.quote-text{font-family:'Fraunces',serif;font-size:clamp(18px,2vw,26px);font-style:italic;font-weight:300;line-height:1.55;color:white;position:relative;z-index:1;}
+.quote-text strong{color:var(--sun);font-style:normal;font-weight:600;}
+.quote-author{display:flex;align-items:center;gap:14px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);}
+.qa-av{width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid var(--sun);flex-shrink:0;}
+.qa-av img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.qa-name{font-size:14px;font-weight:700;color:white;}
+.qa-role{font-size:12px;color:rgba(255,255,255,.4);margin-top:2px;}
+
+/* ── STORY ── */
+#story{background:var(--cream2);}
+.story-wrap{max-width:1400px;margin:0 auto;padding:110px 80px;display:grid;grid-template-columns:360px 1fr;gap:80px;align-items:start;}
+.story-photo{border-radius:24px 24px 70px 24px;overflow:hidden;aspect-ratio:3/4;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.12);}
+.story-photo img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.story-photo-decor{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(155,110,168,.3),transparent);}
+.sbadges{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
+.sbadge{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;background:white;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.sbadge-ico{font-size:20px;}
+.sbadge-t{font-size:13px;font-weight:700;color:var(--ink);}
+.sbadge-s{font-size:11px;color:var(--textm);}
+.story-text p{font-size:16px;line-height:1.85;color:var(--textm);margin-bottom:20px;}
+.story-text p strong{color:var(--ink);font-weight:600;}
+.highlight{background:linear-gradient(135deg,rgba(228,164,60,.1),rgba(155,110,168,.08));border-left:4px solid var(--sun);border-radius:0 16px 16px 0;padding:22px 28px;margin:28px 0;font-family:'Fraunces',serif;font-size:21px;font-style:italic;color:var(--coral);line-height:1.5;}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px;}
+.cred{background:white;border-radius:16px;padding:20px;box-shadow:0 2px 16px rgba(0,0,0,.05);border:2px solid transparent;transition:all .3s;}
+.cred:hover{border-color:var(--coral);box-shadow:0 8px 24px rgba(155,110,168,.1);}
+.cred-ico{font-size:26px;margin-bottom:10px;}
+.cred-t{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.cred-d{font-size:12px;color:var(--textm);line-height:1.5;}
+
+/* ── PULL QUOTE ── */
+.pullquote{background:linear-gradient(135deg,var(--lavender) 0%,var(--rose) 55%,var(--coral) 100%);padding:90px 80px;text-align:center;position:relative;overflow:visible;width:100%;box-sizing:border-box;}
+.pullquote::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");}
+.pullquote-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;width:100%;box-sizing:border-box;}
+.pullquote-text{font-family:'Fraunces',serif;font-size:clamp(22px,3.5vw,48px);color:white;font-weight:300;line-height:1.3;font-style:italic;word-wrap:break-word;overflow-wrap:break-word;}
+.pullquote-by{margin-top:24px;font-size:14px;color:rgba(255,255,255,.7);letter-spacing:2px;text-transform:uppercase;font-weight:600;}
+
+/* ── METHOD ── */
+#method{background:white;}
+.method-wrap{padding:110px 80px;max-width:1400px;margin:0 auto;}
+.method-header{text-align:center;margin-bottom:70px;}
+.dims{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.dim{border-radius:24px;padding:36px 28px;position:relative;overflow:hidden;transition:all .35s var(--tr);cursor:default;}
+.dim:hover{transform:translateY(-10px);box-shadow:0 30px 60px rgba(0,0,0,.12);}
+.dim.d1{background:linear-gradient(160deg,#F5EDFF,#EDD8F5);}
+.dim.d2{background:linear-gradient(160deg,#FFF8E8,#FFF0C0);}
+.dim.d3{background:linear-gradient(160deg,#E8F8F4,#C8EDE6);}
+.dim.d4{background:linear-gradient(160deg,#EDE8FF,#D8D0FF);}
+.dim-n{font-family:'Fraunces',serif;font-size:72px;font-weight:700;line-height:1;opacity:.08;position:absolute;top:10px;right:16px;}
+.dim.d1 .dim-n{color:var(--coral);}.dim.d2 .dim-n{color:var(--sun);}.dim.d3 .dim-n{color:var(--mint2);}.dim.d4 .dim-n{color:var(--lavender);}
+.dim-ico{font-size:40px;margin-bottom:16px;display:block;}
+.dim-title{font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:10px;}
+.dim.d1 .dim-title{color:var(--coral);}.dim.d2 .dim-title{color:#C07A00;}.dim.d3 .dim-title{color:var(--mint2);}.dim.d4 .dim-title{color:var(--lavender);}
+.dim-desc{font-size:14px;line-height:1.7;color:var(--textm);}
+
+/* ── VIDEOS ── */
+#videos{background:linear-gradient(160deg,#FDF8F2 0%,#F4EEFF 100%);}
+.videos-wrap{padding:90px 80px;max-width:1400px;margin:0 auto;}
+.videos-header{text-align:center;margin-bottom:44px;}
+.vid-scroll-wrap{position:relative;overflow:hidden;max-width:100%;}
+.vid-scroll-track{display:flex;gap:16px;transition:transform .6s var(--tr);will-change:transform;}
+.vid-card{flex:0 0 calc(25% - 12px);border-radius:20px;overflow:hidden;background:var(--ink);position:relative;aspect-ratio:9/16;box-shadow:0 12px 40px rgba(0,0,0,.12);border:2px solid rgba(255,255,255,.06);transition:transform .3s,box-shadow .3s;}
+.vid-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 50px rgba(0,0,0,.2);}
+.vid-card video{width:100%;height:100%;object-fit:cover;display:block;}
+.vid-card-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.8),transparent);padding:36px 14px 14px;font-size:12px;font-weight:600;color:white;letter-spacing:.3px;}
+.vid-scroll-nav{display:flex;gap:10px;justify-content:center;margin-top:20px;align-items:center;}
+.vid-dot{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.15);border:none;cursor:pointer;padding:0;transition:all .3s;}
+.vid-dot.on{background:var(--coral);width:20px;border-radius:3px;}
+.vid-arrows{display:flex;gap:8px;margin-left:16px;}
+.vid-arr{width:36px;height:36px;border-radius:50%;background:white;border:1.5px solid rgba(0,0,0,.1);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .25s;color:var(--ink);}
+.vid-arr:hover{background:var(--coral);color:white;border-color:var(--coral);}
+@media(max-width:900px){.vid-card{flex:0 0 calc(50% - 8px);}}
+@media(max-width:540px){.vid-card{flex:0 0 calc(80% - 6px);}}
+
+/* ── PROGRAMME 3 TABS ── */
+#programme{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 100%);}
+.prog-wrap{padding:110px 80px;max-width:1400px;margin:0 auto;}
+.tab-nav{display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;}
+.tab-btn{flex:1;min-width:160px;padding:18px 20px;border-radius:16px;background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.08);cursor:pointer;text-align:left;transition:all .3s;font-family:'DM Sans',sans-serif;display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden;}
+.tab-btn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--coral),var(--rose));opacity:0;transition:opacity .3s;}
+.tab-btn:hover{background:rgba(255,255,255,.08);}
+.tab-btn.active{background:linear-gradient(135deg,rgba(155,110,168,.25),rgba(196,94,138,.15));border-color:rgba(155,110,168,.7);box-shadow:0 0 0 3px rgba(155,110,168,.2);transform:translateY(-2px);}
+.tab-btn.active::after{opacity:1;}
+.tab-ico{font-size:22px;margin-bottom:6px;}
+.tab-name{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:white;}
+.tab-sub{font-size:12px;color:rgba(255,255,255,.4);}
+.tab-btn.active .tab-sub{color:rgba(255,255,255,.65);}
+.tab-content{animation:fadeIn .3s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.tab-header{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;margin-bottom:40px;padding:28px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:18px;}
+.tab-h{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:white;margin-bottom:10px;}
+.tab-desc{font-size:15px;color:rgba(255,255,255,.5);line-height:1.65;max-width:520px;}
+.tab-price-block{text-align:right;flex-shrink:0;}
+.tab-price{font-family:'Fraunces',serif;font-size:48px;font-weight:700;color:var(--coral);line-height:1;}
+.tab-price span{font-size:24px;}
+.tab-price-sub{font-size:12px;color:rgba(255,255,255,.35);margin:6px 0 14px;}
+.btn-tab-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--coral),var(--rose));color:white;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;transition:all .3s;white-space:nowrap;}
+.btn-tab-cta:hover{transform:translateY(-2px);opacity:.9;}
+.mod{border-top:1px solid rgba(255,255,255,.08);cursor:pointer;}
+.mod:last-child{border-bottom:1px solid rgba(255,255,255,.08);}
+.mod-head{display:flex;align-items:center;gap:22px;padding:26px 0;transition:padding .3s;}
+.mod:hover .mod-head{padding-left:6px;}
+.mod-num{font-family:'Fraunces',serif;font-size:12px;font-weight:700;letter-spacing:2px;min-width:55px;}
+.m1 .mod-num{color:var(--coral);}.m2 .mod-num{color:var(--sun);}.m3 .mod-num{color:var(--mint);}
+.m4 .mod-num{color:#89B4E8;}.m5 .mod-num{color:#A8D060;}.m6 .mod-num{color:var(--rose);}.m7 .mod-num{color:var(--lavender);}
+.mod-title{flex:1;font-family:'Fraunces',serif;font-size:24px;font-weight:500;color:white;}
+.mod-tag{font-size:11px;color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);padding:4px 12px;border-radius:50px;}
+.mod-arrow{color:rgba(255,255,255,.3);font-size:20px;transition:transform .3s,color .3s;}
+.mod.open .mod-arrow{transform:rotate(45deg);color:var(--coral);}
+.mod-body{max-height:0;overflow:hidden;transition:max-height .5s var(--tr);padding-left:77px;}
+.mod.open .mod-body{max-height:200px;}
+.mod-body-in{padding:0 0 24px;font-size:15px;color:rgba(255,255,255,.5);line-height:1.75;}
+.mod-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.mod-pill{font-size:12px;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.1);padding:4px 14px;border-radius:50px;}
+.performe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
+.pday{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;transition:all .3s;}
+.pday:hover{border-color:rgba(155,110,168,.35);}
+.pday-num{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+.pday-title{font-family:'Fraunces',serif;font-size:20px;color:white;margin-bottom:10px;}
+.pday-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.65;}
+.tab-infos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;}
+.tab-info-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px;display:flex;gap:12px;align-items:flex-start;}
+.tab-info-ico{font-size:22px;flex-shrink:0;}
+.tab-info-item strong{display:block;font-size:14px;color:white;font-weight:600;}
+.tab-info-item span{font-size:12px;color:rgba(255,255,255,.4);margin-top:2px;display:block;}
+.rayonne-features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
+.rf-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;transition:all .3s;}
+.rf-card:hover{border-color:rgba(122,98,200,.35);background:rgba(122,98,200,.06);}
+.rf-ico{font-size:30px;margin-bottom:12px;}
+.rf-t{font-size:15px;font-weight:700;color:white;margin-bottom:6px;}
+.rf-d{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;}
+.rayonne-cta-box{background:linear-gradient(135deg,rgba(122,98,200,.15),rgba(196,94,138,.12));border:1px solid rgba(122,98,200,.25);border-radius:20px;padding:36px;text-align:center;margin-top:24px;}
+@media(max-width:768px){.performe-grid,.rayonne-features,.tab-infos{grid-template-columns:1fr;}.tab-header{grid-template-columns:1fr;}.tab-price-block{text-align:left;}}
+
+/* ── TESTIMONIALS ── */
+#temoignages{background:white;}
+.testi-wrap{padding:110px 80px;max-width:1400px;margin:0 auto;}
+.testi-header{text-align:center;margin-bottom:60px;}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.tc{border-radius:22px;padding:32px;transition:all .3s;}
+.tc:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.1);}
+.tc-a{background:linear-gradient(135deg,#F5EDFF,#EDD8F5);}
+.tc-b{background:linear-gradient(135deg,#FFF8E8,#FFF5C0);}
+.tc-c{background:linear-gradient(135deg,#E8F8F4,#C8EDE6);}
+.tc-d{background:linear-gradient(135deg,#EDE8FF,#D8D0FF);}
+.tc-e{background:linear-gradient(135deg,#FFE8F2,#F5C4D8);}
+.tc-big{grid-column:span 2;background:linear-gradient(135deg,#1E1228,#2A1A38);}
+.tc-stars{font-size:14px;letter-spacing:3px;margin-bottom:14px;color:var(--sun);}
+.tc-text{font-family:'Fraunces',serif;font-size:19px;font-style:italic;line-height:1.5;margin-bottom:22px;}
+.tc-a .tc-text{color:var(--coral);}.tc-b .tc-text{color:#8A6000;}.tc-c .tc-text{color:var(--mint2);}
+.tc-d .tc-text{color:var(--lavender);}.tc-e .tc-text{color:var(--rose);}.tc-big .tc-text{color:white;font-size:24px;}
+.tc-author{display:flex;gap:12px;align-items:center;}
+.tc-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:white;flex-shrink:0;}
+.tc-name{font-size:14px;font-weight:700;}
+.tc-big .tc-name{color:white;}
+.tc-role{font-size:12px;color:var(--textm);}
+.tc-big .tc-role{color:rgba(255,255,255,.4);}
+
+/* ── FINANCEMENT ── */
+#financement{background:linear-gradient(160deg,#FDF8F2 0%,#F4EEFF 100%);}
+.fin-wrap{padding:90px 80px;max-width:1400px;margin:0 auto;}
+.fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.qpill{display:inline-flex;align-items:center;gap:10px;background:white;border:2px solid var(--sun);border-radius:12px;padding:14px 22px;margin-bottom:28px;box-shadow:0 4px 16px rgba(228,164,60,.2);}
+.qpill-text{font-size:12px;font-weight:700;color:#8A6000;letter-spacing:1.5px;text-transform:uppercase;}
+.fin-amts{display:flex;gap:16px;margin-top:32px;}
+.fin-amt{border-radius:16px;padding:20px 28px;text-align:center;flex:1;}
+.fin-amt-dk{background:var(--ink);}
+.fin-amt-lt{background:white;border:2px solid var(--mint);}
+.fin-n{font-family:'Fraunces',serif;font-size:44px;font-weight:700;line-height:1;}
+.fin-amt-dk .fin-n{color:var(--coral);}
+.fin-amt-lt .fin-n{color:var(--mint2);}
+.fin-l{font-size:12px;margin-top:6px;}
+.fin-amt-dk .fin-l{color:rgba(255,255,255,.4);}
+.fin-amt-lt .fin-l{color:var(--textm);}
+.fin-cards{display:flex;flex-direction:column;gap:16px;}
+.fin-card{display:flex;gap:18px;align-items:flex-start;background:white;border-radius:18px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,.06);border:2px solid transparent;transition:all .3s;}
+.fin-card:hover{border-color:var(--coral);box-shadow:0 8px 28px rgba(155,110,168,.1);}
+.fin-card-ico{font-size:34px;flex-shrink:0;}
+.fin-card-t{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.fin-card-d{font-size:13px;color:var(--textm);line-height:1.6;}
+
+/* ── QUIZ ── */
+#quiz{background:linear-gradient(160deg,var(--ink) 0%,#1A0A20 100%);}
+.quiz-wrap{padding:90px 80px;max-width:900px;margin:0 auto;text-align:center;}
+.quiz-card{background:linear-gradient(160deg,#24142E 0%,#1A1028 100%);border-radius:32px;padding:60px;border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden;}
+.quiz-card::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(155,110,168,.1),transparent 70%);}
+.quiz-card::after{content:'';position:absolute;bottom:-60px;left:-60px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(196,94,138,.1),transparent 70%);}
+.qz{position:relative;z-index:1;}
+.qz-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--sun);margin-bottom:16px;}
+.qz-h{font-family:'Fraunces',serif;font-size:clamp(26px,3vw,42px);font-weight:700;color:white;line-height:1.15;margin-bottom:14px;letter-spacing:-.5px;}
+.qz-h em{font-style:italic;background:linear-gradient(135deg,var(--coral),var(--sun));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.qz-sub{font-size:15px;color:rgba(255,255,255,.5);margin-bottom:44px;}
+.qz-progress{display:flex;gap:6px;justify-content:center;margin-bottom:28px;}
+.qz-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.12);border:none;padding:0;transition:all .3s;}
+.qz-dot.on{background:var(--coral);width:22px;border-radius:3px;}
+.qz-dot.done{background:rgba(155,110,168,.4);}
+.qz-q{font-family:'Fraunces',serif;font-size:22px;color:white;margin-bottom:28px;font-weight:500;}
+.qz-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left;}
+.qz-opt{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:14px;padding:16px 18px;cursor:pointer;color:rgba(255,255,255,.7);font-size:14px;line-height:1.4;transition:all .2s;display:flex;align-items:center;gap:12px;font-family:'DM Sans',sans-serif;}
+.qz-opt:hover{background:rgba(155,110,168,.12);border-color:rgba(155,110,168,.4);color:white;}
+.qz-opt.sel{background:rgba(155,110,168,.15);border-color:var(--coral);color:white;}
+.qz-opt-ico{font-size:20px;flex-shrink:0;}
+.qz-nav{display:flex;gap:12px;justify-content:center;margin-top:28px;}
+.btn-qz-next{background:linear-gradient(135deg,var(--coral),var(--rose));color:white;padding:13px 30px;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-qz-next:hover{transform:translateY(-2px);}
+.btn-qz-next:disabled{background:rgba(255,255,255,.1);color:rgba(255,255,255,.3);cursor:not-allowed;transform:none;}
+.btn-qz-back{background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);padding:13px 30px;border-radius:50px;font-size:14px;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-qz-back:hover{background:rgba(255,255,255,.12);color:white;}
+.qz-input{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;font-family:'DM Sans',sans-serif;font-size:15px;color:white;width:100%;outline:none;transition:border-color .2s;margin-bottom:12px;display:block;}
+.qz-input::placeholder{color:rgba(255,255,255,.25);}
+.qz-input:focus{border-color:rgba(155,110,168,.5);}
+
+/* ── PRICING ── */
+#pricing{background:white;}
+.price-wrap{padding:110px 80px;max-width:1400px;margin:0 auto;}
+.price-header{text-align:center;margin-bottom:65px;}
+.pgrid{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:20px;align-items:start;}
+.pc{border-radius:24px;padding:40px;border:2px solid transparent;transition:all .4s;}
+.pc:hover{transform:translateY(-6px);}
+.pc-basic{background:var(--cream2);border-color:rgba(0,0,0,.06);}
+.pc-basic:hover{border-color:var(--coral);box-shadow:0 20px 50px rgba(155,110,168,.1);}
+.pc-star{background:linear-gradient(160deg,var(--ink),var(--ink2));border-color:rgba(155,110,168,.35);box-shadow:0 20px 60px rgba(0,0,0,.2);position:relative;}
+.pc-star:hover{box-shadow:0 32px 70px rgba(0,0,0,.25);}
+.pc-prem{background:var(--cream2);border-color:rgba(0,0,0,.06);}
+.pc-prem:hover{border-color:var(--mint);box-shadow:0 20px 50px rgba(107,191,168,.1);}
+.pc-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--sun),var(--coral));color:white;font-size:11px;font-weight:800;padding:5px 18px;border-radius:50px;white-space:nowrap;font-family:'Fraunces',serif;letter-spacing:1px;text-transform:uppercase;}
+.pc-tier{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--textm);margin-bottom:14px;}
+.pc-star .pc-tier{color:rgba(155,110,168,.7);}
+.pc-name{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.pc-star .pc-name{color:white;}
+.pc-desc{font-size:14px;color:var(--textm);margin-bottom:28px;line-height:1.5;}
+.pc-star .pc-desc{color:rgba(255,255,255,.4);}
+.pc-price{margin-bottom:32px;}
+.pc-n{font-family:'Fraunces',serif;font-size:56px;font-weight:700;line-height:1;color:var(--ink);}
+.pc-star .pc-n{color:white;}
+.pc-per{font-size:14px;color:var(--textm);margin-left:4px;}
+.pc-star .pc-per{color:rgba(255,255,255,.3);}
+.pc-feats{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.pc-feat{display:flex;gap:10px;font-size:14px;color:var(--textm);}
+.pc-star .pc-feat{color:rgba(255,255,255,.6);}
+.pc-check{flex-shrink:0;font-size:15px;}
+.pc-basic .pc-check{color:var(--mint2);}.pc-star .pc-check{color:var(--sun);}.pc-prem .pc-check{color:var(--mint2);}
+.btn-pc{display:block;text-align:center;text-decoration:none;padding:16px;border-radius:50px;font-size:15px;font-weight:700;transition:all .3s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;}
+.btn-pc-main{background:linear-gradient(135deg,var(--coral),var(--rose));color:white;box-shadow:0 8px 24px rgba(155,110,168,.35);}
+.btn-pc-main:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(155,110,168,.5);}
+.btn-pc-out{background:transparent;color:var(--text);border:2px solid rgba(0,0,0,.12);}
+.btn-pc-out:hover{border-color:var(--coral);color:var(--coral);}
+.btn-pc-outm{background:transparent;color:var(--text);border:2px solid rgba(107,191,168,.4);}
+.btn-pc-outm:hover{border-color:var(--mint2);color:var(--mint2);}
+.guarantee{text-align:center;margin-top:32px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;color:var(--textm);}
+.guarantee strong{color:var(--ink);}
+
+/* ── PRO ── */
+#pro{background:var(--cream2);}
+.pro-inner{max-width:1400px;margin:0 auto;padding:80px 60px;}
+.pro-header{text-align:center;margin-bottom:70px;}
+.pro-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.pro-card{background:white;border-radius:24px;padding:48px;border:2px solid rgba(0,0,0,.06);box-shadow:0 4px 30px rgba(0,0,0,.05);}
+.field-label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:.5px;text-transform:uppercase;}
+.field-input{width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .2s;display:block;margin-bottom:14px;}
+.field-input:focus{border-color:var(--coral);}
+.field-textarea{width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;resize:vertical;display:block;margin-bottom:16px;}
+.field-textarea:focus{border-color:var(--coral);}
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:0;}
+.soin-card{background:var(--cream2);border-radius:16px;padding:22px;border:2px solid transparent;transition:all .3s;cursor:default;margin-bottom:16px;}
+.soin-card:hover{border-color:var(--coral);}
+.soin-card.featured{background:linear-gradient(135deg,rgba(155,110,168,.08),rgba(74,158,137,.06));border:2px solid rgba(155,110,168,.2);}
+
+/* ── PAYMENT ── */
+#paiement{background:var(--cream2);}
+.pay-inner{max-width:1000px;margin:0 auto;padding:80px 60px;}
+.pay-header{text-align:center;margin-bottom:60px;}
+.pay-grid{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start;}
+input,textarea,select{max-width:100%;box-sizing:border-box;}
+.pay-card{background:white;border-radius:24px;padding:40px;box-shadow:0 4px 30px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.06);width:100%;overflow:hidden;min-width:0;}
+.pay-section-title{font-family:'Fraunces',serif;font-size:20px;color:var(--ink);margin-bottom:20px;font-weight:600;}
+.pay-field{margin-bottom:14px;}
+.pay-label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:.5px;text-transform:uppercase;}
+.pay-input{width:100%;max-width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color .2s;box-sizing:border-box;}
+.pay-input:focus{border-color:var(--coral);}
+.pay-method{display:flex;gap:10px;margin-bottom:20px;}
+.pay-method-label{flex:1;border:2px solid rgba(0,0,0,.1);border-radius:12px;padding:14px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .25s;font-size:14px;font-weight:600;color:var(--ink);}
+.pay-method-label:has(input:checked){border-color:var(--coral);background:rgba(155,110,168,.05);}
+.card-number-wrap{position:relative;}
+.card-number-wrap input{padding-right:50px;}
+.card-brand{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:22px;}
+.afdas-box{background:linear-gradient(135deg,rgba(155,110,168,.06),rgba(74,158,137,.04));border:1.5px solid rgba(155,110,168,.2);border-radius:14px;padding:18px;margin-bottom:24px;}
+.afdas-toggle{display:flex;align-items:center;gap:12px;cursor:pointer;}
+.afdas-extra{margin-top:16px;padding-top:16px;border-top:1px solid rgba(155,110,168,.2);display:none;}
+.cgv-label{display:flex;gap:10px;align-items:flex-start;margin-bottom:24px;cursor:pointer;font-size:13px;color:var(--textm);line-height:1.6;width:100%;box-sizing:border-box;}
+.cgv-label input{flex-shrink:0;margin-top:3px;}
+.cgv-label span{flex:1;min-width:0;word-wrap:break-word;overflow-wrap:break-word;}
+.cgv-label a{color:var(--coral);text-decoration:none;font-weight:600;}
+.pay-btn{display:block;width:100%;padding:20px;background:linear-gradient(135deg,var(--coral),var(--rose));color:white;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .3s;box-shadow:0 10px 28px rgba(155,110,168,.3);-webkit-appearance:none;appearance:none;text-align:center;}
+.pay-btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(155,110,168,.4);}
+.pay-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.pay-secure{text-align:center;font-size:12px;color:var(--textm);margin-top:10px;}
+.pay-success{display:none;text-align:center;padding:40px 20px;}
+.pay-summary{background:white;border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.06);margin-bottom:16px;}
+.pay-promo{background:white;border-radius:16px;padding:20px;margin-bottom:16px;border:1px solid rgba(0,0,0,.06);}
+.pay-guarantees{background:white;border-radius:16px;padding:20px;border:1px solid rgba(0,0,0,.06);}
+.pay-guarantee-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--textm);margin-bottom:12px;}
+.pay-guarantee-item:last-child{margin-bottom:0;}
+
+/* ── FAQ ── */
+#faq{background:white;}
+.faq-wrap{padding:90px 80px;max-width:860px;margin:0 auto;}
+.faq-header{text-align:center;margin-bottom:56px;}
+.fq{border-top:2px dashed rgba(0,0,0,.08);cursor:pointer;}
+.fq:last-child{border-bottom:2px dashed rgba(0,0,0,.08);}
+.fq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:16px;font-size:16px;font-weight:600;color:var(--ink);line-height:1.4;}
+.fq-ico{font-size:22px;color:var(--coral);flex-shrink:0;transition:transform .3s;}
+.fq.open .fq-ico{transform:rotate(45deg);}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--tr);}
+.fq.open .fq-a{max-height:200px;}
+.fq-a-in{padding:0 0 20px;font-size:15px;color:var(--textm);line-height:1.75;}
+
+/* ── CTA ── */
+#cta{background:linear-gradient(135deg,var(--coral) 0%,var(--rose) 55%,var(--lavender) 100%);position:relative;overflow:hidden;}
+#cta::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");}
+.cta-inner{position:relative;z-index:1;padding:110px 80px;text-align:center;max-width:1400px;margin:0 auto;}
+.cta-h{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,68px);font-weight:700;line-height:1.05;color:white;letter-spacing:-1.5px;margin-bottom:22px;}
+.cta-h em{font-style:italic;font-weight:500;}
+.cta-sub{font-size:18px;color:rgba(255,255,255,.8);margin-bottom:48px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.6;}
+.cta-btn{display:inline-flex;align-items:center;gap:12px;background:white;color:var(--coral);padding:20px 52px;border-radius:50px;font-size:18px;font-weight:800;text-decoration:none;box-shadow:0 16px 44px rgba(0,0,0,.2);transition:all .3s;}
+.cta-btn:hover{transform:translateY(-4px);box-shadow:0 24px 56px rgba(0,0,0,.3);}
+.cta-chips{display:flex;gap:20px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
+.cta-chip{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.85);font-size:14px;font-weight:500;}
+.cta-chip::before{content:'✓';font-weight:800;color:white;}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:60px 80px 40px;}
+.ft-inner{max-width:1400px;margin:0 auto;}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:50px;}
+.ft-logo{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:white;margin-bottom:14px;}
+.ft-logo span{color:var(--sun);}
+.ft-tag{font-size:14px;color:rgba(255,255,255,.35);line-height:1.6;max-width:260px;}
+.ft-socials{display:flex;gap:12px;margin-top:20px;}
+.ft-social{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:18px;text-decoration:none;transition:all .2s;}
+.ft-social:hover{background:var(--coral);border-color:var(--coral);}
+.ft-col-t{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun);margin-bottom:18px;}
+.ft-lks{display:flex;flex-direction:column;gap:10px;}
+.ft-lks a{font-size:14px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+.ft-lks a:hover{color:white;}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-copy{font-size:13px;color:rgba(255,255,255,.2);}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s var(--tr),transform .65s var(--tr);}
+.rv.in{opacity:1;transform:translateY(0);}
+.rv1{transition-delay:.1s;}.rv2{transition-delay:.2s;}.rv3{transition-delay:.3s;}.rv4{transition-delay:.4s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .hero-inner,.sympt-wrap,.story-wrap,.fin-grid,.ft-top{grid-template-columns:1fr;gap:40px;}
+  .hero-img-area{display:none;}
+  .dims{grid-template-columns:1fr 1fr;}
+  .tgrid{grid-template-columns:1fr 1fr;}
+  .tc-big{grid-column:auto;}
+  .pgrid{grid-template-columns:1fr;}
+  .pro-grid{grid-template-columns:1fr;}
+  .pay-grid{grid-template-columns:1fr;}
+  nav{padding:16px 30px;}
+  .nav-links{display:none;}
+  .nav-burger{display:flex;}
+  .lm-inner{grid-template-columns:1fr;gap:40px;}
+}
+
+/* ── MOBILE — tout ce qui peut dépasser ── */
+@media(max-width:768px){
+  /* Grilles → 1 colonne */
+  .dims,.tgrid,.pgrid,.qz-opts,.pro-grid,.pay-grid,.fin-grid,
+  .performe-grid,.rayonne-features,.tab-infos,.creds,.form-grid-2,
+  .hero-stats,.method-right,.story-wrap,.sympt-wrap,.lm-inner,
+  .ft-top{
+    grid-template-columns:1fr !important;
+  }
+  .tc-big{grid-column:span 1 !important;}
+
+  /* Paddings réduits sur tous les wrappers */
+  .hero-inner,.sympt-wrap,.story-wrap,.fin-wrap,.prog-wrap,
+  .testi-wrap,.price-wrap,.faq-wrap,.videos-wrap,.quiz-wrap,
+  .pro-inner,.pay-inner,.lm-inner,.cta-inner,.pullquote,
+  .method-wrap,.testi-wrap{
+    padding-left:16px !important;
+    padding-right:16px !important;
+    padding-top:50px !important;
+    padding-bottom:50px !important;
+  }
+  footer{padding:40px 16px 24px !important;}
+
+  /* Tout ce qui peut overflow */
+  .pay-card,.pro-card,.quiz-card,.tab-btn,.tab-header,
+  .fin-card,.soin-card,.tc,.dim,.cred,.sbadge,.mod,
+  .pday,.rf-card,.tab-info-item{
+    max-width:100% !important;
+    width:100% !important;
+    overflow:hidden !important;
+    min-width:0 !important;
+  }
+
+  /* Afdas box */
+  .afdas-box{overflow:hidden;}
+  .afdas-toggle{flex-wrap:wrap;}
+
+  /* Résumé paiement — force une seule colonne */
+  .pay-grid{display:flex !important;flex-direction:column !important;gap:20px !important;}
+  .pay-summary,.pay-promo,.pay-guarantees{width:100% !important;}
+
+  /* Tabs nav */
+  .tab-nav{flex-direction:column;}
+  .tab-btn{min-width:auto;}
+
+  /* Tab header */
+  .tab-header{grid-template-columns:1fr !important;}
+  .tab-price-block{text-align:left !important;}
+
+  /* Quiz options */
+  .qz-opts{grid-template-columns:1fr !important;}
+
+  /* Video cards — 1 visible à la fois */
+  .vid-card{flex:0 0 calc(90% - 6px) !important;}
+
+  /* Hero stats — flex wrap */
+  .hero-stats{flex-wrap:wrap;gap:24px;}
+
+  /* Formulaire */
+  .pay-method{flex-direction:column;}
+  .pay-method-label{width:100%;}
+
+  /* Boutons hero */
+  .hero-btns{flex-direction:column;align-items:flex-start;}
+  .btn-main,.btn-ghost{width:100%;justify-content:center;}
+
+  /* Float cards — plus de débordement */
+  .float-card{display:none;}
+
+  /* Nav */
+  nav{padding:14px 20px !important;}
+  nav.scrolled{padding:10px 20px !important;}
+}
+
+@media(max-width:400px){
+  .hero-h1{font-size:38px !important;letter-spacing:-1px;}
+  .sh2{font-size:28px !important;}
+  .quiz-card{padding:28px 16px !important;}
+  .pay-card{padding:20px 14px !important;}
+  .pro-card{padding:24px 16px !important;}
+}
+/* Ensure pay-card padding is tight on ALL mobile */
+@media(max-width:768px){
+  .pay-card{padding:24px 16px !important;}
+  .quiz-card{padding:36px 20px !important;}
+  /* Card number wrap — prevent overflow */
+  .card-number-wrap,.card-number-wrap input{width:100% !important;max-width:100% !important;}
+  /* Two column form grids → one column */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+  /* Guarantee items text wrap */
+  .pay-guarantee-item{flex-wrap:wrap;}
+}
+
+/* ── BANDEAU QUALIOPI ── */
+.fin-ticker {
+  background: #1E1228;
+  border-bottom: 3px solid #E4A43C;
+  height: 44px;
+  overflow: hidden;
+  position: fixed;
+  top: var(--nav-h, 68px);
+  left: 0; right: 0;
+  z-index: 997;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* pas d'animation tickerGold ni tickerScroll */
+.fin-ticker-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  white-space: nowrap;
+}
+.fin-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+}
+.tick-hl { color: #E4A43C; font-weight: 800; }
+.tick-sep { color: rgba(255,255,255,.3); font-size: 10px; }
+/* ── LOGOS SECTION ── */
+.logos-section { background: white; border-bottom: 1px solid rgba(0,0,0,.06); padding: 28px 0; overflow: hidden; }
+.logos-label { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--textm); margin-bottom: 18px; }
+.logos-carousel { position: relative; max-width: 1400px; margin: 0 auto; padding: 0 60px; }
+.logos-arr {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: white; border: 1.5px solid rgba(0,0,0,.1);
+  cursor: pointer; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink); transition: all .25s; z-index: 10;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.logos-arr:hover { background: var(--coral); color: white; border-color: var(--coral); }
+.logos-arr-prev { left: 16px; }
+.logos-arr-next { right: 16px; }
+.logos-track-wrap { overflow: hidden; position: relative; }
+.logos-track-wrap::before, .logos-track-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none;
+}
+.logos-track-wrap::before { left: 0; background: linear-gradient(to right, white, transparent); }
+.logos-track-wrap::after { right: 0; background: linear-gradient(to left, white, transparent); }
+.logos-track {
+  display: flex; gap: 0;
+  animation: logoScroll 15s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+  transform: translateZ(0);
+}
+.logos-track:hover { animation-play-state: paused; }
+.logo-item {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 6px 32px;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(15px, 1.8vw, 20px);
+  font-weight: 700; color: var(--textm);
+  opacity: 0.5; transition: opacity .25s, color .25s;
+  white-space: nowrap; flex-shrink: 0; cursor: default;
+}
+.logo-item:hover { opacity: 1; color: var(--coral); }
+.logo-sep { color: var(--coral); opacity: 0.25; font-size: 14px; padding: 0 2px; }
+@keyframes logoScroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+@media(max-width:640px) { .logos-carousel { padding: 0 40px; } .logos-arr { width:30px; height:30px; font-size:13px; } }
+
+/* ── STICKY SCROLL CTA ── */
+.sticky-cta {
+  position: fixed; bottom: 24px; right: 24px; z-index: 500;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+  pointer-events: none;
+  opacity: 0; transform: translateY(20px);
+  transition: all .4s var(--tr);
+}
+.sticky-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.sticky-btn {
+  display: flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--coral), var(--rose));
+  color: white; padding: 14px 24px; border-radius: 50px;
+  font-size: 14px; font-weight: 700;
+  text-decoration: none; cursor: pointer; border: none;
+  box-shadow: 0 8px 30px rgba(155,110,168,.45);
+  font-family: 'DM Sans', sans-serif;
+  transition: all .3s; white-space: nowrap;
+}
+.sticky-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(155,110,168,.55); }
+.sticky-btn-gold {
+  background: linear-gradient(135deg, #C8930A, #E4A43C);
+  box-shadow: 0 8px 30px rgba(200,147,10,.4);
+}
+.sticky-btn-gold:hover { box-shadow: 0 14px 40px rgba(200,147,10,.5); }
+.sticky-close {
+  background: rgba(255,255,255,.9); border: 1px solid rgba(0,0,0,.1);
+  color: var(--textm); width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; cursor: pointer; align-self: flex-end;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+@media(max-width:480px) {
+  .sticky-cta { bottom: 16px; right: 16px; }
+  .sticky-btn { padding: 12px 18px; font-size: 13px; }
+}
+
+/* ── GOOGLE REVIEWS ── */
+.reviews-section { background: var(--cream2); border-top: 1px solid rgba(0,0,0,.06); }
+.reviews-inner { max-width: 1400px; margin: 0 auto; padding: 80px 60px; }
+.reviews-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 20px; }
+.google-badge {
+  display: flex; align-items: center; gap: 16px;
+  background: white; border-radius: 18px; padding: 18px 28px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.08); border: 1px solid rgba(0,0,0,.06);
+}
+.google-logo { font-size: 28px; }
+.google-score { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 700; color: var(--ink); line-height: 1; }
+.google-stars { color: #FBBC04; font-size: 20px; letter-spacing: 2px; margin: 4px 0 2px; }
+.google-count { font-size: 13px; color: var(--textm); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.review-card {
+  background: white; border-radius: 18px; padding: 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.05); border: 1px solid rgba(0,0,0,.05);
+  transition: all .3s;
+}
+.review-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,.1); }
+.review-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.review-av {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif; font-size: 16px; font-weight: 700; color: white;
+}
+.review-name { font-size: 14px; font-weight: 700; color: var(--ink); }
+.review-date { font-size: 11px; color: var(--textm); margin-top: 2px; }
+.review-stars { color: #FBBC04; font-size: 14px; letter-spacing: 1px; margin-bottom: 10px; }
+.review-text { font-size: 14px; color: var(--textm); line-height: 1.65; font-style: italic; }
+.review-source { display: flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 11px; color: var(--textm); }
+@media(max-width:768px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:540px) { .reviews-grid { grid-template-columns: 1fr; } .reviews-inner { padding: 60px 20px; } }
+
+/* ── BOOKING CALENDAR ── */
+.booking-modal {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,.6); backdrop-filter: blur(8px);
+  align-items: center; justify-content: center; padding: 20px;
+}
+.booking-modal.open { display: flex; }
+.booking-box {
+  background: white; border-radius: 28px;
+  width: 100%; max-width: 680px; max-height: 92vh;
+  overflow-y: auto; padding: 40px;
+  box-shadow: 0 40px 100px rgba(0,0,0,.3);
+  position: relative;
+}
+.booking-close {
+  position: absolute; top: 20px; right: 20px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--cream2); border: none; cursor: pointer;
+  font-size: 18px; display: flex; align-items: center; justify-content: center;
+  color: var(--textm); transition: all .2s;
+}
+.booking-close:hover { background: var(--coral); color: white; }
+.booking-title { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.booking-sub { font-size: 15px; color: var(--textm); margin-bottom: 28px; line-height: 1.6; }
+.booking-tabs { display: flex; gap: 10px; margin-bottom: 28px; }
+.booking-tab {
+  flex: 1; padding: 12px 16px; border-radius: 12px;
+  background: var(--cream2); border: 2px solid transparent;
+  cursor: pointer; text-align: center;
+  font-family: 'DM Sans', sans-serif; transition: all .2s;
+}
+.booking-tab.active { background: white; border-color: var(--coral); }
+.booking-tab-name { font-size: 15px; font-weight: 700; color: var(--ink); }
+.booking-tab-price { font-size: 18px; font-weight: 800; color: var(--coral); font-family: 'Fraunces', serif; }
+.booking-tab-desc { font-size: 12px; color: var(--textm); margin-top: 2px; }
+.booking-calendar { margin-bottom: 24px; }
+.cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.cal-month { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--ink); }
+.cal-nav { width: 32px; height: 32px; border-radius: 50%; background: var(--cream2); border: none; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; color: var(--ink); transition: all .2s; }
+.cal-nav:hover { background: var(--coral); color: white; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-day-header { font-size: 11px; font-weight: 700; color: var(--textm); text-align: center; padding: 6px 0; letter-spacing: 0.5px; text-transform: uppercase; }
+.cal-day {
+  aspect-ratio: 1; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  font-size: 14px; cursor: pointer; transition: all .2s; border: 2px solid transparent;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+}
+.cal-day.empty { cursor: default; }
+.cal-day.past { color: rgba(0,0,0,.2); cursor: not-allowed; }
+.cal-day.available { background: var(--cream2); color: var(--ink); }
+.cal-day.available:hover { background: var(--cream); border-color: var(--coral); color: var(--coral); }
+.cal-day.selected { background: var(--coral); color: white; border-color: var(--coral); }
+.cal-day.full { background: rgba(0,0,0,.04); color: rgba(0,0,0,.2); cursor: not-allowed; text-decoration: line-through; }
+.time-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
+.time-slot {
+  padding: 10px; border-radius: 10px; background: var(--cream2);
+  border: 2px solid transparent; cursor: pointer;
+  text-align: center; font-size: 14px; font-weight: 600; color: var(--ink);
+  transition: all .2s; font-family: 'DM Sans', sans-serif;
+}
+.time-slot:hover { border-color: var(--coral); background: white; }
+.time-slot.selected { background: var(--coral); color: white; border-color: var(--coral); }
+.time-slot.unavail { opacity: .35; cursor: not-allowed; }
+.booking-form { display: flex; flex-direction: column; gap: 12px; }
+.booking-field { }
+.booking-label { display: block; font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 5px; letter-spacing: .5px; text-transform: uppercase; }
+.booking-input { width: 100%; padding: 13px 16px; border-radius: 12px; border: 1.5px solid rgba(0,0,0,.1); font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; transition: border-color .2s; box-sizing: border-box; }
+.booking-input:focus { border-color: var(--coral); }
+.booking-pay-btn {
+  width: 100%; padding: 18px; background: linear-gradient(135deg, var(--coral), var(--rose));
+  color: white; border: none; border-radius: 50px; font-size: 16px; font-weight: 800;
+  cursor: pointer; font-family: 'DM Sans', sans-serif; margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(155,110,168,.35); transition: all .3s;
+  -webkit-appearance: none; appearance: none; text-align: center;
+}
+.booking-pay-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(155,110,168,.5); }
+.booking-summary {
+  background: var(--cream2); border-radius: 14px; padding: 16px 20px;
+  margin-bottom: 16px; font-size: 14px;
+}
+.booking-success { display: none; text-align: center; padding: 32px 0; }
+.booking-success.show { display: block; }
+
+/* ── MEET BOOKING (Performe/Rayonne) ── */
+.meet-modal { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,.6); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px; }
+.meet-modal.open { display: flex; }
+.meet-box { background: white; border-radius: 28px; width: 100%; max-width: 560px; padding: 40px; box-shadow: 0 40px 100px rgba(0,0,0,.3); position: relative; max-height: 92vh; overflow-y: auto; }
+.meet-step { display: none; }
+.meet-step.active { display: block; }
+.meet-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+.meet-slot { padding: 14px 16px; border-radius: 12px; background: var(--cream2); border: 2px solid transparent; cursor: pointer; transition: all .2s; }
+.meet-slot:hover { border-color: var(--lavender); background: white; }
+.meet-slot.sel { background: white; border-color: var(--lavender); }
+.meet-slot-date { font-size: 14px; font-weight: 700; color: var(--ink); }
+.meet-slot-time { font-size: 13px; color: var(--textm); margin-top: 2px; }
+.meet-slot-avail { font-size: 11px; color: var(--mint2); font-weight: 600; margin-top: 4px; }
+
+
+/* ── ANIMATED FINANCING TEXT ── */
+.fin-anim-wrap {
+  margin-top: 18px;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.fin-anim-label {
+  font-size: 13px; color: rgba(255,255,255,.5); font-weight: 500;
+  white-space: nowrap;
+}
+.fin-anim-badges {
+  display: flex; gap: 7px; flex-wrap: wrap;
+}
+.fin-anim-badge {
+  background: linear-gradient(135deg, #C8930A, #E4A43C);
+  color: white;
+  font-size: 11px; font-weight: 800;
+  padding: 5px 14px; border-radius: 50px;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  animation: badgePop 0.5s cubic-bezier(.34,1.56,.64,1) both;
+}
+.fin-anim-badge:nth-child(1){animation-delay:.05s}
+.fin-anim-badge:nth-child(2){animation-delay:.15s}
+.fin-anim-badge:nth-child(3){animation-delay:.25s}
+.fin-anim-badge:nth-child(4){animation-delay:.35s}
+.fin-anim-badge:nth-child(5){animation-delay:.45s}
+@keyframes badgePop {
+  0%  { opacity:0; transform: scale(0.6) translateY(10px); }
+  70% { transform: scale(1.08) translateY(-2px); }
+  100%{ opacity:1; transform: scale(1) translateY(0); }
+}
+.fin-anim-wrap:not(.in) .fin-anim-badge { animation-play-state: paused; opacity:0; }
+.fin-anim-wrap.in .fin-anim-badge { animation-play-state: running; }
+
+
+/* ── MOBILE HERO PHOTO ── */
+.hero-mobile-photo {
+  display: none;
+  width: 100%;
+  max-width: 300px;
+  margin: 32px auto 0;
+  border-radius: 20px 20px 60px 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(155,110,168,.25);
+  aspect-ratio: 3/4;
+  position: relative;
+}
+.hero-mobile-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top;
+}
+@media(max-width:1100px) {
+  .hero-mobile-photo { display: none; }
+}
+
+
+/* ── SMOOTH SCROLL PERF ── */
+.logos-track-wrap, .fin-ticker {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+
+
+/* ── ANIMATIONS AVANCÉES ── */
+
+/* Compteurs */
+.stat-n { transition: opacity .3s; }
+
+/* Typewriter */
+.tw-char {
+  opacity: 0;
+  display: inline;
+  transition: opacity .15s;
+}
+.tw-char.in { opacity: 1; }
+
+/* Tilt 3D reset */
+.dim, .cred {
+  transform-style: preserve-3d;
+  transition: transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s;
+}
+
+/* Hero word reveal */
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s var(--tr), transform .5s var(--tr);
+}
+.hero-word.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger symptômes */
+.sy-card {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity .5s var(--tr), transform .5s var(--tr);
+}
+.sy-card.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Particules canvas */
+#heroParticles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-inner { z-index: 2; }
+
+/* Progress bar modules */
+.mod-progress {
+  height: 2px;
+  background: linear-gradient(90deg, var(--coral), var(--sun));
+  width: 0;
+  transition: width .6s var(--tr);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+.mod.open .mod-progress { width: 100%; }
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tw-char, .hero-word, .sy-card, .mod-progress { transition: none !important; animation: none !important; }
+}
+
+
+/* ── 1. AUDIO WAVEFORM CANVAS ── */
+#heroWaveform{position:absolute;bottom:0;left:0;width:100%;height:80px;z-index:1;pointer-events:none;opacity:.7;}
+
+/* ── 2. BREATHING BUTTON ── */
+@keyframes breathe{0%,100%{box-shadow:0 12px 32px rgba(155,110,168,.4),0 0 0 0 rgba(155,110,168,0);}50%{box-shadow:0 12px 32px rgba(155,110,168,.4),0 0 0 20px rgba(155,110,168,.15);}}
+.btn-main--breathe{animation:breathe 4s ease-in-out infinite;will-change:box-shadow;}
+
+/* ── 3. CLIP-PATH WIPE REVEAL ── */
+.wipe-section{clip-path:inset(0 0 100% 0);transition:clip-path .8s ease-out;will-change:clip-path;}
+.wipe-section.wipe-in{clip-path:inset(0 0 0% 0);}
+
+/* ── 4. SOUND RIPPLE ON HOVER ── */
+.btn-main{position:relative;overflow:hidden;}
+.ripple-circle{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.5);pointer-events:none;animation:rippleExpand .8s ease-out forwards;will-change:transform,opacity;}
+@keyframes rippleExpand{0%{transform:scale(0);opacity:.6;}100%{transform:scale(1);opacity:0;}}
+
+/* ── 5. MAGNETIC CURSOR ── */
+.dim,.cred{will-change:transform;transition:transform .3s var(--tr);}
+
+/* ── 6. WAVEFORM TEXT REVEAL ── */
+/* ── TITLE REVEAL — word by word, safe ── */
+.sh2-word{display:inline-block;opacity:0;transform:translateY(22px);transition:opacity .5s var(--tr),transform .5s var(--tr);white-space:nowrap;}
+.sh2-word.in{opacity:1;transform:translateY(0);}
+@keyframes charOscillate{0%{transform:translateY(0);}25%{transform:translateY(-4px);}50%{transform:translateY(2px);}75%{transform:translateY(-1px);}100%{transform:translateY(0);}}
+
+/* ── 7. SVG WAVE DIVIDER ── */
+.wave-divider{display:block;width:100%;height:60px;overflow:visible;}
+.wave-divider path{stroke-dasharray:2000;stroke-dashoffset:2000;transition:stroke-dashoffset 1.2s ease-out;will-change:stroke-dashoffset;}
+.wave-divider.traced path{stroke-dashoffset:0;}
+
+/* ── 8. FLOATING MUSIC NOTES ── */
+.music-note{position:absolute;pointer-events:none;font-size:16px;opacity:0;will-change:transform,opacity;animation:floatNote 12s linear infinite;}
+@keyframes floatNote{0%{transform:translateY(0) rotate(0deg);opacity:0;}10%{opacity:.06;}85%{opacity:.06;}100%{transform:translateY(-100vh) rotate(20deg);opacity:0;}}
+#programme{position:relative;overflow:hidden;}
+
+/* ── MODULE PROGRESS BAR ── */
+.mod-progress{height:3px;background:rgba(255,255,255,.08);border-radius:2px;margin-top:0;overflow:hidden;opacity:0;transition:opacity .3s;}
+.mod.open .mod-progress{opacity:1;}
+.mod-progress-fill{height:100%;width:0;border-radius:2px;transition:width .8s var(--tr);}
+.mod.open .mod-progress-fill{width:100%;}
+.m1 .mod-progress-fill{background:var(--coral);}.m2 .mod-progress-fill{background:var(--sun);}.m3 .mod-progress-fill{background:var(--mint);}
+.m4 .mod-progress-fill{background:#89B4E8;}.m5 .mod-progress-fill{background:#A8D060;}.m6 .mod-progress-fill{background:var(--rose);}.m7 .mod-progress-fill{background:var(--lavender);}
+
+/* ── REDUCED MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  .btn-main--breathe{animation:none !important;}
+  .wipe-section{clip-path:none !important;transition:none !important;}
+  .sh2-word{opacity:1 !important;transform:none !important;transition:none !important;}
+  .wave-divider path{stroke-dashoffset:0 !important;transition:none !important;}
+  .music-note{display:none !important;}
+  .rv{transition:none !important;opacity:1 !important;transform:none !important;}
+  .ripple-circle{display:none !important;}
+  #heroWaveform{display:none;}
+}
+@media(pointer:coarse){
+  .ripple-circle{display:none !important;}
+  .dim,.cred{transition:transform .35s var(--tr) !important;}
+}
+
+
+@media(max-width:1100px){
+  .hero-inner > div:first-child { max-width: 100%; width: 100%; }
+  .hero-h1 { font-size: clamp(44px, 8vw, 84px); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <button class="sticky-close" id="stickyClose">×</button>
+  <a href="#paiement" class="sticky-btn sticky-btn-gold">
+    🔒 Rejoindre Résonne · 597€ →
+  </a>
+  <button class="sticky-btn" onclick="goToTab('performe')" style="border:none;cursor:pointer;font-family:'DM Sans',sans-serif;">
+    🔥 Performe & Rayonne →
+  </button>
+</div>
+<nav id="navbar">
+  <a href="#" class="nav-logo">Salomé Sebbag<span>.</span></a>
+  <div class="nav-links">
+    <a href="#story">Salomé</a>
+    <a href="#method">Méthode</a>
+    <a href="#programme">Formations</a>
+    <a href="#temoignages">Avis</a>
+    <a href="#pricing">Tarifs</a>
+    <a href="#pro" style="background:rgba(74,158,137,.12);border:1px solid rgba(74,158,137,.3);color:var(--mint2);padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;">🏢 Entreprises</a>
+    <a href="#paiement" class="nav-cta">Rejoindre →</a>
+  </div>
+  <button class="nav-burger" id="burgerBtn" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#story" onclick="toggleMenu()">Salomé</a>
+  <a href="#method" onclick="toggleMenu()">Méthode</a>
+  <a href="#programme" onclick="toggleMenu()">Formations</a>
+  <a href="#temoignages" onclick="toggleMenu()">Avis</a>
+  <a href="#pro" onclick="toggleMenu()">Pro & Cabinet</a>
+  <a href="#pricing" onclick="toggleMenu()">Tarifs</a>
+  <a href="#paiement" onclick="toggleMenu()" style="color:var(--coral);">→ Rejoindre Résonne</a>
+</div>
+
+<!-- FINANCEMENT TICKER -->
+<div class="fin-ticker">
+  <div class="fin-ticker-track">
+    <span class="fin-ticker-item">
+      <span>🏅</span>
+      <span class="tick-hl">Certifiée Qualiopi</span>
+      <span class="tick-sep"> — </span>
+      <span>Formation 100% Finançable</span>
+    </span>
+  </div>
+</div>
+<!-- HERO -->
+<section id="hero">
+  <canvas id="heroParticles"></canvas>
+  <canvas id="heroWaveform"></canvas>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span class="dot-pulse"></span> Ostéopathe de la Voix · Certifiée Qualiopi</div>
+      <h1 class="hero-h1">
+        Libère<br>ton corps,
+        <span class="wave">libère ta voix.</span>
+        <span class="subline">Pour enfin chanter sans forcer.</span>
+      </h1>
+      <p class="hero-sub">La première formation qui combine <strong>ostéopathie, rééducation et technique vocale</strong> — pour chanter sans forcer, sans tension, sans limite.</p>
+      <div class="hero-btns">
+        <a href="#paiement" class="btn-main">Accéder à Résonne · 597€ →</a>
+        <a href="#temoignages" class="btn-ghost">▶ Voir les résultats</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-n c1">1000+</div><div class="stat-l">Voix accompagnées</div></div>
+        <div><div class="stat-n c2">7</div><div class="stat-l">Modules complets</div></div>
+        <div><div class="stat-n c3">0€</div><div class="stat-l">Avec AFDAS</div></div>
+      </div>
+      </div>
+    </div>
+    </div>
+    <div class="hero-img-area rv rv2">
+      <div class="hero-tag-bubble">🏆 Le Roi Lion · Mogador</div>
+      <div class="hero-img-frame">
+        <img src="assets/images/salome.jpg" alt="Salomé Sebbag — Ostéopathe de la Voix">
+      </div>
+      <div class="float-card fc-bot"><span class="fc-ico">🛡️</span><div class="fc-t"><strong>Garantie 14 jours</strong><span>Satisfait ou remboursé</span></div></div>
+      <div class="float-card fc-top"><span class="fc-ico">✅</span><div class="fc-t"><strong>Qualiopi</strong><span>Formation certifiée</span></div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+
+<!-- LOGOS SECTION -->
+<div class="logos-section">
+  <div class="logos-label">Ils me font confiance</div>
+  <div class="logos-carousel">
+    <button class="logos-arr logos-arr-prev" onclick="logoMove(-1)">←</button>
+    <div class="logos-track-wrap">
+    <div class="logos-track" id="logosTrack">
+      <span class="logo-item">🦁 Le Roi Lion</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎭 Théâtre Mogador</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎪 Comédie Musicale Paris</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎬 Artistes Lyriques</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎙️ Chanteurs Pro</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎤 Coachs Vocaux</span><span class="logo-sep">·</span>
+      <span class="logo-item">🩺 Ostéopathes</span><span class="logo-sep">·</span>
+      <span class="logo-item">🌟 +1000 Voix</span><span class="logo-sep">·</span>
+      <!-- Duplicate for infinite scroll -->
+      <span class="logo-item">🦁 Le Roi Lion</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎭 Théâtre Mogador</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎪 Comédie Musicale Paris</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎬 Artistes Lyriques</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎙️ Chanteurs Pro</span><span class="logo-sep">·</span>
+      <span class="logo-item">🎤 Coachs Vocaux</span><span class="logo-sep">·</span>
+      <span class="logo-item">🩺 Ostéopathes</span><span class="logo-sep">·</span>
+      <span class="logo-item">🌟 +1000 Voix</span><span class="logo-sep">·</span>
+    </div>
+    </div>
+    <button class="logos-arr logos-arr-next" onclick="logoMove(1)">→</button>
+  </div>
+</div>
+<!-- LEAD MAGNET -->
+<section id="leadmagnet">
+  <div class="lm-inner rv">
+    <div>
+      <div class="tag tag-coral" style="margin-bottom:20px;">Gratuit · Pour toi</div>
+      <h2 class="sh2" style="margin-bottom:16px;">Apprends déjà à travailler<br><em>ta voix sans forcer.</em></h2>
+      <p class="sp" style="margin-bottom:32px;">Découvre les premiers principes ostéopathiques pour libérer ta voix — gratuitement, en vidéo, maintenant.</p>
+      <div id="lm-cta">
+        <div class="lm-input-row">
+          <input type="email" id="lmEmail" class="lm-input" placeholder="Ton adresse email">
+          <button onclick="accessLM()" class="btn-main">Je découvre →</button>
+        </div>
+        <p style="font-size:12px;color:var(--textm);margin-top:10px;padding-left:4px;">Aucun spam. Désabonnement en un clic.</p>
+      </div>
+      <div id="lm-merci">
+        <p style="font-size:16px;font-weight:600;color:var(--text);">🎉 C'est parti ! Vérifie ta boîte mail.</p>
+        <p style="font-size:14px;color:var(--textm);margin-top:6px;">Le lien d'accès à ta vidéo gratuite arrive dans quelques secondes.</p>
+      </div>
+    </div>
+    <div class="rv rv2">
+      <div class="lm-video-card">
+        <div class="lm-video-inner">
+          <video controls playsinline preload="metadata">
+            <source src="assets/videos/temoignage-2.mp4" type="video/mp4">
+          </video>
+          <div class="lm-video-badge">▶ Ma méthode en 3 min</div>
+        </div>
+        <div class="lm-video-footer">
+          <img src="assets/images/salome.jpg" class="lm-avatar" alt="Salomé">
+          <div><div style="font-size:13px;font-weight:700;color:var(--ink);">Salomé Sebbag</div><div style="font-size:11px;color:var(--textm);">Ostéopathe de la Voix · Paris</div></div>
+          <span class="lm-gratuit">GRATUIT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYMPTOMS -->
+<section id="symptoms">
+  <div class="sympt-wrap">
+    <div>
+      <div class="tag tag-coral rv">Tu te reconnais ?</div>
+      <h2 class="sh2 rv rv1">Ces blocages qui<br><em>étouffent ta voix.</em></h2>
+      <div class="rv rv2">
+        <div class="sy-card"><span class="sy-ico">😤</span><div><div class="sy-title">Gorge serrée, tensions, forçage</div><div class="sy-desc">Tu pousses, tu serres — et la voix reste bloquée là-dedans.</div></div></div>
+        <div class="sy-card"><span class="sy-ico">📉</span><div><div class="sy-title">Voix qui casse ou fatigue vite</div><div class="sy-desc">Après quelques chansons, tu n'as plus rien.</div></div></div>
+        <div class="sy-card"><span class="sy-ico">🎵</span><div><div class="sy-title">Les aigus disparaissent</div><div class="sy-desc">Tu appréhendes certaines notes avant même de les chanter.</div></div></div>
+        <div class="sy-card"><span class="sy-ico">🧠</span><div><div class="sy-title">Blocage mental avant la scène</div><div class="sy-desc">Le stress envahit tout — le corps se verrouille.</div></div></div>
+        <div class="sy-card"><span class="sy-ico">🔄</span><div><div class="sy-title">Des cours, des vocalises — sans résultat durable</div><div class="sy-desc">Parce que personne n'a travaillé sur la vraie cause.</div></div></div>
+      </div>
+    </div>
+    <div class="rv rv3">
+      <div class="quote-box">
+        <div class="quote-text">Ces symptômes ? C'est la seule façon que ton corps a trouvée pour te dire que <strong>quelque chose ne va pas.</strong> L'objectif, c'est de comprendre quoi — et d'agir au bon endroit.</div>
+        <div class="quote-author">
+          <div class="qa-av"><img src="assets/images/salome.jpg" alt="Salomé"></div>
+          <div><div class="qa-name">Salomé Sebbag</div><div class="qa-role">Ostéopathe de la Voix · Paris</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE DIVIDER -->
+<svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 Q120,5 240,30 T480,30 T720,30 T960,30 T1200,30 T1440,30" fill="none" stroke="rgba(155,110,168,0.2)" stroke-width="2"/></svg>
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-wrap">
+    <div class="rv">
+      <div class="story-photo">
+        <img src="assets/images/salome.jpg" alt="Salomé Sebbag">
+        <div class="story-photo-decor"></div>
+      </div>
+      <div class="sbadges">
+        <div class="sbadge"><span class="sbadge-ico">🏅</span><div><div class="sbadge-t">Certifiée Qualiopi</div><div class="sbadge-s">100% remboursable AFDAS/OPCO</div></div></div>
+        <div class="sbadge"><span class="sbadge-ico">🎭</span><div><div class="sbadge-t">Le Roi Lion · Mogador</div><div class="sbadge-s">Comédie musicale de renom</div></div></div>
+        <a href="https://www.doctolib.fr/osteopathe/paris/salome-sebbag" target="_blank" rel="noopener" class="sbadge" style="text-decoration:none;transition:all .2s;" onmouseover="this.style.borderLeft='3px solid var(--coral)'" onmouseout="this.style.borderLeft='none'">
+          <span class="sbadge-ico">📍</span><div><div class="sbadge-t">Cabinet à Paris</div><div class="sbadge-s" style="color:var(--coral);font-weight:600;">Prendre RDV →</div></div>
+        </a>
+        <a href="https://www.instagram.com/salomesebbag/" target="_blank" rel="noopener" class="sbadge" style="text-decoration:none;">
+          <span class="sbadge-ico">📱</span><div><div class="sbadge-t">+30K abonnés</div><div class="sbadge-s" style="color:var(--coral);font-weight:600;">@salomesebbag →</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="story-text rv rv2">
+      <div class="tag tag-coral">Mon histoire</div>
+      <h2 class="sh2">Je ne suis pas une<br><em>prof de chant classique.</em></h2>
+      <p>Je suis <strong>ostéopathe spécialisée dans la voix.</strong> Ce qui veut dire que quand tu travailles avec moi, je ne t'apprends pas juste à chanter. Je comprends ce qui se passe dans ton corps, anatomiquement.</p>
+      <p>Le larynx, le soutien abdominal, la mâchoire, la langue, les résonateurs, le système nerveux face au stress... Je travaille sur <strong>les vraies causes</strong> de ce qui bloque ta voix.</p>
+      <div class="highlight">"Près de 1 000 voix accompagnées — des troupes du Roi Lion au Théâtre Mogador, des artistes pro, des chanteurs amateurs. Et maintenant cette méthode, accessible à toi."</div>
+      <div class="creds">
+        <div class="cred"><div class="cred-ico">🩺</div><div class="cred-t">Ostéopathie vocale</div><div class="cred-d">Approche médicale et technique réunies</div></div>
+        <div class="cred"><div class="cred-ico">🎬</div><div class="cred-t">Comédies musicales</div><div class="cred-d">Mogador, Le Roi Lion et bien d'autres</div></div>
+        <div class="cred"><div class="cred-ico">🌍</div><div class="cred-t">Formation en ligne</div><div class="cred-d">Accès immédiat, depuis partout</div></div>
+        <div class="cred"><div class="cred-ico">✅</div><div class="cred-t">Qualiopi certifiée</div><div class="cred-d">AFDAS, OPCO — jusqu'à 100% pris en charge</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pullquote"><div class="pullquote-inner"><div class="pullquote-text">"Toi seul as la réponse à ton problème. Mon rôle, c'est seulement de te guider pour y arriver."</div><div class="pullquote-by">— Salomé Sebbag, Ostéopathe de la Voix</div></div></div>
+
+<!-- WAVE DIVIDER -->
+<svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 Q180,55 360,30 T720,30 T1080,30 T1440,30" fill="none" stroke="rgba(228,164,60,0.2)" stroke-width="2"/></svg>
+
+<!-- METHOD -->
+<section id="method">
+  <div class="method-wrap">
+    <div class="method-header">
+      <div class="tag tag-coral rv">La méthode</div>
+      <h2 class="sh2 rv rv1" style="text-align:center;">4 dimensions. <em>Une voix libérée.</em></h2>
+      <p class="sp rv rv2" style="text-align:center;margin:0 auto;">Résonne ne traite pas les symptômes. Elle s'attaque aux vraies causes.</p>
+    </div>
+    <div class="dims">
+      <div class="dim d1 rv rv1"><div class="dim-n">01</div><span class="dim-ico">🫁</span><div class="dim-title">Ostéopathique</div><div class="dim-desc">Détecter les tensions cachées et les libérer concrètement.</div></div>
+      <div class="dim d2 rv rv2"><div class="dim-n">02</div><span class="dim-ico">🧬</span><div class="dim-title">Rééducation</div><div class="dim-desc">Reprogrammer les bons automatismes durablement.</div></div>
+      <div class="dim d3 rv rv3"><div class="dim-n">03</div><span class="dim-ico">🎶</span><div class="dim-title">Vocale</div><div class="dim-desc">Soutien, respiration, larynx, résonateurs — sensations concrètes.</div></div>
+      <div class="dim d4 rv rv4"><div class="dim-n">04</div><span class="dim-ico">💫</span><div class="dim-title">Émotionnelle</div><div class="dim-desc">Ta voix est le reflet de tes émotions. On les libère aussi.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE DIVIDER -->
+<svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 Q90,10 180,30 T360,30 T540,30 T720,30 T900,30 T1080,30 T1260,30 T1440,30" fill="none" stroke="rgba(107,191,168,0.2)" stroke-width="2"/></svg>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="videos-wrap">
+    <div class="videos-header rv" style="text-align:center;margin-bottom:44px;">
+      <div class="tag tag-mint" style="display:inline-flex;">Résultats réels</div>
+      <h2 class="sh2 sh2-mint rv rv1" style="text-align:center;">Écoute <em>leurs voix</em> se transformer.</h2>
+      <p class="sp rv rv2" style="text-align:center;margin:0 auto;">Des chanteurs réels. Des transformations concrètes.</p>
+    </div>
+    <div class="vid-scroll-wrap rv rv2">
+      <div class="vid-scroll-track" id="vidTrack">
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-1.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-2.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-1.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-2.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div>
+        <div class="vid-card"><video controls playsinline preload="metadata"><source src="assets/videos/temoignage-1.mp4" type="video/mp4"></video><div class="vid-card-label">🎤 Session Résonne</div></div></div>
+      <div class="vid-scroll-nav">
+        <button class="vid-dot on" onclick="vidGo(0)"></button>
+        <button class="vid-dot" onclick="vidGo(1)"></button>
+        <button class="vid-dot" onclick="vidGo(2)"></button>
+        <button class="vid-dot" onclick="vidGo(3)"></button>
+        <button class="vid-dot" onclick="vidGo(4)"></button>
+        <div class="vid-arrows">
+          <button class="vid-arr" onclick="vidMove(-1)">←</button>
+          <button class="vid-arr" onclick="vidMove(1)">→</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <p class="rv rv3" style="text-align:center;margin-top:28px;font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--textm);">"La méthode de Salomé, c'est différent de tout ce que j'ai essayé."</p>
+  </div>
+</section>
+
+<!-- PROGRAMME 3 TABS -->
+<section id="programme">
+  <div id="musicNotesContainer" aria-hidden="true"></div>
+  <div class="prog-wrap">
+    <div style="margin-bottom:50px;">
+      <div class="tag tag-gold rv" style="color:#D4A020;">Les formations</div>
+      <h2 class="sh2 sh2-light rv rv1">3 niveaux.<br><em>Une seule méthode.</em></h2>
+    </div>
+    <div class="fin-anim-wrap rv" style="margin-bottom:40px;">
+      <span class="fin-anim-label">💰 100% finançable :</span>
+      <div class="fin-anim-badges">
+        <span class="fin-anim-badge">AFDAS</span>
+        <span class="fin-anim-badge">OPCO</span>
+        <span class="fin-anim-badge">France Travail</span>
+        <span class="fin-anim-badge">FIFPL</span>
+        <span class="fin-anim-badge">CPF</span>
+      </div>
+    </div>
+    <div class="tab-nav rv">
+      <button class="tab-btn active" onclick="switchTab('resonne',this)"><span class="tab-ico">💻</span><span class="tab-name">Résonne</span><span class="tab-sub">Formation en ligne</span></button>
+      <button class="tab-btn" onclick="switchTab('performe',this)"><span class="tab-ico">🔥</span><span class="tab-name">Performe</span><span class="tab-sub">Stage 3 jours</span></button>
+      <button class="tab-btn" onclick="switchTab('rayonne',this)"><span class="tab-ico">✨</span><span class="tab-name">Rayonne</span><span class="tab-sub">Accompagnement sur mesure</span></button>
+    </div>
+    <div class="tab-content" id="tab-resonne">
+      <div class="tab-header"><div><h3 class="tab-h">Résonne — Formation en ligne</h3><p class="tab-desc">7 modules complets pour libérer ta voix de l'intérieur, à ton rythme, depuis chez toi.</p></div><div class="tab-price-block"><div class="tab-price">597<span>€</span></div><div class="tab-price-sub">Paiement direct · Accès immédiat</div><a href="https://VOTRE_PAGE_RESONNE.systeme.io" target="_blank" class="btn-tab-cta">Découvrir Résonne →</a></div></div>
+      <div>
+        <div class="mod m1" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 01</span><span class="mod-title">Comprendre ta voix autrement</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Fondations</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Vision ostéopathique, bases remises à l'endroit.<div class="mod-pills"><span class="mod-pill">🎬 3 vidéos</span><span class="mod-pill">📄 1 fiche PDF</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
+        <div class="mod m2" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 02</span><span class="mod-title">Pourquoi ton corps bloque ta voix</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Ostéopathie</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Stress, tensions, réponse nerveuse — on comprend le mécanisme complet.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🎧 Audio guidé</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
+        <div class="mod m3" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 03</span><span class="mod-title">La respiration, ton point de départ</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Rééducation</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Exercices qui changent les automatismes en profondeur.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🎧 Audio abdominal</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
+        <div class="mod m4" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 04</span><span class="mod-title">Le soutien — ton point d'appui</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Technique vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Clé voûte du chant sans forçage. Checklist pratique incluse.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">📄 Checklist soutien</span><span class="mod-pill">⏱ ~30 min</span></div></div></div></div>
+        <div class="mod m5" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 05</span><span class="mod-title">Larynx, langue et mâchoire en chant</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Anatomie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Principales sources de tension — on les libère avec des exercices ciblés.<div class="mod-pills"><span class="mod-pill">🎬 5 vidéos</span><span class="mod-pill">🎧 2 audios guidés</span><span class="mod-pill">⏱ ~35 min</span></div></div></div></div>
+        <div class="mod m6" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 06</span><span class="mod-title">Ton cerveau : allié ou ennemi ?</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Neurologie vocale</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Peur de la note, cercle vicieux — on comprend neurologiquement et on reprend le contrôle.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">🧠 Exercices cognitifs</span><span class="mod-pill">⏱ ~25 min</span></div></div></div></div>
+        <div class="mod m7" onclick="tMod(this)"><div class="mod-head"><span class="mod-num">MOD 07</span><span class="mod-title">Chanter avec ses tripes</span><div style="display:flex;gap:12px;align-items:center;"><span class="mod-tag">Émotionnel</span><span class="mod-arrow">+</span></div></div><div class="mod-body"><div class="mod-body-in"><div class="mod-progress"></div>Corps, technique et émotion réunis. Chante avec toute ta puissance.<div class="mod-pills"><span class="mod-pill">🎬 4 vidéos</span><span class="mod-pill">📄 Fiche émotion/chanson</span><span class="mod-pill">🎧 Mini-routine pré-scène</span></div></div></div></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-performe" style="display:none;">
+      <div class="tab-header"><div><h3 class="tab-h">Performe — Stage Intensif 3 Jours</h3><p class="tab-desc">3 jours en immersion totale avec Salomé. Transformer ta voix, ta présence scénique et ton rapport à la performance.</p></div><div class="tab-price-block"><div class="tab-price" style="font-size:28px;padding-top:8px;">Liste d'attente</div><div class="tab-price-sub">Places limitées · Sur candidature</div><button onclick="openMeet('performe')" class="btn-tab-cta" style="background:linear-gradient(135deg,var(--coral),var(--rose));border:none;cursor:pointer;font-family:'DM Sans',sans-serif;">📞 Réserver un appel →</button></div></div>
+      <div class="performe-grid">
+        <div class="pday"><div class="pday-num">Jour 1</div><div class="pday-title">Libérer le corps</div><div class="pday-desc">Bilan ostéopathique individuel, travail des tensions profondes, séances de relâchement en groupe.</div><div class="mod-pills" style="margin-top:14px;"><span class="mod-pill">🩺 Bilan individuel</span><span class="mod-pill">🧘 Relâchement collectif</span></div></div>
+        <div class="pday"><div class="pday-num">Jour 2</div><div class="pday-title">Construire la technique</div><div class="pday-desc">Modules techniques en profondeur : soutien, respiration, larynx, résonateurs. Mise en pratique sur des chansons réelles.</div><div class="mod-pills" style="margin-top:14px;"><span class="mod-pill">🎶 Technique vocale</span><span class="mod-pill">🎵 Mise en pratique</span></div></div>
+        <div class="pday"><div class="pday-num">Jour 3</div><div class="pday-title">Performer sur scène</div><div class="pday-desc">Travail émotionnel, gestion du stress scénique, présence et charisme. Mini-concert de clôture en groupe.</div><div class="mod-pills" style="margin-top:14px;"><span class="mod-pill">🎭 Scène & présence</span><span class="mod-pill">🏆 Mini-concert</span></div></div>
+      </div>
+      <div class="tab-infos">
+        <div class="tab-info-item"><span class="tab-info-ico">📍</span><div><strong>Paris</strong><span>Lieu communiqué après inscription</span></div></div>
+        <div class="tab-info-item"><span class="tab-info-ico">👥</span><div><strong>Groupe restreint</strong><span>6 à 10 participants max</span></div></div>
+        <div class="tab-info-item"><span class="tab-info-ico">🎁</span><div><strong>Résonne incluse</strong><span>Formation en ligne offerte</span></div></div>
+        <div class="tab-info-item"><span class="tab-info-ico">📅</span><div><strong>Prochaine session</strong><span>Liste d'attente ouverte</span></div></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-rayonne" style="display:none;">
+      <div class="tab-header"><div><h3 class="tab-h">Rayonne — Accompagnement Sur Mesure</h3><p class="tab-desc">Suivi individuel sur plusieurs mois, entièrement adapté à toi. Pour les artistes qui veulent aller au bout de leur transformation.</p></div><div class="tab-price-block"><div class="tab-price" style="font-size:28px;padding-top:8px;">Sur candidature</div><div class="tab-price-sub">Appel de découverte · Places très limitées</div><button onclick="openMeet('rayonne')" class="btn-tab-cta" style="background:linear-gradient(135deg,var(--lavender),var(--rose));border:none;cursor:pointer;font-family:'DM Sans',sans-serif;">📞 Réserver un appel →</button></div></div>
+      <div class="rayonne-features">
+        <div class="rf-card"><div class="rf-ico">🗓️</div><div class="rf-t">Suivi plurimensuel</div><div class="rf-d">2 à 6 mois d'accompagnement selon ton profil et tes objectifs.</div></div>
+        <div class="rf-card"><div class="rf-ico">💻</div><div class="rf-t">Séances individuelles</div><div class="rf-d">Sessions régulières en visio ou au cabinet. Feedback personnalisé.</div></div>
+        <div class="rf-card"><div class="rf-ico">📋</div><div class="rf-t">Protocole sur mesure</div><div class="rf-d">Exercices et routines définis ensemble — pas de programme générique.</div></div>
+        <div class="rf-card"><div class="rf-ico">🎯</div><div class="rf-t">Objectif concret</div><div class="rf-d">Concert, audition, tournée... On prépare un événement réel ensemble.</div></div>
+        <div class="rf-card"><div class="rf-ico">📱</div><div class="rf-t">Accès direct</div><div class="rf-d">Messagerie directe avec Salomé entre les séances.</div></div>
+        <div class="rf-card"><div class="rf-ico">✨</div><div class="rf-t">Tout inclus</div><div class="rf-d">Résonne + Performe inclus dans l'accompagnement.</div></div>
+      </div>
+      <div class="rayonne-cta-box"><p style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:rgba(255,255,255,.9);margin-bottom:20px;">"Rayonne n'est pas une formation. C'est une transformation."</p><button onclick="openMeet('rayonne')" class="btn-tab-cta" style="background:linear-gradient(135deg,var(--lavender),var(--rose));display:inline-flex;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;">📞 Réserver un appel Rayonne →</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="temoignages">
+  <div class="testi-wrap">
+    <div class="testi-header"><div class="tag tag-rose rv">Témoignages</div><h2 class="sh2 rv rv1" style="text-align:center;">C'est pas moi qui le dis —<br><em>c'est vous.</em></h2></div>
+    <div class="tgrid">
+      <div class="tc tc-big rv"><div class="tc-stars">★★★★★</div><div class="tc-text">"Merci de ce que tu es en train d'accomplir avec moi. Je n'aurais jamais cru retrouver ça."</div><div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,#9B6EA8,#C45E8A)">D</div><div><div class="tc-name">David M.</div><div class="tc-role">Chanteur professionnel · Paris</div></div></div></div>
+      <div class="tc tc-a rv rv1"><div class="tc-stars">★★★★★</div><div class="tc-text">"J'ai enfin retrouvé toute ma voix. Après deux ans de galère."</div><div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,#9B6EA8,#7A62C8)">M</div><div><div class="tc-name" style="color:var(--coral);">Mathilde R.</div><div class="tc-role">Comédienne musicale</div></div></div></div>
+      <div class="tc tc-b rv rv2"><div class="tc-stars">★★★★★</div><div class="tc-text">"Un truc s'est enfin libéré. Vraiment différent de tout ce que j'avais essayé."</div><div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,var(--sun),#C07A00)">A</div><div><div class="tc-name" style="color:#8A6000;">Alexandre K.</div><div class="tc-role">Chanteur · Lyon</div></div></div></div>
+      <div class="tc tc-c rv rv1"><div class="tc-stars">★★★★★</div><div class="tc-text">"J'ai retrouvé une des choses les plus importantes de ma vie."</div><div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,var(--mint),var(--mint2))">L</div><div><div class="tc-name" style="color:var(--mint2);">Lucie B.</div><div class="tc-role">Chanteuse · Bordeaux</div></div></div></div>
+      <div class="tc tc-d rv rv2"><div class="tc-stars">★★★★★</div><div class="tc-text">"Une approche vraiment différente. Les résultats sont là, concrets."</div><div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,var(--lavender),#5030A0)">S</div><div><div class="tc-name" style="color:var(--lavender);">Sophie T.</div><div class="tc-role">Professeure de chant</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCEMENT -->
+<section id="financement">
+  <div class="fin-wrap">
+    <div class="fin-grid">
+      <div class="rv">
+                <div style="background:linear-gradient(135deg,#B8860A,#D4A020,#E8B830);border-radius:16px;padding:20px 24px;margin-bottom:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;box-shadow:0 8px 24px rgba(0,0,0,.12);">
+          <div style="font-size:28px;">💰</div>
+          <div>
+            <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:white;text-shadow:0 1px 3px rgba(0,0,0,.2);">Formation prise en charge jusqu'à 100%</div>
+            <div style="font-size:13px;color:rgba(255,255,255,.8);margin-top:4px;font-weight:600;letter-spacing:.5px;">AFDAS · OPCO · France Travail · FIFPL · CPF · Qualiopi certifiée</div>
+          </div>
+        </div>
+<div class="qpill"><span style="font-size:22px">🏅</span><div class="qpill-text">Certification Qualiopi</div></div>
+        <h2 class="sh2">Ta formation peut être<br><em>100% remboursée.</em></h2>
+        <p class="sp" style="margin-top:16px;">Résonne est éligible AFDAS, OPCO et CPF. Pour les intermittents, la formation peut être intégralement prise en charge — sans avancer un centime.</p>
+        <div class="fin-amts">
+          <div class="fin-amt fin-amt-dk"><div class="fin-n">597€</div><div class="fin-l">Prix formation</div></div>
+          <div class="fin-amt fin-amt-lt"><div class="fin-n">0€</div><div class="fin-l">Avec AFDAS</div></div>
+        </div>
+      </div>
+      <div class="fin-cards rv rv2">
+        <div class="fin-card"><span class="fin-card-ico">🎭</span><div><div class="fin-card-t">AFDAS — Intermittents du spectacle</div><div class="fin-card-d">Catégorie "Métiers" (~10h). Prise en charge jusqu'à 600€ — couvre intégralement Résonne.</div></div></div>
+        <div class="fin-card"><span class="fin-card-ico">💼</span><div><div class="fin-card-t">OPCO — Salariés & indépendants</div><div class="fin-card-d">Financement total ou partiel selon ton secteur.</div></div></div>
+        <div class="fin-card"><span class="fin-card-ico">📋</span><div><div class="fin-card-t">CPF — Compte Personnel de Formation</div><div class="fin-card-d">Certification Qualiopi validée — utilise tes droits CPF.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="quiz-wrap">
+    <div class="quiz-card">
+      <div class="qz" id="qz-intro"><div class="qz-label">✨ Diagnostic vocal gratuit</div><h2 class="qz-h">Quel est ton <em>profil vocal ?</em></h2><p class="qz-sub">5 questions · Analyse personnalisée · Exercices sur-mesure par mail</p><button class="btn-main" onclick="startQz()" style="margin:0 auto;display:inline-flex;">Commencer le diagnostic →</button></div>
+      <div class="qz" id="qz-steps" style="display:none;">
+        <div class="qz-progress" id="qzProg"></div>
+        <div id="qz-s0"><div class="qz-q">Quel est ton rapport au chant ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎤</span>Chanteur·se amateur</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎭</span>Artiste professionnel·le</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎓</span>Prof de chant / coach</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🌱</span>Débutant·e</div></div></div>
+        <div id="qz-s1" style="display:none;"><div class="qz-q">Ton problème principal ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">😤</span>Tensions, forçage</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">📉</span>Voix qui fatigue vite</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🧠</span>Blocage mental</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎵</span>Difficultés techniques</div></div></div>
+        <div id="qz-s2" style="display:none;"><div class="qz-q">As-tu déjà suivi des cours ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">❌</span>Non, jamais</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">📚</span>Quelques cours</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🔄</span>Plusieurs années</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎯</span>Oui, sans résultat</div></div></div>
+        <div id="qz-s3" style="display:none;"><div class="qz-q">À quelle fréquence utilises-tu ta voix ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🌙</span>Rarement</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">📅</span>Quelques fois/semaine</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">⚡</span>Tous les jours</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🎪</span>En spectacle</div></div></div>
+        <div id="qz-s4" style="display:none;"><div class="qz-q">Ton objectif avec Résonne ?</div><div class="qz-opts"><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🔓</span>Libérer ma voix</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🚀</span>Développer ma puissance</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">😌</span>Retrouver le plaisir</div><div class="qz-opt" onclick="selOpt(this)"><span class="qz-opt-ico">🏆</span>Professionnaliser</div></div></div>
+        <div class="qz-nav"><button class="btn-qz-back" id="qzBack" onclick="qzPrev()" style="display:none;">← Retour</button><button class="btn-qz-next" id="qzNext" onclick="qzNext()" disabled>Continuer →</button></div>
+      </div>
+      <div class="qz" id="qz-form" style="display:none;"><div class="qz-label">Presque là ✦</div><h2 class="qz-h" style="font-size:28px;">Où envoyer ton analyse ?</h2><p class="qz-sub" style="margin-bottom:28px;">Profil vocal + exercices — gratuitement.</p><div style="max-width:360px;margin:0 auto;"><input type="text" class="qz-input" placeholder="Ton prénom" id="qzPrenom"><input type="email" class="qz-input" placeholder="Ton adresse email" id="qzEmail"><button class="btn-main" onclick="submitQz()" style="width:100%;justify-content:center;border-radius:12px;">Recevoir mon analyse →</button><p style="font-size:12px;color:rgba(255,255,255,.2);text-align:center;margin-top:12px;">Aucun spam.</p></div></div>
+      <div class="qz" id="qz-result" style="display:none;"><div style="font-size:60px;margin-bottom:20px;">✦</div><h2 class="qz-h" id="qzResTitle"></h2><p class="qz-sub" id="qzResText" style="margin-bottom:32px;"></p><a href="#paiement" class="btn-main" style="margin:0 auto;display:inline-flex;">Rejoindre Résonne →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="price-wrap">
+    <div class="price-header"><div class="tag tag-coral rv">L'offre</div><h2 class="sh2 rv rv1" style="text-align:center;">Choisis ton niveau.<br><em>Change ta voix.</em></h2></div>
+    <div class="pgrid">
+      <div class="pc pc-basic rv"><div class="pc-tier">Découverte</div><div class="pc-name">Accès Gratuit</div><div class="pc-desc">Les bases ostéopathiques — accès libre pour démarrer.</div><div class="pc-price"><div class="pc-n" style="font-size:42px;">Gratuit</div></div><div class="pc-feats"><div class="pc-feat"><span class="pc-check">✓</span>2 vidéos de formation</div><div class="pc-feat"><span class="pc-check">✓</span>Introduction à la méthode</div><div class="pc-feat"><span class="pc-check">✓</span>1 exercice de relâchement</div></div><a href="#leadmagnet" class="btn-pc btn-pc-out">J'accède gratuitement →</a></div>
+      <div class="pc pc-star rv rv2"><div class="pc-badge">⭐ Recommandé</div><div class="pc-tier">Formation complète</div><div class="pc-name">Résonne</div><div class="pc-desc">La méthode complète pour retrouver une voix libre, puissante et durable.</div><div class="pc-price"><span class="pc-n">597</span><span class="pc-per">€ · une fois</span></div><div class="pc-feats"><div class="pc-feat"><span class="pc-check">✓</span>7 modules (29 vidéos HD)</div><div class="pc-feat"><span class="pc-check">✓</span>3 fiches PDF pratiques</div><div class="pc-feat"><span class="pc-check">✓</span>4 audios guidés</div><div class="pc-feat"><span class="pc-check">✓</span>Accès à vie + mises à jour</div><div class="pc-feat"><span class="pc-check">✓</span>Garantie 14 jours</div><div class="pc-feat"><span class="pc-check">✓</span>Éligible AFDAS / OPCO / CPF</div></div><a href="https://VOTRE_PAGE_RESONNE.systeme.io" target="_blank" class="btn-pc btn-pc-main">Découvrir Résonne →</a></div>
+      <div class="pc pc-prem rv rv3"><div class="pc-tier">Accompagnement</div><div class="pc-name">Coaching Premium</div><div class="pc-desc">Performe ou Rayonne — pour aller encore plus loin.</div><div class="pc-price"><div class="pc-n" style="font-size:36px;">Sur mesure</div></div><div class="pc-feats"><div class="pc-feat"><span class="pc-check">✓</span>Formation Résonne incluse</div><div class="pc-feat"><span class="pc-check">✓</span>Séances individuelles</div><div class="pc-feat"><span class="pc-check">✓</span>Protocole sur mesure</div><div class="pc-feat"><span class="pc-check">✓</span>Cabinet Paris disponible</div></div><button onclick="openMeet('performe')" class="btn-pc btn-pc-outm" style="border:none;cursor:pointer;font-family:'DM Sans',sans-serif;">Réserver un appel →</button></div>
+    </div>
+    <div class="guarantee rv"><span style="font-size:22px;">🛡️</span><span>Satisfait ou remboursé <strong>14 jours</strong> — sans justification, sans conditions.</span></div>
+  </div>
+</section>
+
+<!-- LISTE D'ATTENTE Performe / Rayonne -->
+<section id="waitlist" style="background:white;border-top:1px solid rgba(0,0,0,.06);">
+  <div style="max-width:700px;margin:0 auto;padding:80px 60px;text-align:center;" class="rv">
+    <div class="tag tag-coral" style="display:inline-flex;margin-bottom:20px;">🔥 Performe & Rayonne</div>
+    <h2 class="sh2" style="text-align:center;margin-bottom:16px;">Rejoins la liste d'attente.<br><em>Places très limitées.</em></h2>
+    <p style="font-size:15px;color:var(--textm);margin-bottom:32px;">Tu recevras un lien de paiement personnalisé après un appel de qualification avec Salomé.</p>
+    <form id="waitlistForm" onsubmit="submitWaitlist(event)">
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:14px;">
+        <input type="text" placeholder="Ton prénom" required style="width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;box-sizing:border-box;">
+        <input type="email" placeholder="Ton email" required style="width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;box-sizing:border-box;">
+      </div>
+      <select required style="width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:14px;background:white;color:var(--text);">
+        <option value="">Je suis intéressé·e par...</option>
+        <option value="performe">🔥 Performe — Stage 3 jours</option>
+        <option value="rayonne">✨ Rayonne — Accompagnement sur mesure</option>
+        <option value="both">Les deux</option>
+      </select>
+      <button type="submit" class="btn-main" style="width:100%;justify-content:center;">Rejoindre la liste d'attente →</button>
+    </form>
+    <div id="waitlist-merci" style="display:none;background:linear-gradient(135deg,rgba(155,110,168,.08),rgba(74,158,137,.06));border:1px solid rgba(155,110,168,.25);border-radius:16px;padding:24px;margin-top:16px;">
+      <p style="font-size:16px;font-weight:700;color:var(--ink);">✅ Tu es sur la liste !</p>
+      <p style="font-size:14px;color:var(--textm);margin-top:6px;">Salomé te contactera pour planifier un appel de découverte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRO + CABINET -->
+<section id="pro">
+  <div class="pro-inner">
+    <div class="pro-header rv">
+      <div class="tag tag-mint" style="display:inline-flex;">Offres professionnelles</div>
+      <h2 class="sh2 rv rv1" style="text-align:center;">Tu es une entreprise,<br>une production, un artiste ?</h2>
+      <p class="sp rv rv2" style="text-align:center;margin:0 auto;">Des interventions sur mesure pour les équipes, les productions et les artistes en développement.</p>
+    </div>
+    <div class="pro-grid rv rv2">
+      <div class="pro-card">
+        <div style="font-size:40px;margin-bottom:20px;">🏢</div>
+        <h3 style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:12px;">Interventions B2B</h3>
+        <p style="font-size:15px;color:var(--textm);line-height:1.75;margin-bottom:24px;">Formation de troupes, coaching de comédiens, interventions dans des productions musicales — comme Salomé le fait pour le <strong>Roi Lion au Théâtre Mogador</strong>.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+          <div style="display:flex;gap:10px;font-size:14px;color:var(--textm);align-items:flex-start;"><span style="color:var(--coral);font-size:16px;flex-shrink:0;">✓</span>Formation d'équipe sur site ou en visio</div>
+          <div style="display:flex;gap:10px;font-size:14px;color:var(--textm);align-items:flex-start;"><span style="color:var(--coral);font-size:16px;flex-shrink:0;">✓</span>Interventions en production musicale</div>
+          <div style="display:flex;gap:10px;font-size:14px;color:var(--textm);align-items:flex-start;"><span style="color:var(--coral);font-size:16px;flex-shrink:0;">✓</span>Coaching vocal pour comédiens / acteurs</div>
+          <div style="display:flex;gap:10px;font-size:14px;color:var(--textm);align-items:flex-start;"><span style="color:var(--coral);font-size:16px;flex-shrink:0;">✓</span>Programme sur mesure selon les besoins</div>
+        </div>
+        <button onclick="toggleB2B()" id="b2bToggleBtn" style="width:100%;padding:14px 20px;background:linear-gradient(135deg,var(--coral),var(--rose));color:white;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:16px;font-family:'DM Sans',sans-serif;text-align:left;display:flex;justify-content:space-between;align-items:center;">
+          <span>📩 Envoyer une demande</span><span id="b2bArrow">▼</span>
+        </button>
+        <div id="b2bFormWrap" style="display:none;">
+        <form id="b2bForm" onsubmit="submitB2B(event)" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
+          <div class="form-grid-2">
+            <div><label class="field-label">Votre nom</label><input type="text" name="nom" class="field-input" placeholder="Marie Dupont" required></div>
+            <div><label class="field-label">Structure / Production</label><input type="text" name="structure" class="field-input" placeholder="Théâtre du Nord" required></div>
+          </div>
+          <label class="field-label">Email professionnel</label>
+          <input type="email" name="email" class="field-input" placeholder="contact@structure.fr" required>
+          <label class="field-label">Téléphone</label>
+          <input type="tel" name="telephone" class="field-input" placeholder="+33 6 XX XX XX XX">
+          <label class="field-label">Votre projet</label>
+          <textarea name="message" class="field-textarea" rows="3" placeholder="Décrivez votre équipe, le contexte, vos besoins..."></textarea>
+          <button type="submit" class="btn-main" style="width:100%;justify-content:center;">Envoyer ma demande →</button>
+        </form>
+        </div><!-- end b2bFormWrap -->
+        <div id="b2b-merci" style="display:none;background:rgba(155,110,168,.08);border:1px solid rgba(155,110,168,.3);border-radius:12px;padding:16px;text-align:center;margin-top:12px;"><p style="font-size:15px;font-weight:600;color:var(--ink);">✅ Message reçu !</p><p style="font-size:13px;color:var(--textm);margin-top:4px;">Salomé vous répondra sous 48h.</p></div>
+      </div>
+
+      <div class="pro-card">
+        <div style="font-size:40px;margin-bottom:20px;">📍</div>
+        <h3 style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:12px;">Cabinet à Paris</h3>
+        <p style="font-size:15px;color:var(--textm);line-height:1.75;margin-bottom:28px;">Consultations individuelles en cabinet, à Paris. Bilan vocal complet ou suivi thérapeutique personnalisé.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px;">
+          <div class="soin-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><strong style="font-size:16px;color:var(--ink);">Séance diagnostique</strong><span style="font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--coral);">150€</span></div><p style="font-size:13px;color:var(--textm);line-height:1.5;">Bilan ostéopathique vocal complet, identification des blocages, recommandations personnalisées. Durée : 1h.</p></div>
+          <div class="soin-card featured"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><div><strong style="font-size:16px;color:var(--ink);">Pack 5 séances</strong><span style="display:block;font-size:11px;color:var(--coral);font-weight:700;margin-top:2px;">⭐ RECOMMANDÉ</span></div><span style="font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--coral);">750€</span></div><p style="font-size:13px;color:var(--textm);line-height:1.5;">Suivi thérapeutique sur 5 séances. Programme progressif adapté. Économie de 150€.</p></div>
+        </div>
+        <button onclick="openBooking()" class="btn-main" style="display:flex;justify-content:center;width:100%;">
+          📅 Voir les disponibilités & réserver →
+        </button>
+        <p style="font-size:12px;color:var(--textm);text-align:center;margin-top:12px;">📍 Paris · Paiement sécurisé · Confirmation immédiate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT PAGE -->
+<section id="paiement" style="background:var(--cream2);border-top:1px solid rgba(0,0,0,.06);">
+  <div class="pay-inner">
+    <div class="pay-header rv">
+      <div class="tag tag-coral" style="display:inline-flex;margin-bottom:18px;">Rejoindre Résonne</div>
+      <h2 class="sh2" style="text-align:center;margin-bottom:12px;">Finalise ton inscription.<br><em>Accès immédiat.</em></h2>
+      <p style="font-size:15px;color:var(--textm);">🔒 Sécurisé · SSL · Satisfait ou remboursé 14 jours</p>
+    </div>
+    <div class="pay-grid rv rv1">
+      <div class="pay-card">
+        <form id="payForm" onsubmit="submitPay(event)">
+          <p class="pay-section-title">Tes informations</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:0;" class="form-grid-2">
+            <div class="pay-field"><label class="pay-label">Prénom</label><input type="text" id="payPrenom" class="pay-input" placeholder="Ton prénom" required></div>
+            <div class="pay-field"><label class="pay-label">Nom</label><input type="text" id="payNom" class="pay-input" placeholder="Ton nom" required></div>
+          </div>
+          <div class="pay-field"><label class="pay-label">Email</label><input type="email" id="payEmail" class="pay-input" placeholder="ton@email.com" required></div>
+          <div class="pay-field"><label class="pay-label">Téléphone <span style="font-weight:400;color:var(--textm);text-transform:none;">(optionnel)</span></label><input type="tel" class="pay-input" placeholder="+33 6 XX XX XX XX"></div>
+          <div class="afdas-box">
+            <label class="afdas-toggle">
+              <input type="checkbox" id="payAFDAS" style="width:18px;height:18px;accent-color:var(--coral);" onchange="this.closest('.afdas-box').querySelector('.afdas-extra').style.display=this.checked?'block':'none'">
+              <div><div style="font-size:14px;font-weight:700;color:var(--ink);">🎭 Je suis intermittent du spectacle (AFDAS)</div><div style="font-size:12px;color:var(--textm);margin-top:2px;">Je souhaite être guidé pour le remboursement intégral</div></div>
+            </label>
+            <div class="afdas-extra"><input type="text" placeholder="N° de carte d'intermittent (optionnel)" class="pay-input" style="margin-top:0;"><p style="font-size:12px;color:var(--textm);line-height:1.5;margin-top:6px;">Tu recevras un guide complet pour monter ton dossier AFDAS après inscription.</p></div>
+          </div>
+          <p class="pay-section-title">Méthode de paiement</p>
+          <div class="pay-method">
+            <label class="pay-method-label" id="cardLabel"><input type="radio" name="payMethod" value="card" checked onchange="switchPayMethod('card')"> 💳 Carte bancaire</label>
+            <label class="pay-method-label" id="paypalLabel"><input type="radio" name="payMethod" value="paypal" onchange="switchPayMethod('paypal')"> 🅿️ PayPal</label>
+          </div>
+          <div id="card-fields">
+            <div class="pay-field"><label class="pay-label">Numéro de carte</label><div class="card-number-wrap"><input type="text" class="pay-input" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)"><span class="card-brand" id="cardBrand">💳</span></div></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+              <div class="pay-field"><label class="pay-label">Expiration</label><input type="text" class="pay-input" placeholder="MM / AA" maxlength="7" oninput="formatExpiry(this)"></div>
+              <div class="pay-field"><label class="pay-label">CVC</label><input type="text" class="pay-input" placeholder="123" maxlength="4"></div>
+            </div>
+          </div>
+          <div id="paypal-fields" style="display:none;margin-bottom:20px;text-align:center;padding:20px;background:rgba(0,112,243,.04);border:1.5px solid rgba(0,112,243,.15);border-radius:12px;font-size:14px;color:var(--textm);">Tu seras redirigé vers PayPal pour finaliser ton paiement en sécurité.</div>
+          <label class="cgv-label" style="margin-top:20px;"><input type="checkbox" required style="accent-color:var(--coral);flex-shrink:0;margin-top:3px;"><span>J'accepte les <a href="#">conditions générales de vente</a> et la <a href="#">politique de confidentialité</a>. Je reconnais avoir pris connaissance de la <strong style="color:var(--ink);">garantie satisfait ou remboursé 14 jours</strong>.</span></label>
+          <button type="submit" class="pay-btn" id="payBtn">🔒 Payer 597€ · Accès immédiat</button>
+          <p class="pay-secure">🔒 Paiement 100% sécurisé · Chiffré SSL · Propulsé par Stripe</p>
+        </form>
+        <div class="pay-success" id="pay-success">
+          <div style="font-size:70px;margin-bottom:20px;">🎉</div>
+          <h3 style="font-family:'Fraunces',serif;font-size:28px;color:var(--ink);margin-bottom:12px;" id="paySuccessName">Bienvenue dans Résonne !</h3>
+          <p style="font-size:16px;color:var(--textm);line-height:1.7;margin-bottom:28px;">Ton accès est en cours d'activation. Tu recevras un email dans les prochaines minutes.</p>
+          <div style="background:var(--cream2);border-radius:16px;padding:24px;text-align:left;">
+            <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px;">Tes prochaines étapes :</div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="display:flex;gap:10px;font-size:14px;color:var(--textm);"><span style="color:var(--coral);font-weight:700;">1.</span>Vérifie ta boîte mail (et tes spams)</div>
+              <div style="display:flex;gap:10px;font-size:14px;color:var(--textm);"><span style="color:var(--coral);font-weight:700;">2.</span>Crée ton espace sur Teachizy avec le lien reçu</div>
+              <div style="display:flex;gap:10px;font-size:14px;color:var(--textm);"><span style="color:var(--coral);font-weight:700;">3.</span>Lance le Module 01 — ta voix change dès aujourd'hui 🎤</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="pay-summary">
+          <div style="font-size:12px;font-weight:700;color:var(--textm);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;">Récapitulatif</div>
+          <div style="display:flex;gap:14px;align-items:center;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,.06);margin-bottom:20px;">
+            <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,rgba(155,110,168,.15),rgba(74,158,137,.1));display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;">🎤</div>
+            <div><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--ink);">Formation Résonne</div><div style="font-size:12px;color:var(--textm);margin-top:2px;">Accès illimité · 7 modules · 29 vidéos</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;color:var(--textm);"><span>Sous-total</span><span>597,00 €</span></div>
+            <div style="display:flex;justify-content:space-between;color:var(--textm);"><span>TVA (incluse)</span><span>99,50 €</span></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:2px solid rgba(0,0,0,.08);">
+            <span style="font-size:16px;font-weight:700;color:var(--ink);">Total</span>
+            <span id="totalAmount" style="font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:var(--coral);">597€</span>
+          </div>
+        </div>
+        <div class="pay-promo">
+          <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:10px;">Code promo</div>
+          <div style="display:flex;gap:8px;">
+            <input type="text" id="promoInput" placeholder="RESONNE2026" class="pay-input" style="padding:11px 14px;font-size:14px;">
+            <button onclick="applyPromo()" style="padding:11px 18px;background:var(--ink);color:white;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;">Appliquer</button>
+          </div>
+          <div id="promoMsg" style="font-size:12px;margin-top:8px;display:none;"></div>
+        </div>
+        <div class="pay-guarantees">
+          <div class="pay-guarantee-item"><span style="font-size:18px;flex-shrink:0;">🛡️</span><span><strong style="color:var(--ink);">Garantie 14 jours</strong> — remboursé intégralement si ça ne convient pas</span></div>
+          <div class="pay-guarantee-item"><span style="font-size:18px;flex-shrink:0;">🔒</span><span><strong style="color:var(--ink);">Paiement sécurisé</strong> — SSL, données chiffrées, jamais stockées</span></div>
+          <div class="pay-guarantee-item"><span style="font-size:18px;flex-shrink:0;">⚡</span><span><strong style="color:var(--ink);">Accès immédiat</strong> — commence dans les 5 minutes</span></div>
+          <div class="pay-guarantee-item"><span style="font-size:18px;flex-shrink:0;">🏅</span><span><strong style="color:var(--ink);">Qualiopi</strong> — éligible AFDAS, OPCO, CPF</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE REVIEWS -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <div class="reviews-header">
+      <div>
+        <div class="tag tag-gold" style="color:#B07820;">Avis vérifiés</div>
+        <h2 class="sh2" style="margin-bottom:0;">Ce que disent<br><em>mes patients.</em></h2>
+      </div>
+      <div class="google-badge">
+        <div class="google-logo">🔍</div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--textm);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Google Reviews</div>
+          <div class="google-score">5.0</div>
+          <div class="google-stars">★★★★★</div>
+          <div class="google-count">+47 avis · Ostéopathe Paris</div>
+        </div>
+        <a href="https://g.page/r/salome-sebbag-osteopathe/review" target="_blank" rel="noopener"
+           style="background:linear-gradient(135deg,#4285F4,#34A853);color:white;padding:10px 18px;border-radius:50px;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;align-self:flex-start;">
+          Laisser un avis →
+        </a>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-av" style="background:linear-gradient(135deg,#4285F4,#0F52BA);">C</div>
+          <div><div class="review-name">Clara M.</div><div class="review-date">Il y a 2 semaines</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Salomé est exceptionnelle. En une séance, elle a identifié les tensions que je n'arrivais pas à résoudre depuis des mois. Ma voix a retrouvé une liberté que je n'avais plus."</div>
+        <div class="review-source">🔍 <span>Google · Vérifié</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-av" style="background:linear-gradient(135deg,#34A853,#1E7A35);">T</div>
+          <div><div class="review-name">Thomas B.</div><div class="review-date">Il y a 1 mois</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Une approche vraiment unique, à la croisée de l'ostéopathie et du chant. Les résultats sont là, concrets et durables. Je recommande à tous les chanteurs professionnels."</div>
+        <div class="review-source">🔍 <span>Google · Vérifié</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-av" style="background:linear-gradient(135deg,#EA4335,#C62828);">A</div>
+          <div><div class="review-name">Amandine K.</div><div class="review-date">Il y a 3 semaines</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"J'avais des nodules et beaucoup d'appréhension. Salomé m'a aidée à comprendre mon corps et à retrouver confiance. Son approche bienveillante et scientifique est rassurante."</div>
+        <div class="review-source">🔍 <span>Google · Vérifié</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-av" style="background:linear-gradient(135deg,#FBBC04,#E37400);">M</div>
+          <div><div class="review-name">Marc-Antoine L.</div><div class="review-date">Il y a 2 mois</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Chanteur de comédie musicale depuis 10 ans, j'ai enfin trouvé quelqu'un qui comprend les enjeux vocaux du spectacle vivant. Salomé fait partie de mon équipe maintenant."</div>
+        <div class="review-source">🔍 <span>Google · Vérifié</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-av" style="background:linear-gradient(135deg,#9B6EA8,#C45E8A);">L</div>
+          <div><div class="review-name">Léa R.</div><div class="review-date">Il y a 1 mois</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"La formation Résonne a changé ma façon de chanter. Plus d'appréhension, plus de forçage. Je chante enfin avec tout mon corps. Merci Salomé pour cette transformation."</div>
+        <div class="review-source">🔍 <span>Google · Vérifié</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-av" style="background:linear-gradient(135deg,#4ECDC4,#2BB5AC);">P</div>
+          <div><div class="review-name">Pierre-Emmanuel G.</div><div class="review-date">Il y a 3 mois</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Prise en charge via l'AFDAS, zéro avance de frais. Le contenu est d'un niveau professionnel rare. Je conseille à tous les intermittents du spectacle."</div>
+        <div class="review-source">🔍 <span>Google · Vérifié</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-wrap">
+    <div class="faq-header"><div class="tag tag-mint rv" style="display:inline-flex;">FAQ</div><h2 class="sh2 rv rv1" style="text-align:center;">Questions <em>fréquentes.</em></h2></div>
+    <div>
+      <div class="fq rv" onclick="tFq(this)"><div class="fq-q">À qui s'adresse vraiment Résonne ? <span class="fq-ico">+</span></div><div class="fq-a"><div class="fq-a-in">Aux chanteurs amateurs et professionnels qui forcent, manquent de puissance, ressentent des tensions, ou veulent consolider leurs bases. Peu importe le niveau — la méthode est progressive et s'adapte à chaque profil.</div></div></div>
+      <div class="fq rv" onclick="tFq(this)"><div class="fq-q">La formation est vraiment remboursable ? <span class="fq-ico">+</span></div><div class="fq-a"><div class="fq-a-in">Oui. Certification Qualiopi → éligible AFDAS (intermittents), OPCO (salariés), CPF. Pour les intermittents, catégorie "Métiers" ~10h déclarées, prise en charge intégrale des 597€ possible.</div></div></div>
+      <div class="fq rv" onclick="tFq(this)"><div class="fq-q">Je n'ai jamais eu de cours — est-ce fait pour moi ? <span class="fq-ico">+</span></div><div class="fq-a"><div class="fq-a-in">Absolument. L'approche ostéopathique repart de zéro. Ne pas avoir de "mauvaises habitudes" est souvent un avantage pour intégrer la méthode rapidement.</div></div></div>
+      <div class="fq rv" onclick="tFq(this)"><div class="fq-q">Combien de temps pour voir des résultats ? <span class="fq-ico">+</span></div><div class="fq-a"><div class="fq-a-in">Les premiers changements se ressentent souvent dès les premiers modules. Les transformations profondes demandent 4 à 8 semaines de pratique régulière.</div></div></div>
+      <div class="fq rv" onclick="tFq(this)"><div class="fq-q">Comment fonctionne la garantie ? <span class="fq-ico">+</span></div><div class="fq-a"><div class="fq-a-in">14 jours pour accéder, tester, faire les exercices. Si ce n'est pas fait pour toi — remboursement intégral, sans justification.</div></div></div>
+      <div class="fq rv" onclick="tFq(this)"><div class="fq-q">Puis-je suivre à mon rythme ? <span class="fq-ico">+</span></div><div class="fq-a"><div class="fq-a-in">Oui — accès à vie à tous les contenus. Les 7 modules se suivent en 7 jours ou sur plusieurs semaines. Les audios sont réutilisables à l'infini.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <h2 class="cta-h">Si t'es encore là —<br><em>c'est que ça a résonné.</em></h2>
+    <p class="cta-sub">De l'autre côté de cette formation, il y a une voix libérée, puissante. Et ce plaisir de chanter que tu avais perdu.</p>
+    <a href="https://VOTRE_PAGE_RESONNE.systeme.io" target="_blank" class="cta-btn">Rejoindre Résonne · 597€ →</a>
+    <div class="cta-chips">
+      <div class="cta-chip">Garantie 14 jours</div>
+      <div class="cta-chip">Accès immédiat</div>
+      <div class="cta-chip">Remboursable AFDAS</div>
+      <div class="cta-chip">Certifié Qualiopi</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <div class="ft-logo">Salomé Sebbag<span>.</span></div>
+        <div class="ft-tag">La formation vocale qui libère ta voix de l'intérieur — par Salomé Sebbag, ostéopathe de la voix.</div>
+        <div class="ft-socials">
+          <a href="https://www.instagram.com/salomesebbag/" target="_blank" rel="noopener" class="ft-social" title="Instagram">📸</a>
+          <a href="https://osteodelavoix.fr/" target="_blank" rel="noopener" class="ft-social" title="Site ostéo">🌐</a>
+          <a href="https://www.doctolib.fr/osteopathe/paris/salome-sebbag" target="_blank" rel="noopener" class="ft-social" title="Doctolib">📅</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-t">Formation</div>
+        <div class="ft-lks">
+          <a href="#method">La méthode</a>
+          <a href="#programme">Programme</a>
+          <a href="#pricing">Tarifs</a>
+          <a href="#financement">Financement AFDAS</a>
+          <a href="#paiement">Rejoindre Résonne</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-t">Salomé</div>
+        <div class="ft-lks">
+          <a href="#story">Mon histoire</a>
+          <a href="#temoignages">Témoignages</a>
+          <a href="https://www.doctolib.fr/osteopathe/paris/salome-sebbag" target="_blank" rel="noopener">Cabinet Paris (Doctolib)</a>
+          <a href="https://www.instagram.com/salomesebbag/" target="_blank" rel="noopener">Instagram @salomesebbag</a>
+          <a href="https://osteodelavoix.fr/" target="_blank" rel="noopener">osteodelavoix.fr</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-t">Contact</div>
+        <div class="ft-lks">
+          <a href="#quiz">Diagnostic gratuit</a>
+          <a href="#waitlist">Performe & Rayonne</a>
+          <a href="#pro">Interventions B2B</a>
+          <a href="/cdn-cgi/l/email-protection#71121e1f05101205310314021e1f1f145f1703"><span class="__cf_email__" data-cfemail="f695999882979582b684938599989893d89084">[email&#160;protected]</span></a>
+          <a href="#">Mentions légales</a>
+          <a href="#">CGV</a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy">© 2026 Résonne · Salomé Sebbag · Qualiopi · Tous droits réservés</div>
+      <div class="ft-copy">Fait avec 🎤 à Paris</div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── NAV ──
+function updateNavTicker() {
+  var nav = document.getElementById('navbar');
+  if (!nav) return;
+  var h = nav.getBoundingClientRect().height;
+  document.documentElement.style.setProperty('--nav-h', Math.round(h) + 'px');
+}
+window.addEventListener('scroll', function() {
+  var scrolled = window.scrollY > 60;
+  document.getElementById('navbar').classList.toggle('scrolled', scrolled);
+  updateNavTicker();
+});
+window.addEventListener('resize', updateNavTicker);
+document.addEventListener('DOMContentLoaded', function() {
+  updateNavTicker();
+  // Re-measure after fonts load
+  if (document.fonts) document.fonts.ready.then(updateNavTicker);
+});
+// Immediate measure
+updateNavTicker();
+function toggleMenu() {
+  var m = document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+
+// ── REVEAL ──
+var ro = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if(e.isIntersecting) e.target.classList.add('in'); });
+}, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el) { ro.observe(el); });
+
+// ── VIDEO CAROUSEL AUTO-SCROLL ──
+var vidIdx = 0, vidTotal = 5, vidAuto;
+function vidMove(dir) { vidGo((vidIdx + dir + vidTotal) % vidTotal); }
+function vidGo(i) {
+  vidIdx = i;
+  var track = document.getElementById('vidTrack');
+  if(!track) return;
+  var cards = track.querySelectorAll('.vid-card');
+  if(!cards.length) return;
+  // getBoundingClientRect = vraie largeur même si offsetWidth = 0
+  var rect = cards[0].getBoundingClientRect();
+  var cardW = (rect.width > 0 ? rect.width : cards[0].offsetWidth) + 16;
+  if(cardW <= 16) cardW = 200; // fallback
+  track.style.transform = 'translate3d(' + (-vidIdx * cardW) + 'px, 0, 0)';
+  document.querySelectorAll('.vid-dot').forEach(function(d, j) { d.classList.toggle('on', j === vidIdx); });
+  track.querySelectorAll('video').forEach(function(v) { v.pause(); });
+  // Recalculer au resize
+  window._lastCardW = cardW;
+}
+function startVidAuto() { vidAuto = setInterval(function() { vidMove(1); }, 4500); }
+function stopVidAuto() { clearInterval(vidAuto); }
+document.addEventListener('DOMContentLoaded', function() {
+  startVidAuto();
+  var wrap = document.querySelector('.vid-scroll-wrap');
+  if(wrap) { wrap.addEventListener('mouseenter', stopVidAuto); wrap.addEventListener('mouseleave', startVidAuto); }
+  window.addEventListener('resize', function() { window._lastCardW = 0; vidGo(vidIdx); });
+});
+
+// ── TABS ──
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(function(t) { t.style.display = 'none'; });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('tab-' + name).style.display = 'block';
+  btn.classList.add('active');
+}
+
+// ── MODULES ──
+function tMod(el) {
+  var was = el.classList.contains('open');
+  document.querySelectorAll('.mod').forEach(function(m) { m.classList.remove('open'); });
+  if(!was) el.classList.add('open');
+}
+
+// ── FAQ ──
+function tFq(el) {
+  var was = el.classList.contains('open');
+  document.querySelectorAll('.fq').forEach(function(f) { f.classList.remove('open'); });
+  if(!was) el.classList.add('open');
+}
+
+// ── LEAD MAGNET ──
+function accessLM() {
+  var e = document.getElementById('lmEmail').value;
+  if(!e || !e.includes('@')) { alert('Merci de saisir une adresse email valide.'); return; }
+  // TODO: send to Systeme.io / Mailchimp webhook
+  document.getElementById('lm-cta').style.display = 'none';
+  document.getElementById('lm-merci').style.display = 'block';
+}
+
+// ── QUIZ ──
+var qzStep = 0, qzTotal = 5, qzAnswers = [];
+function startQz() {
+  document.getElementById('qz-intro').style.display = 'none';
+  document.getElementById('qz-steps').style.display = 'block';
+  updateQz();
+}
+function updateQz() {
+  var prog = document.getElementById('qzProg');
+  prog.innerHTML = '';
+  for(var i = 0; i < qzTotal; i++) {
+    var d = document.createElement('button');
+    d.className = 'qz-dot' + (i === qzStep ? ' on' : i < qzStep ? ' done' : '');
+    prog.appendChild(d);
+  }
+  document.getElementById('qzBack').style.display = qzStep > 0 ? 'inline-block' : 'none';
+  var n = document.getElementById('qzNext');
+  n.disabled = !qzAnswers[qzStep];
+  n.textContent = qzStep === qzTotal - 1 ? 'Terminer →' : 'Continuer →';
+}
+function selOpt(el) {
+  el.closest('.qz-opts').querySelectorAll('.qz-opt').forEach(function(o) { o.classList.remove('sel'); });
+  el.classList.add('sel');
+  qzAnswers[qzStep] = el.textContent.trim();
+  document.getElementById('qzNext').disabled = false;
+}
+function qzNext() {
+  if(qzStep < qzTotal - 1) {
+    document.getElementById('qz-s' + qzStep).style.display = 'none';
+    qzStep++;
+    document.getElementById('qz-s' + qzStep).style.display = 'block';
+    updateQz();
+  } else {
+    document.getElementById('qz-steps').style.display = 'none';
+    document.getElementById('qz-form').style.display = 'block';
+  }
+}
+function qzPrev() {
+  document.getElementById('qz-s' + qzStep).style.display = 'none';
+  qzStep--;
+  document.getElementById('qz-s' + qzStep).style.display = 'block';
+  updateQz();
+}
+function submitQz() {
+  var p = document.getElementById('qzPrenom').value;
+  var e = document.getElementById('qzEmail').value;
+  if(!p || !e) { alert('Merci de remplir tous les champs.'); return; }
+  // TODO: send to Systeme.io / Mailchimp webhook
+  document.getElementById('qz-form').style.display = 'none';
+  document.getElementById('qz-result').style.display = 'block';
+  document.getElementById('qzResTitle').textContent = p + ', ton analyse arrive !';
+  document.getElementById('qzResText').textContent = 'Ton profil vocal et tes exercices personnalisés arrivent sur ' + e + '.';
+}
+
+// ── WAITLIST ──
+function submitWaitlist(e) {
+  e.preventDefault();
+  // TODO: connect to Systeme.io or Tally.so webhook
+  document.getElementById('waitlistForm').style.display = 'none';
+  document.getElementById('waitlist-merci').style.display = 'block';
+}
+
+// ── B2B FORM ──
+function submitB2B(e) {
+  e.preventDefault();
+  // Form has action="https://formspree.io/f/FORMSPREE_ID" — replace with real ID
+  document.getElementById('b2bForm').style.display = 'none';
+  document.getElementById('b2b-merci').style.display = 'block';
+}
+
+// ── PAYMENT PAGE ──
+function switchPayMethod(method) {
+  document.getElementById('card-fields').style.display = method === 'card' ? 'block' : 'none';
+  document.getElementById('paypal-fields').style.display = method === 'paypal' ? 'block' : 'none';
+  document.getElementById('cardLabel').style.borderColor = method === 'card' ? 'var(--coral)' : 'rgba(0,0,0,.1)';
+  document.getElementById('paypalLabel').style.borderColor = method === 'paypal' ? 'var(--coral)' : 'rgba(0,0,0,.1)';
+  document.getElementById('cardLabel').style.background = method === 'card' ? 'rgba(155,110,168,.05)' : '';
+  document.getElementById('paypalLabel').style.background = method === 'paypal' ? 'rgba(0,112,243,.04)' : '';
+}
+function formatCard(input) {
+  var v = input.value.replace(/\D/g,'').substring(0,16);
+  input.value = v.match(/.{1,4}/g) ? v.match(/.{1,4}/g).join(' ') : v;
+  var brand = document.getElementById('cardBrand');
+  if(brand) brand.textContent = v.startsWith('4') ? '💙' : v.startsWith('5') ? '🔴' : v.startsWith('3') ? '🟡' : '💳';
+}
+function formatExpiry(input) {
+  var v = input.value.replace(/\D/g,'');
+  if(v.length >= 2) v = v.substring(0,2) + ' / ' + v.substring(2,4);
+  input.value = v;
+}
+function applyPromo() {
+  var code = document.getElementById('promoInput').value.trim().toUpperCase();
+  var msg = document.getElementById('promoMsg');
+  var total = document.getElementById('totalAmount');
+  var btn = document.getElementById('payBtn');
+  msg.style.display = 'block';
+  if(code === 'RESONNE2026' || code === 'BIENVENUE') {
+    msg.style.color = 'var(--mint2)';
+    msg.textContent = '✅ Code appliqué ! −50€ appliqué.';
+    if(total) total.textContent = '547€';
+    if(btn) btn.textContent = '🔒 Payer 547€ · Accès immédiat';
+  } else {
+    msg.style.color = 'var(--rose)';
+    msg.textContent = '❌ Code invalide ou expiré.';
+  }
+}
+function submitPay(e) {
+  e.preventDefault();
+  var prenom = document.getElementById('payPrenom').value;
+  var btn = document.getElementById('payBtn');
+  btn.textContent = '⏳ Traitement en cours...';
+  btn.disabled = true;
+  // TODO: redirect to Stripe payment link or process via Stripe.js
+  // window.location.href = 'https://buy.stripe.com/VOTRE_LIEN_STRIPE';
+  setTimeout(function() {
+    document.getElementById('payForm').style.display = 'none';
+    document.getElementById('pay-success').style.display = 'block';
+    document.getElementById('paySuccessName').textContent = 'Bienvenue ' + prenom + ' dans Résonne !';
+    window.scrollTo({ top: document.getElementById('paiement').offsetTop - 80, behavior:'smooth' });
+  }, 1800);
+}
+
+// ── LOGOS CAROUSEL ──
+var logosManualX = 0;
+var logosAnimRunning = true;
+
+function logoMove(dir) {
+  var track = document.getElementById('logosTrack');
+  if (!track) return;
+
+  // Si animation encore active, lire la position courante via matrix
+  if (logosAnimRunning) {
+    var matrix = window.getComputedStyle(track).transform;
+    if (matrix && matrix !== 'none') {
+      var match = matrix.match(/matrix\(.*,\s*([-\d.]+),\s*([-\d.]+)\)/);
+      logosManualX = match ? parseFloat(match[1]) : 0;
+    }
+    // Stopper l'animation
+    track.style.animation = 'none';
+    track.style.transform = 'translate3d(' + logosManualX + 'px, 0, 0)';
+    logosAnimRunning = false;
+  }
+
+  logosManualX += dir * 200;
+
+  track.style.transition = 'transform .5s cubic-bezier(.25,.46,.45,.94)';
+  track.style.transform = 'translate3d(' + logosManualX + 'px, 0, 0)';
+
+  clearTimeout(window._logosTimeout);
+  window._logosTimeout = setTimeout(function() {
+    // Reprendre l'animation
+    track.style.transition = 'none';
+    track.style.animation = 'logoScroll 15s linear infinite';
+    logosManualX = 0;
+    logosAnimRunning = true;
+  }, 3000);
+}
+
+// ═══════════════════════════════════════════════
+// ANIMATIONS AVANCÉES — prefers-reduced-motion safe
+// ═══════════════════════════════════════════════
+(function() {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. COMPTEURS animés hero stats
+  function animCounter(el, target, suffix, ms) {
+    var t0 = null;
+    (function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / ms, 1);
+      var v = Math.round((1 - Math.pow(1-p, 3)) * target);
+      el.textContent = v + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  var sObs = new IntersectionObserver(function(es) {
+    es.forEach(function(e) {
+      if (!e.isIntersecting || e.target.dataset.done) return;
+      e.target.dataset.done = 1;
+      var t = e.target.textContent.trim();
+      if (t.includes('1000')) animCounter(e.target, 1000, '+', 1800);
+      else if (t === '7') animCounter(e.target, 7, '', 800);
+      else if (t.includes('0€')) animCounter(e.target, 0, '€', 600);
+      sObs.unobserve(e.target);
+    });
+  }, {threshold: 0.5});
+  if (!reduced) document.querySelectorAll('.stat-n').forEach(function(el) { sObs.observe(el); });
+
+  // 2. HERO H1 mot par mot
+  if (!reduced) {
+    var h1 = document.querySelector('.hero-h1');
+    if (h1) {
+      var first = h1.childNodes[0];
+      if (first && first.nodeType === 3 && first.textContent.trim()) {
+        var words = first.textContent.trim().split(/\s+/);
+        var frag = document.createDocumentFragment();
+        words.forEach(function(w, i) {
+          var s = document.createElement('span');
+          s.className = 'hero-word';
+          s.textContent = w + ' ';
+          s.style.transitionDelay = (i * 0.13) + 's';
+          frag.appendChild(s);
+        });
+        first.replaceWith(frag);
+        setTimeout(function() {
+          h1.querySelectorAll('.hero-word').forEach(function(w) { w.classList.add('in'); });
+        }, 150);
+      }
+    }
+  }
+
+  // 3. STAGGER symptômes
+  var syCards = document.querySelectorAll('.sy-card');
+  if (!reduced && syCards.length) {
+    var syObs = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var i = Array.from(syCards).indexOf(e.target);
+        e.target.style.transitionDelay = (i * 0.1) + 's';
+        e.target.classList.add('in');
+        syObs.unobserve(e.target);
+      });
+    }, {threshold: 0.1});
+    syCards.forEach(function(c) { syObs.observe(c); });
+  } else {
+    syCards.forEach(function(c) { c.style.opacity = '1'; c.style.transform = 'none'; });
+  }
+
+  // 4. PARALLAX blobs
+  if (!reduced) {
+    var blobs = document.querySelectorAll('.blob');
+    window.addEventListener('scroll', function() {
+      var sy = window.scrollY;
+      blobs.forEach(function(b, i) {
+        var sp = [0.07, -0.04, 0.03][i] || 0.05;
+        b.style.transform = 'translateY(' + (sy * sp) + 'px)';
+      });
+    }, {passive: true});
+  }
+
+  // 5. TILT 3D
+  if (!reduced) {
+    ['dim','cred'].forEach(function(cls) {
+      document.querySelectorAll('.' + cls).forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+          var r = card.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transition = 'none';
+          card.style.transform = 'perspective(700px) rotateY(' + (x*8) + 'deg) rotateX(' + (-y*8) + 'deg) translateY(-8px)';
+        });
+        card.addEventListener('mouseleave', function() {
+          card.style.transition = 'transform .4s var(--tr)';
+          card.style.transform = '';
+          setTimeout(function() { card.style.transition = ''; }, 400);
+        });
+      });
+    });
+  }
+
+  // 6. TYPEWRITER pullquote
+  if (!reduced) {
+    var pObs = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var el = e.target.querySelector('.pullquote-text');
+        if (!el || el.dataset.t) return;
+        el.dataset.t = 1;
+        var orig = el.textContent;
+        el.innerHTML = '';
+        orig.split('').forEach(function(c) {
+          var s = document.createElement('span');
+          s.className = 'tw-char';
+          s.textContent = c === ' ' ? ' ' : c;
+          el.appendChild(s);
+        });
+        el.querySelectorAll('.tw-char').forEach(function(ch, i) {
+          setTimeout(function() { ch.classList.add('in'); }, i * 22);
+        });
+        pObs.unobserve(e.target);
+      });
+    }, {threshold: 0.4});
+    var pq = document.querySelector('.pullquote');
+    if (pq) pObs.observe(pq);
+  }
+
+  // 8. PARTICULES canvas hero
+  var canvas = document.getElementById('heroParticles');
+  if (canvas && !reduced) {
+    var ctx = canvas.getContext('2d');
+    var hero = document.getElementById('hero');
+    function rsz() { canvas.width = hero.offsetWidth; canvas.height = hero.offsetHeight; }
+    rsz();
+    window.addEventListener('resize', rsz, {passive: true});
+    var pts = Array.from({length: 18}, function() {
+      return { x: Math.random(), y: Math.random(), r: Math.random()*1.5+0.5, dx: (Math.random()-.5)*.4, dy: (Math.random()-.5)*.3, o: Math.random()*.15+.08 };
+    });
+    (function draw() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      pts.forEach(function(p) {
+        p.x += p.dx/canvas.width; p.y += p.dy/canvas.height;
+        if (p.x<0||p.x>1) p.dx*=-1;
+        if (p.y<0||p.y>1) p.dy*=-1;
+        ctx.beginPath();
+        ctx.arc(p.x*canvas.width, p.y*canvas.height, p.r, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(155,110,168,'+p.o+')';
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    })();
+  }
+})();
+
+
+// ═══════════════════════════════════════════════════════
+// PREMIUM ANIMATIONS — Thème voix / vibration / souffle
+// ═══════════════════════════════════════════════════════
+(function() {
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+  var isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+  // ── 1. AUDIO WAVEFORM HERO ──
+  (function() {
+    var canvas = document.getElementById('heroWaveform');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var hero = document.getElementById('hero');
+    var barCount = 100, phaseOffset = [];
+    for (var i = 0; i < barCount; i++) phaseOffset.push(Math.random() * Math.PI * 2);
+    function resize() { canvas.width = hero.offsetWidth; canvas.height = 80; }
+    resize();
+    window.addEventListener('resize', resize);
+    function lerpColor(t) {
+      var r, g, b;
+      if (t < 0.5) { var p=t*2; r=155+(196-155)*p; g=110+(94-110)*p; b=168+(138-168)*p; }
+      else { var p=(t-0.5)*2; r=196+(228-196)*p; g=94+(164-94)*p; b=138+(60-138)*p; }
+      return 'rgba('+Math.round(r)+','+Math.round(g)+','+Math.round(b)+',0.7)';
+    }
+    function waveformDraw(time) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var barW = canvas.width / barCount, baseH = 8, maxAmp = 30, t = time * 0.001;
+      for (var i = 0; i < barCount; i++) {
+        var center = (i/barCount - 0.5)*2, bell = Math.exp(-center*center*3);
+        var amp = maxAmp * bell;
+        var h = baseH + amp*(0.5 + 0.5*Math.sin(t*1.8 + i*0.3 + phaseOffset[i]));
+        h += amp*0.3*Math.sin(t*2.7 + i*0.15 + phaseOffset[i]*1.5);
+        ctx.fillStyle = lerpColor(i/barCount);
+        var x=i*barW+barW*0.15, w=barW*0.7, radius=w/2;
+        ctx.beginPath();
+        ctx.moveTo(x, canvas.height);
+        ctx.lineTo(x, canvas.height - h + radius);
+        ctx.arcTo(x, canvas.height-h, x+w, canvas.height-h, radius);
+        ctx.arcTo(x+w, canvas.height-h, x+w, canvas.height-h+radius, radius);
+        ctx.lineTo(x+w, canvas.height);
+        ctx.fill();
+      }
+      requestAnimationFrame(waveformDraw);
+    }
+    requestAnimationFrame(waveformDraw);
+  })();
+
+  // ── 2. BREATHING BUTTON ──
+  var heroBtn = document.querySelector('#hero .btn-main');
+  if (heroBtn) heroBtn.classList.add('btn-main--breathe');
+
+  // ── 3. WIPE REVEAL ──
+  (function() {
+    var sects = document.querySelectorAll('#symptoms,#story,#method,#videos,#programme,#temoignages,#financement,#pricing,#faq,#cta');
+    sects.forEach(function(s) { s.classList.add('wipe-section'); });
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('wipe-in');
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.06 });
+    sects.forEach(function(s) { obs.observe(s); });
+  })();
+
+  // ── 4. SOUND RIPPLE ──
+  if (!isTouch) {
+    document.querySelectorAll('.btn-main, .cta-btn').forEach(function(btn) {
+      btn.addEventListener('mouseenter', function(e) {
+        var rect = btn.getBoundingClientRect();
+        var x = e.clientX - rect.left, y = e.clientY - rect.top;
+        for (var i = 0; i < 3; i++) {
+          (function(d) {
+            setTimeout(function() {
+              var c = document.createElement('span');
+              c.className = 'ripple-circle';
+              c.style.cssText = 'left:'+(x-60)+'px;top:'+(y-60)+'px;width:120px;height:120px;animation-delay:0s;';
+              btn.appendChild(c);
+              setTimeout(function() { if(c.parentNode) c.parentNode.removeChild(c); }, 900);
+            }, d);
+          })(i * 200);
+        }
+      });
+    });
+  }
+
+  // ── 5. MAGNETIC CARDS ──
+  if (!isTouch) {
+    ['.dims .dim', '.creds .cred'].forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(card) {
+        var cx=0, cy=0, tx=0, ty=0, running=false;
+        function lerpStep() {
+          cx += (tx-cx)*0.12; cy += (ty-cy)*0.12;
+          card.style.transform = 'translate('+cx+'px,'+cy+'px)';
+          if (Math.abs(tx-cx)>0.05 || Math.abs(ty-cy)>0.05) requestAnimationFrame(lerpStep);
+          else running = false;
+        }
+        function start() { if (!running) { running=true; requestAnimationFrame(lerpStep); } }
+        card.addEventListener('mousemove', function(e) {
+          var r = card.getBoundingClientRect();
+          var dx=e.clientX-(r.left+r.width/2), dy=e.clientY-(r.top+r.height/2);
+          var dist=Math.sqrt(dx*dx+dy*dy);
+          if (dist<150) { var s=(1-dist/150)*12; tx=dx/dist*s; ty=dy/dist*s; }
+          else { tx=0; ty=0; }
+          start();
+        });
+        card.addEventListener('mouseleave', function() { tx=0; ty=0; start(); });
+      });
+    });
+  }
+
+  // ── 6. WORD-BY-WORD TITLE REVEAL (safe — operates on text nodes only) ──
+  (function() {
+    function wrapWords(el) {
+      // Walk direct children — treat em/strong as atomic units (don't recurse)
+      // to preserve -webkit-background-clip:text gradient on em elements
+      Array.from(el.childNodes).forEach(function(node) {
+        if (node.nodeType === 3) { // plain text node
+          var words = node.textContent.split(/( +)/);
+          var frag = document.createDocumentFragment();
+          words.forEach(function(word) {
+            if (word.match(/^ +$/)) {
+              frag.appendChild(document.createTextNode(word));
+            } else if (word.length > 0) {
+              var span = document.createElement('span');
+              span.className = 'sh2-word';
+              span.textContent = word;
+              frag.appendChild(span);
+            }
+          });
+          node.parentNode.replaceChild(frag, node);
+        } else if (node.nodeType === 1 && node.tagName !== 'BR') {
+          // Wrap the whole em/strong as a single animated unit
+          var wrapper = document.createElement('span');
+          wrapper.className = 'sh2-word';
+          node.parentNode.insertBefore(wrapper, node);
+          wrapper.appendChild(node);
+        }
+      });
+    }
+
+    var delayCounter = 0;
+    document.querySelectorAll('.sh2:not([data-wv])').forEach(function(title) {
+      title.setAttribute('data-wv', '1');
+      delayCounter = 0;
+      wrapWords(title);
+      // Assign stagger delays after wrapping
+      title.querySelectorAll('.sh2-word').forEach(function(w) {
+        w.style.transitionDelay = (delayCounter * 55) + 'ms';
+        delayCounter++;
+      });
+    });
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('.sh2-word').forEach(function(w) { w.classList.add('in'); });
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.sh2[data-wv]').forEach(function(t) { obs.observe(t); });
+  })();
+
+  // ── 7. SVG DIVIDER TRACE ──
+  var divObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('traced'); divObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.wave-divider').forEach(function(d){ divObs.observe(d); });
+
+  // ── 8. FLOATING MUSIC NOTES ──
+  var container = document.getElementById('musicNotesContainer');
+  if (container) {
+    var notes=['♪','♫','♩','♬'];
+    for (var i=0; i<12; i++) {
+      var note=document.createElement('span');
+      note.className='music-note';
+      note.textContent=notes[i%4];
+      note.style.cssText='left:'+(5+Math.random()*90)+'%;bottom:'+(Math.random()*20)+'%;font-size:'+(12+Math.random()*10)+'px;animation-duration:'+(10+Math.random()*8)+'s;animation-delay:'+(Math.random()*12)+'s;color:rgba(255,255,255,'+(0.03+Math.random()*0.05)+');';
+      container.appendChild(note);
+    }
+  }
+
+})();
+
+</script>
+
+<!-- ═══ BOOKING MODAL (Cabinet) ═══ -->
+<div class="booking-modal" id="bookingModal">
+  <div class="booking-box">
+    <button class="booking-close" onclick="closeBooking()">×</button>
+    <div id="bookingMain">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+        <span style="font-size:32px;">📍</span>
+        <div>
+          <div class="booking-title">Réserver une séance</div>
+          <div style="font-size:13px;color:var(--textm);">Cabinet · Paris · Paiement sécurisé à l'avance</div>
+        </div>
+      </div>
+      <p class="booking-sub">Choisissez votre formule, sélectionnez un créneau et payez en ligne. Votre réservation est confirmée instantanément.</p>
+      
+      <div class="booking-tabs" id="bookingTabs">
+        <div class="booking-tab active" onclick="selectSoin(this,'diag')" data-soin="diag">
+          <div class="booking-tab-name">Séance diagnostique</div>
+          <div class="booking-tab-price">150€</div>
+          <div class="booking-tab-desc">1h · Bilan complet</div>
+        </div>
+        <div class="booking-tab" onclick="selectSoin(this,'pack')" data-soin="pack">
+          <div class="booking-tab-name">Pack 5 séances</div>
+          <div class="booking-tab-price">750€</div>
+          <div class="booking-tab-desc">5 séances · Économie 150€</div>
+        </div>
+      </div>
+
+      <div id="soin-diag">
+        <div style="background:var(--cream2);border-radius:14px;padding:16px 20px;margin-bottom:20px;font-size:14px;color:var(--textm);line-height:1.6;">
+          <strong style="color:var(--ink);">Bilan ostéopathique vocal complet</strong><br>
+          Identification des tensions et blocages, recommandations personnalisées, exercices ciblés. Durée : 1h. Cabinet à Paris (adresse communiquée après réservation).
+        </div>
+      </div>
+      <div id="soin-pack" style="display:none;">
+        <div style="background:linear-gradient(135deg,rgba(155,110,168,.08),rgba(74,158,137,.06));border-radius:14px;padding:16px 20px;margin-bottom:20px;font-size:14px;color:var(--textm);line-height:1.6;border:1px solid rgba(155,110,168,.2);">
+          <strong style="color:var(--ink);">⭐ Suivi thérapeutique — 5 séances</strong><br>
+          Programme progressif sur mesure, 5 séances d'1h, suivi entre les séances. Économie de 150€ par rapport aux séances individuelles.
+        </div>
+      </div>
+
+      <div class="booking-calendar">
+        <div class="cal-header">
+          <button class="cal-nav" onclick="calNav(-1)">‹</button>
+          <div class="cal-month" id="calMonth">Avril 2026</div>
+          <button class="cal-nav" onclick="calNav(1)">›</button>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+
+      <div id="timeSlotArea" style="display:none;margin-bottom:20px;">
+        <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;">Créneaux disponibles</div>
+        <div class="time-slots" id="timeSlots"></div>
+      </div>
+
+      <div id="bookingFormArea" style="display:none;">
+        <div class="booking-summary" id="bookingSummary"></div>
+        <div class="booking-form">
+          <div class="booking-field">
+            <label class="booking-label">Prénom & Nom</label>
+            <input type="text" class="booking-input" id="bookName" placeholder="Marie Dupont" required>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Email</label>
+            <input type="email" class="booking-input" id="bookEmail" placeholder="marie@email.com" required>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Téléphone</label>
+            <input type="tel" class="booking-input" id="bookPhone" placeholder="+33 6 XX XX XX XX" required>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Motif / Informations utiles <span style="font-weight:400;color:var(--textm);">(optionnel)</span></label>
+            <textarea class="booking-input" id="bookNote" rows="2" placeholder="Décrivez brièvement votre problème vocal..." style="resize:vertical;"></textarea>
+          </div>
+          <button class="booking-pay-btn" id="bookPayBtn" onclick="submitBooking()">
+            🔒 Confirmer et payer <span id="bookAmount">150€</span>
+          </button>
+          <p style="font-size:12px;color:var(--textm);text-align:center;margin-top:8px;">Paiement 100% sécurisé · Remboursement si annulation 48h avant</p>
+        </div>
+      </div>
+    </div>
+    <div class="booking-success" id="bookingSuccess">
+      <div style="font-size:64px;margin-bottom:16px;">🎉</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:26px;color:var(--ink);margin-bottom:10px;">Réservation confirmée !</h3>
+      <p style="font-size:15px;color:var(--textm);line-height:1.7;margin-bottom:20px;">Tu recevras un email de confirmation avec l'adresse du cabinet et toutes les informations pratiques.</p>
+      <button onclick="closeBooking()" class="btn-main" style="margin:0 auto;display:inline-flex;">Parfait, à bientôt ! 🎤</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MEET MODAL (Performe / Rayonne) ═══ -->
+<div class="meet-modal" id="meetModal">
+  <div class="meet-box">
+    <button class="booking-close" onclick="closeMeet()">×</button>
+    <div id="meetMain">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:32px;" id="meetIcon">🔥</span>
+        <div>
+          <div class="booking-title" id="meetTitle">Appel de découverte</div>
+          <div style="font-size:13px;color:var(--textm);">20 min · Google Meet · Gratuit</div>
+        </div>
+      </div>
+      <p class="booking-sub" id="meetDesc">Choisis un créneau pour un appel de découverte avec Salomé. En 20 minutes, on vérifie ensemble que la formation est adaptée à ton profil.</p>
+
+      <div class="meet-step active" id="meet-s1">
+        <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:12px;">Choisis un créneau</div>
+        <div class="meet-slots">
+          <div class="meet-slot" onclick="selMeetSlot(this,'Lundi 7 Avril','14h00')">
+            <div class="meet-slot-date">Lundi 7 Avril</div>
+            <div class="meet-slot-time">14h00 – 14h20</div>
+            <div class="meet-slot-avail">✓ Disponible</div>
+          </div>
+          <div class="meet-slot" onclick="selMeetSlot(this,'Mardi 8 Avril','10h00')">
+            <div class="meet-slot-date">Mardi 8 Avril</div>
+            <div class="meet-slot-time">10h00 – 10h20</div>
+            <div class="meet-slot-avail">✓ Disponible</div>
+          </div>
+          <div class="meet-slot" onclick="selMeetSlot(this,'Mercredi 9 Avril','16h30')">
+            <div class="meet-slot-date">Mercredi 9 Avril</div>
+            <div class="meet-slot-time">16h30 – 16h50</div>
+            <div class="meet-slot-avail">✓ Disponible</div>
+          </div>
+          <div class="meet-slot" onclick="selMeetSlot(this,'Jeudi 10 Avril','11h00')">
+            <div class="meet-slot-date">Jeudi 10 Avril</div>
+            <div class="meet-slot-time">11h00 – 11h20</div>
+            <div class="meet-slot-avail">✓ Disponible</div>
+          </div>
+          <div class="meet-slot" onclick="selMeetSlot(this,'Vendredi 11 Avril','09h30')">
+            <div class="meet-slot-date">Vendredi 11 Avril</div>
+            <div class="meet-slot-time">09h30 – 09h50</div>
+            <div class="meet-slot-avail">✓ Disponible</div>
+          </div>
+          <div class="meet-slot" onclick="selMeetSlot(this,'Lundi 14 Avril','15h00')">
+            <div class="meet-slot-date">Lundi 14 Avril</div>
+            <div class="meet-slot-time">15h00 – 15h20</div>
+            <div class="meet-slot-avail">✓ Disponible</div>
+          </div>
+        </div>
+        <button class="booking-pay-btn" id="meetNextBtn" onclick="meetNext()" disabled style="background:linear-gradient(135deg,var(--lavender),var(--rose));">
+          Choisir ce créneau →
+        </button>
+      </div>
+
+      <div class="meet-step" id="meet-s2">
+        <div id="meetSlotSummary" style="background:linear-gradient(135deg,rgba(122,98,200,.1),rgba(196,94,138,.08));border:1px solid rgba(122,98,200,.2);border-radius:14px;padding:16px 20px;margin-bottom:20px;font-size:14px;color:var(--ink);"></div>
+        <div class="booking-form">
+          <div class="booking-field">
+            <label class="booking-label">Prénom & Nom</label>
+            <input type="text" class="booking-input" id="meetName" placeholder="Marie Dupont" required>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Email</label>
+            <input type="email" class="booking-input" id="meetEmail" placeholder="marie@email.com" required>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Ton profil en 2 phrases</label>
+            <textarea class="booking-input" id="meetNote" rows="3" placeholder="Ex: Chanteur amateur depuis 5 ans, je force sur les aigus et j'ai des tensions récurrentes..." style="resize:vertical;"></textarea>
+          </div>
+          <button class="booking-pay-btn" onclick="submitMeet()" style="background:linear-gradient(135deg,var(--lavender),var(--rose));">
+            ✅ Confirmer mon appel Meet →
+          </button>
+          <p style="font-size:12px;color:var(--textm);text-align:center;margin-top:8px;">Tu recevras le lien Google Meet par email · Annulation libre</p>
+        </div>
+      </div>
+    </div>
+    <div class="booking-success" id="meetSuccess">
+      <div style="font-size:64px;margin-bottom:16px;">📅</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:26px;color:var(--ink);margin-bottom:10px;">Appel confirmé !</h3>
+      <p style="font-size:15px;color:var(--textm);line-height:1.7;margin-bottom:20px;">Tu recevras le lien Google Meet et un email de rappel 24h avant l'appel. Salomé a hâte de discuter avec toi !</p>
