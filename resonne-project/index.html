@@ -60,7 +60,7 @@ nav.scrolled{background:rgba(253,248,242,.96);backdrop-filter:blur(20px);box-sha
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(155,110,168,.12);border:1.5px solid rgba(155,110,168,.4);color:var(--coral);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 16px;border-radius:50px;margin-bottom:24px;white-space:nowrap;flex-wrap:nowrap;}
 .dot-pulse{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.5);opacity:.5;}}
-.hero-h1{font-family:'Fraunces',serif;font-size:clamp(50px,6vw,84px);font-weight:700;line-height:1.02;letter-spacing:-2px;color:var(--ink);margin-bottom:10px;}
+.hero-h1{font-family:'Fraunces',serif;font-size:clamp(50px,6vw,84px);font-weight:700;line-height:1.02;letter-spacing:-1px;word-spacing:0.15em;color:var(--ink);margin-bottom:10px;}
 .hero-h1 .wave{display:block;background:linear-gradient(135deg,var(--coral) 0%,var(--sun) 50%,var(--rose) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic;}
 .hero-h1 .subline{display:block;font-size:clamp(26px,3vw,42px);font-weight:300;color:var(--textm);letter-spacing:-1px;margin-top:4px;-webkit-text-fill-color:var(--textm);background:none;}
 .hero-sub{font-size:17px;line-height:1.75;color:var(--textm);max-width:520px;margin:28px 0 44px;}
@@ -609,7 +609,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
   align-items: center;
   justify-content: center;
 }
-/* pas d'animation tickerGold ni tickerScroll */
 .fin-ticker-track {
   display: flex;
   align-items: center;
@@ -986,8 +985,8 @@ footer{background:var(--ink);padding:60px 80px 40px;}
 .btn-main--breathe{animation:breathe 4s ease-in-out infinite;will-change:box-shadow;}
 
 /* ── 3. CLIP-PATH WIPE REVEAL ── */
-.wipe-section{clip-path:inset(0 0 100% 0);transition:clip-path .8s ease-out;will-change:clip-path;}
-.wipe-section.wipe-in{clip-path:inset(0 0 0% 0);}
+.wipe-section{/* clip-path désactivé */}
+.wipe-section.wipe-in{/* désactivé */}
 
 /* ── 4. SOUND RIPPLE ON HOVER ── */
 .btn-main{position:relative;overflow:hidden;}
@@ -1024,7 +1023,7 @@ footer{background:var(--ink);padding:60px 80px 40px;}
 /* ── REDUCED MOTION ── */
 @media(prefers-reduced-motion:reduce){
   .btn-main--breathe{animation:none !important;}
-  .wipe-section{clip-path:none !important;transition:none !important;}
+  
   .sh2-word{opacity:1 !important;transform:none !important;transition:none !important;}
   .wave-divider path{stroke-dashoffset:0 !important;transition:none !important;}
   .music-note{display:none !important;}
@@ -1037,11 +1036,6 @@ footer{background:var(--ink);padding:60px 80px 40px;}
   .dim,.cred{transition:transform .35s var(--tr) !important;}
 }
 
-
-@media(max-width:1100px){
-  .hero-inner > div:first-child { max-width: 100%; width: 100%; }
-  .hero-h1 { font-size: clamp(44px, 8vw, 84px); }
-}
 </style>
 </head>
 <body>
@@ -1103,7 +1097,7 @@ footer{background:var(--ink);padding:60px 80px 40px;}
     <div>
       <div class="hero-eyebrow"><span class="dot-pulse"></span> Ostéopathe de la Voix · Certifiée Qualiopi</div>
       <h1 class="hero-h1">
-        Libère<br>ton corps,
+        Libère ton corps,
         <span class="wave">libère ta voix.</span>
         <span class="subline">Pour enfin chanter sans forcer.</span>
       </h1>
@@ -1117,8 +1111,14 @@ footer{background:var(--ink);padding:60px 80px 40px;}
         <div><div class="stat-n c2">7</div><div class="stat-l">Modules complets</div></div>
         <div><div class="stat-n c3">0€</div><div class="stat-l">Avec AFDAS</div></div>
       </div>
+      <div class="hero-mobile-photo rv rv3">
+        <img src="assets/images/salome.jpg" alt="Salomé Sebbag — Ostéopathe de la Voix">
+        <div style="position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(to top,rgba(155,110,168,.35),transparent);"></div>
+        <div style="position:absolute;bottom:16px;left:16px;background:rgba(255,255,255,.95);border-radius:10px;padding:10px 14px;">
+          <div style="font-size:12px;font-weight:700;color:var(--ink);">🏆 Le Roi Lion · Mogador</div>
+          <div style="font-size:11px;color:var(--textm);margin-top:2px;">+1000 voix accompagnées</div>
+        </div>
       </div>
-    </div>
     </div>
     <div class="hero-img-area rv rv2">
       <div class="hero-tag-bubble">🏆 Le Roi Lion · Mogador</div>
@@ -1829,6 +1829,13 @@ var ro = new IntersectionObserver(function(entries) {
 }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(function(el) { ro.observe(el); });
 
+// ── FALLBACK : force tout visible après 800ms si observer ne fire pas ──
+setTimeout(function() {
+  document.querySelectorAll('.rv:not(.in)').forEach(function(el) {
+    el.classList.add('in');
+  });
+}, 800);
+
 // ── VIDEO CAROUSEL AUTO-SCROLL ──
 var vidIdx = 0, vidTotal = 5, vidAuto;
 function vidMove(dir) { vidGo((vidIdx + dir + vidTotal) % vidTotal); }
@@ -2257,7 +2264,7 @@ function logoMove(dir) {
   // ── 3. WIPE REVEAL ──
   (function() {
     var sects = document.querySelectorAll('#symptoms,#story,#method,#videos,#programme,#temoignages,#financement,#pricing,#faq,#cta');
-    sects.forEach(function(s) { s.classList.add('wipe-section'); });
+    // wipe disabled
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (!e.isIntersecting) return;
